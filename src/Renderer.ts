@@ -69,6 +69,11 @@ export class Renderer extends SceneRenderer<lib.org.androidworks.cartoonplanes.C
             return;
         }
 
+        const length = 7;
+        const currentSky = +(this.scene.texSky.fileName.charAt(this.scene.texSky.fileName.length - 1));
+        const newSkyId = (currentSky + 1 + Math.trunc(Math.random() * (length - 2))) % length;
+        const timeOfDay = "day";
+
         // TODO: Use a separate texture for static sky and pair for transition,
         // then update only the transition textures and draw transition only after timer is > 0.05 or smth
         // This should prevent 1-frame flickering when changing sky
@@ -79,7 +84,7 @@ export class Renderer extends SceneRenderer<lib.org.androidworks.cartoonplanes.C
         const fileName1 = this.scene.texSky1.fileName;
         const fileName2 = this.scene.texSky2.fileName;
 
-        const newSkyName = `sky/day/${Math.trunc(Math.random() * 7) + 1}`;
+        const newSkyName = `sky/${timeOfDay}/${newSkyId + 1}`;
         this.scene.texSky2.fileName = newSkyName;
         const newSkyTexture2 = await this.loadTexture(this.scene.texSky2);
 

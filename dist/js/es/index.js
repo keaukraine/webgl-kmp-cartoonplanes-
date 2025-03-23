@@ -1867,17 +1867,17 @@ if (typeof Math.imul === 'undefined') {
   setMetadataFor(AbstractMutableCollection, 'AbstractMutableCollection', classMeta, AbstractCollection, [AbstractCollection, Collection]);
   setMetadataFor(IteratorImpl, 'IteratorImpl', classMeta);
   setMetadataFor(List, 'List', interfaceMeta, VOID, [Collection]);
-  setMetadataFor(AbstractMutableList, 'AbstractMutableList', classMeta, AbstractMutableCollection, [AbstractMutableCollection, List, Collection]);
+  setMetadataFor(AbstractMutableList, 'AbstractMutableList', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Collection, List]);
   setMetadataFor(Map_0, 'Map', interfaceMeta);
   setMetadataFor(AbstractMap, 'AbstractMap', classMeta, VOID, [Map_0]);
   setMetadataFor(AbstractMutableMap, 'AbstractMutableMap', classMeta, AbstractMap, [AbstractMap, Map_0]);
   setMetadataFor(Set, 'Set', interfaceMeta, VOID, [Collection]);
-  setMetadataFor(AbstractMutableSet, 'AbstractMutableSet', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Collection, Set]);
+  setMetadataFor(AbstractMutableSet, 'AbstractMutableSet', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Set, Collection]);
   setMetadataFor(Companion, 'Companion', objectMeta);
-  setMetadataFor(ArrayList, 'ArrayList', classMeta, AbstractMutableList, [AbstractMutableList, List, Collection], ArrayList_init_$Create$);
+  setMetadataFor(ArrayList, 'ArrayList', classMeta, AbstractMutableList, [AbstractMutableList, Collection, List], ArrayList_init_$Create$);
   setMetadataFor(HashMap, 'HashMap', classMeta, AbstractMutableMap, [AbstractMutableMap, Map_0], HashMap_init_$Create$);
   setMetadataFor(HashMapValues, 'HashMapValues', classMeta, AbstractMutableCollection, [Collection, AbstractMutableCollection]);
-  setMetadataFor(HashMapEntrySetBase, 'HashMapEntrySetBase', classMeta, AbstractMutableSet, [Collection, Set, AbstractMutableSet]);
+  setMetadataFor(HashMapEntrySetBase, 'HashMapEntrySetBase', classMeta, AbstractMutableSet, [Set, Collection, AbstractMutableSet]);
   setMetadataFor(HashMapEntrySet, 'HashMapEntrySet', classMeta, HashMapEntrySetBase);
   setMetadataFor(HashMapValuesDefault$iterator$1, VOID, classMeta);
   setMetadataFor(HashMapValuesDefault, 'HashMapValuesDefault', classMeta, AbstractMutableCollection);
@@ -12285,7 +12285,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     timers.ai(Timers_PlaneBanking_getInstance(), 22800.0);
     timers.bi(Timers_Camera_getInstance(), 25800.0, false);
     timers.bi(Timers_SwapPlanes_getInstance(), 6000.0, false);
-    timers.bi(Timers_SwapSky_getInstance(), 5000.0, false);
+    timers.bi(Timers_SwapSky_getInstance(), 4000.0, false);
   };
   var Companion_instance_0;
   var Timers_entriesInitialized_0;
@@ -15789,6 +15789,10 @@ class Renderer extends SceneRenderer {
         if (this.scene === undefined) {
             return;
         }
+        const length = 7;
+        const currentSky = +(this.scene.texSky.fileName.charAt(this.scene.texSky.fileName.length - 1));
+        const newSkyId = (currentSky + 1 + Math.trunc(Math.random() * (length - 2))) % length;
+        const timeOfDay = "day";
         // TODO: Use a separate texture for static sky and pair for transition,
         // then update only the transition textures and draw transition only after timer is > 0.05 or smth
         // This should prevent 1-frame flickering when changing sky
@@ -15797,7 +15801,7 @@ class Renderer extends SceneRenderer {
         const id2 = this.scene.texSky2.id;
         this.scene.texSky1.fileName;
         const fileName2 = this.scene.texSky2.fileName;
-        const newSkyName = `sky/day/${Math.trunc(Math.random() * 7) + 1}`;
+        const newSkyName = `sky/${timeOfDay}/${newSkyId + 1}`;
         this.scene.texSky2.fileName = newSkyName;
         const newSkyTexture2 = await this.loadTexture(this.scene.texSky2);
         this.scene.texSky.id = id2;

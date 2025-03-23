@@ -2788,7 +2788,7 @@
     timers.ai(Timers_PlaneBanking_getInstance(), 22800.0);
     timers.bi(Timers_Camera_getInstance(), 25800.0, false);
     timers.bi(Timers_SwapPlanes_getInstance(), 6000.0, false);
-    timers.bi(Timers_SwapSky_getInstance(), 5000.0, false);
+    timers.bi(Timers_SwapSky_getInstance(), 4000.0, false);
   };
   var Companion_instance_0;
   function Companion_getInstance_0() {
