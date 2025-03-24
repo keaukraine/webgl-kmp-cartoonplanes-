@@ -1,4 +1,4 @@
-import { BaseShader } from "webgl-framework";
+import { BaseShader, FullModel } from "webgl-framework";
 import { cartoonplanes, lib } from "./KotlinLib";
 import { SceneRenderer } from "./SceneRenderer";
 import { ShaderInputs } from "./shaders/ShaderInputs";
@@ -32,7 +32,12 @@ export class Renderer extends SceneRenderer<lib.org.androidworks.cartoonplanes.C
 
     createScene(): lib.org.androidworks.cartoonplanes.CartoonPlanesScene {
         const scene = new cartoonplanes.CartoonPlanesScene();
-        scene.nextCamera();
+        scene.changePlanes(0, 1);
+        scene.randomizePropTexture();
+
+        // FIXME
+        // setTimeout(() => { scene. }, 1000);
+
         return scene;
     }
 
@@ -53,18 +58,11 @@ export class Renderer extends SceneRenderer<lib.org.androidworks.cartoonplanes.C
         throw new Error(`Unknown shader type ${name}`);
     }
 
-    public nextCamera(): void {
-        this.scene?.nextCamera();
-    }
-
     public get settings() {
         return this.scene!.settings;
     }
 
     public async randomizeSky(): Promise<void> {
-        // const length = this.config.animals[this.config.currentAnimal].animations.length;
-        // this.config.currentAnimalAnimation = (this.config.currentAnimalAnimation + 1 + Math.trunc(Math.random() * (length - 2))) % length;
-
         if (this.scene === undefined) {
             return;
         }
@@ -73,10 +71,6 @@ export class Renderer extends SceneRenderer<lib.org.androidworks.cartoonplanes.C
         const currentSky = +(this.scene.texSky.fileName.charAt(this.scene.texSky.fileName.length - 1));
         const newSkyId = (currentSky + 1 + Math.trunc(Math.random() * (length - 2))) % length;
         const timeOfDay = "day";
-
-        // TODO: Use a separate texture for static sky and pair for transition,
-        // then update only the transition textures and draw transition only after timer is > 0.05 or smth
-        // This should prevent 1-frame flickering when changing sky
 
         const id = this.scene.texSky.id;
         const id1 = this.scene.texSky1.id;
@@ -100,6 +94,43 @@ export class Renderer extends SceneRenderer<lib.org.androidworks.cartoonplanes.C
         this.scene?.changeSky();
 
         // Update draw commands after changing sky
+        // this.processCommands(this.commands);
+    }
+
+    public async randomizePlane(): Promise<void> {
+        if (!this.scene?.canChangePlanes()) {
+            return;
+        }
+
+        const { currentPlane, nextPlane } = this.scene.settings;
+        const { texPlane1, texPlane2 } = this.scene;
+        const texture1Index = this.scene.texPlane1.id;
+        const texture2Index = this.scene.texPlane2.id;
+        const model1Index = this.scene.meshPlane1.id;
+        const model2Index = this.scene.meshPlane2.id;
+
+        const length = 10;
+        const newPlane = (nextPlane + 1 + Math.trunc(Math.random() * (length - 2))) % length;
+
+        const newModel = new FullModel();
+        await newModel.load(`data/models/plane${newPlane}`, this.gl);
+        this.scene.texPlane2.fileName = `plane${newPlane}`;
+        const newPlaneTexture = await this.loadTexture(this.scene.texPlane2);
+
+        // Move 2 -> 1
+        this.scene.meshPlane1.id = model2Index;
+        const oldTexture1 = this.textures[texture1Index];
+        this.textures[texture1Index] = this.textures[texture2Index];
+
+        this.gl.deleteTexture(oldTexture1);
+        this.textures[texture2Index] = newPlaneTexture;
+        this.models[model1Index] = newModel;
+
+        this.scene.meshPlane2.id = model1Index;
+        // this.scene.texPlane2.id = texture1Index;
+
+        this.scene.changePlanes(nextPlane, newPlane);
+
         this.processCommands(this.commands);
     }
 }

@@ -1321,18 +1321,22 @@ export declare namespace org.androidworks.cartoonplanes {
         set texSky1(value: org.androidworks.engine.Texture);
         get texSky2(): org.androidworks.engine.Texture;
         set texSky2(value: org.androidworks.engine.Texture);
+        get meshPlane1(): org.androidworks.engine.Mesh;
+        set meshPlane1(value: org.androidworks.engine.Mesh);
+        get meshPlane2(): org.androidworks.engine.Mesh;
+        set meshPlane2(value: org.androidworks.engine.Mesh);
+        get texPlane1(): org.androidworks.engine.Texture;
+        set texPlane1(value: org.androidworks.engine.Texture);
+        get texPlane2(): org.androidworks.engine.Texture;
+        set texPlane2(value: org.androidworks.engine.Texture);
         updateTimers(time: number): void;
         updateViewportSize(width: number, height: number): void;
         initialize(): void;
-        protected applySettings(): void;
-        protected animate(): void;
-        protected updateSky(): void;
-        protected updatePlaneTransforms(): void;
-        protected positionCamera(): void;
-        calculatePlanePosition(offset: org.androidworks.engine.math.Vec3, timersOffset: number): void;
-        nextCamera(): void;
-        randomizeCamera(): void;
         changeSky(): void;
+        randomizePropTexture(): void;
+        setPropTexture(id: number): void;
+        canChangePlanes(): boolean;
+        changePlanes(plane1: number, plane2: number): void;
     }
 }
 export declare namespace org.androidworks.cartoonplanes {

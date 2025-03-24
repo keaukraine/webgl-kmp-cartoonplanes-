@@ -267,52 +267,52 @@
     this.sourceFactorColor = BlendingFactor_ZERO_getInstance();
     this.destinationFactorColor = BlendingFactor_ZERO_getInstance();
   }
-  protoOf(Blending).e6 = function (_set____db54di) {
+  protoOf(Blending).f6 = function (_set____db54di) {
     this.enabled = _set____db54di;
   };
-  protoOf(Blending).f6 = function () {
+  protoOf(Blending).g6 = function () {
     return this.enabled;
   };
-  protoOf(Blending).g6 = function (_set____db54di) {
+  protoOf(Blending).h6 = function (_set____db54di) {
     this.isSeparateAlpha = _set____db54di;
   };
-  protoOf(Blending).h6 = function () {
+  protoOf(Blending).i6 = function () {
     return this.isSeparateAlpha;
   };
-  protoOf(Blending).i6 = function (_set____db54di) {
+  protoOf(Blending).j6 = function (_set____db54di) {
     this.equationAlpha = _set____db54di;
   };
-  protoOf(Blending).j6 = function () {
+  protoOf(Blending).k6 = function () {
     return this.equationAlpha;
   };
-  protoOf(Blending).k6 = function (_set____db54di) {
+  protoOf(Blending).l6 = function (_set____db54di) {
     this.equationColor = _set____db54di;
   };
-  protoOf(Blending).l6 = function () {
+  protoOf(Blending).m6 = function () {
     return this.equationColor;
   };
-  protoOf(Blending).m6 = function (_set____db54di) {
+  protoOf(Blending).n6 = function (_set____db54di) {
     this.sourceFactorAlpha = _set____db54di;
   };
-  protoOf(Blending).n6 = function () {
+  protoOf(Blending).o6 = function () {
     return this.sourceFactorAlpha;
   };
-  protoOf(Blending).o6 = function (_set____db54di) {
+  protoOf(Blending).p6 = function (_set____db54di) {
     this.destinationFactorAlpha = _set____db54di;
   };
-  protoOf(Blending).p6 = function () {
+  protoOf(Blending).q6 = function () {
     return this.destinationFactorAlpha;
   };
-  protoOf(Blending).q6 = function (_set____db54di) {
+  protoOf(Blending).r6 = function (_set____db54di) {
     this.sourceFactorColor = _set____db54di;
   };
-  protoOf(Blending).r6 = function () {
+  protoOf(Blending).s6 = function () {
     return this.sourceFactorColor;
   };
-  protoOf(Blending).s6 = function (_set____db54di) {
+  protoOf(Blending).t6 = function (_set____db54di) {
     this.destinationFactorColor = _set____db54di;
   };
-  protoOf(Blending).t6 = function () {
+  protoOf(Blending).u6 = function () {
     return this.destinationFactorColor;
   };
   function BlendingEquation_ADD_getInstance() {
@@ -469,16 +469,16 @@
     this.depthTest = depthTest;
     this.depthWrite = depthWrite;
   }
-  protoOf(DepthMode).w6 = function (_set____db54di) {
+  protoOf(DepthMode).x6 = function (_set____db54di) {
     this.depthTest = _set____db54di;
   };
-  protoOf(DepthMode).x6 = function () {
+  protoOf(DepthMode).y6 = function () {
     return this.depthTest;
   };
-  protoOf(DepthMode).y6 = function (_set____db54di) {
+  protoOf(DepthMode).z6 = function (_set____db54di) {
     this.depthWrite = _set____db54di;
   };
-  protoOf(DepthMode).z6 = function () {
+  protoOf(DepthMode).a7 = function () {
     return this.depthWrite;
   };
   var properties_initialized_DepthMode_kt_b0ctqi;
@@ -509,34 +509,34 @@
   function MeshConstructor2(name, attrs) {
     return Mesh_init_$Init$_0(name, attrs, objectCreate(protoOf(Mesh)));
   }
-  protoOf(Mesh).a7 = function (_set____db54di) {
+  protoOf(Mesh).b7 = function (_set____db54di) {
     this.name = _set____db54di;
   };
   protoOf(Mesh).c4 = function () {
     return this.name;
   };
-  protoOf(Mesh).b7 = function (_set____db54di) {
+  protoOf(Mesh).c7 = function (_set____db54di) {
     this.id = _set____db54di;
   };
-  protoOf(Mesh).c7 = function () {
+  protoOf(Mesh).d7 = function () {
     return this.id;
   };
-  protoOf(Mesh).d7 = function (_set____db54di) {
+  protoOf(Mesh).e7 = function (_set____db54di) {
     this.fileName = _set____db54di;
   };
-  protoOf(Mesh).e7 = function () {
+  protoOf(Mesh).f7 = function () {
     return this.fileName;
   };
-  protoOf(Mesh).f7 = function (_set____db54di) {
+  protoOf(Mesh).g7 = function (_set____db54di) {
     this.loaded = _set____db54di;
   };
-  protoOf(Mesh).g7 = function () {
+  protoOf(Mesh).h7 = function () {
     return this.loaded;
   };
-  protoOf(Mesh).h7 = function (_set____db54di) {
+  protoOf(Mesh).i7 = function (_set____db54di) {
     this.attributes = _set____db54di;
   };
-  protoOf(Mesh).i7 = function () {
+  protoOf(Mesh).j7 = function () {
     return this.attributes;
   };
   function Mesh() {
@@ -552,7 +552,7 @@
     var x = fovY / 360.0 * 3.1415925;
     var fH = Math.tan(x) * zNear;
     fW = fH * aspect;
-    Matrix_getInstance().q7(matrix, 0, -fW, fW, -fH, fH, zNear, zFar);
+    Matrix_getInstance().r7(matrix, 0, -fW, fW, -fH, fH, zNear, zFar);
   }
   function Scene() {
     this.lastFrameTime = 0.0;
@@ -570,127 +570,127 @@
     this.Z_NEAR = 0.0;
     this.Z_FAR = 0.0;
     this.backendMode = BackendMode_OPENGL_getInstance();
-    this.r7_1 = false;
+    this.s7_1 = false;
     var tmp = this;
     // Inline function 'kotlin.collections.mutableListOf' call
-    tmp.s7_1 = ArrayList_init_$Create$();
+    tmp.t7_1 = ArrayList_init_$Create$();
     var tmp_0 = this;
     // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_0.t7_1 = ArrayList_init_$Create$();
+    tmp_0.u7_1 = ArrayList_init_$Create$();
     var tmp_1 = this;
     // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_1.u7_1 = ArrayList_init_$Create$();
+    tmp_1.v7_1 = ArrayList_init_$Create$();
     var tmp_2 = this;
     // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_2.v7_1 = ArrayList_init_$Create$();
+    tmp_2.w7_1 = ArrayList_init_$Create$();
   }
-  protoOf(Scene).w7 = function (_set____db54di) {
+  protoOf(Scene).x7 = function (_set____db54di) {
     this.lastFrameTime = _set____db54di;
   };
-  protoOf(Scene).x7 = function () {
+  protoOf(Scene).y7 = function () {
     return this.lastFrameTime;
   };
-  protoOf(Scene).y7 = function (_set____db54di) {
+  protoOf(Scene).z7 = function (_set____db54di) {
     this.viewportWidth = _set____db54di;
   };
-  protoOf(Scene).z7 = function () {
+  protoOf(Scene).a8 = function () {
     return this.viewportWidth;
   };
-  protoOf(Scene).a8 = function (_set____db54di) {
+  protoOf(Scene).b8 = function (_set____db54di) {
     this.viewportHeight = _set____db54di;
   };
-  protoOf(Scene).b8 = function () {
+  protoOf(Scene).c8 = function () {
     return this.viewportHeight;
   };
-  protoOf(Scene).c8 = function () {
+  protoOf(Scene).d8 = function () {
     return this.matView;
   };
-  protoOf(Scene).d8 = function (_set____db54di) {
+  protoOf(Scene).e8 = function (_set____db54di) {
     this.useExternalViewMatrix = _set____db54di;
   };
-  protoOf(Scene).e8 = function () {
+  protoOf(Scene).f8 = function () {
     return this.useExternalViewMatrix;
   };
-  protoOf(Scene).f8 = function () {
+  protoOf(Scene).g8 = function () {
     return this.matProjection;
   };
-  protoOf(Scene).g8 = function () {
+  protoOf(Scene).h8 = function () {
     return this.matModel;
   };
-  protoOf(Scene).h8 = function () {
+  protoOf(Scene).i8 = function () {
     return this.matMVP;
   };
-  protoOf(Scene).i8 = function (_set____db54di) {
+  protoOf(Scene).j8 = function (_set____db54di) {
     this.zoom = _set____db54di;
   };
-  protoOf(Scene).j8 = function () {
+  protoOf(Scene).k8 = function () {
     return this.zoom;
   };
-  protoOf(Scene).k8 = function (_set____db54di) {
+  protoOf(Scene).l8 = function (_set____db54di) {
     this.ZOOM_FOV = _set____db54di;
   };
-  protoOf(Scene).l8 = function () {
+  protoOf(Scene).m8 = function () {
     return this.ZOOM_FOV;
   };
-  protoOf(Scene).m8 = function (_set____db54di) {
+  protoOf(Scene).n8 = function (_set____db54di) {
     this.FOV_LANDSCAPE = _set____db54di;
   };
-  protoOf(Scene).n8 = function () {
+  protoOf(Scene).o8 = function () {
     return this.FOV_LANDSCAPE;
   };
-  protoOf(Scene).o8 = function (_set____db54di) {
+  protoOf(Scene).p8 = function (_set____db54di) {
     this.FOV_PORTRAIT = _set____db54di;
   };
-  protoOf(Scene).p8 = function () {
+  protoOf(Scene).q8 = function () {
     return this.FOV_PORTRAIT;
   };
-  protoOf(Scene).q8 = function (_set____db54di) {
+  protoOf(Scene).r8 = function (_set____db54di) {
     this.Z_NEAR = _set____db54di;
   };
-  protoOf(Scene).r8 = function () {
+  protoOf(Scene).s8 = function () {
     return this.Z_NEAR;
   };
-  protoOf(Scene).s8 = function (_set____db54di) {
+  protoOf(Scene).t8 = function (_set____db54di) {
     this.Z_FAR = _set____db54di;
   };
-  protoOf(Scene).t8 = function () {
+  protoOf(Scene).u8 = function () {
     return this.Z_FAR;
   };
-  protoOf(Scene).u8 = function (_set____db54di) {
+  protoOf(Scene).v8 = function (_set____db54di) {
     this.backendMode = _set____db54di;
   };
-  protoOf(Scene).v8 = function () {
+  protoOf(Scene).w8 = function () {
     return this.backendMode;
   };
-  protoOf(Scene).f7 = function (value) {
-    this.r7_1 = value;
+  protoOf(Scene).g7 = function (value) {
+    this.s7_1 = value;
   };
-  protoOf(Scene).g7 = function () {
-    return this.r7_1;
-  };
-  protoOf(Scene).w8 = function (_set____db54di) {
-    this.s7_1 = _set____db54di;
-  };
-  protoOf(Scene).x8 = function () {
+  protoOf(Scene).h7 = function () {
     return this.s7_1;
   };
-  protoOf(Scene).y8 = function (_set____db54di) {
+  protoOf(Scene).x8 = function (_set____db54di) {
     this.t7_1 = _set____db54di;
   };
-  protoOf(Scene).z8 = function () {
+  protoOf(Scene).y8 = function () {
     return this.t7_1;
   };
-  protoOf(Scene).a9 = function (_set____db54di) {
+  protoOf(Scene).z8 = function (_set____db54di) {
     this.u7_1 = _set____db54di;
   };
-  protoOf(Scene).b9 = function () {
+  protoOf(Scene).a9 = function () {
     return this.u7_1;
   };
-  protoOf(Scene).c9 = function (_set____db54di) {
+  protoOf(Scene).b9 = function (_set____db54di) {
     this.v7_1 = _set____db54di;
   };
-  protoOf(Scene).d9 = function () {
+  protoOf(Scene).c9 = function () {
     return this.v7_1;
+  };
+  protoOf(Scene).d9 = function (_set____db54di) {
+    this.w7_1 = _set____db54di;
+  };
+  protoOf(Scene).e9 = function () {
+    return this.w7_1;
   };
   protoOf(Scene).updateTimers = function (time) {
     this.lastFrameTime = time;
@@ -699,7 +699,7 @@
     this.viewportWidth = width;
     this.viewportHeight = height;
   };
-  protoOf(Scene).e9 = function (multiplier, width, height) {
+  protoOf(Scene).f9 = function (multiplier, width, height) {
     var tmp;
     if (height > 0) {
       tmp = width / height;
@@ -726,21 +726,21 @@
     multiplier = multiplier === VOID ? 1.0 : multiplier;
     width = width === VOID ? this.viewportWidth : width;
     height = height === VOID ? this.viewportHeight : height;
-    return this.e9(multiplier, width, height);
+    return this.f9(multiplier, width, height);
   };
   protoOf(Scene).calculateMVPMatrix = function (tx, ty, tz, rx, ry, rz, sx, sy, sz) {
-    Matrix_getInstance().f9(this.matModel, 0);
-    Matrix_getInstance().g9(this.matModel, 0, tx, ty, tz);
-    Matrix_getInstance().h9(this.matModel, 0, rx, 1.0, 0.0, 0.0);
-    Matrix_getInstance().h9(this.matModel, 0, ry, 0.0, 1.0, 0.0);
-    Matrix_getInstance().h9(this.matModel, 0, rz, 0.0, 0.0, 1.0);
-    Matrix_getInstance().i9(this.matModel, 0, sx, sy, sz);
-    Matrix_getInstance().j9(this.matMVP, 0, this.matView, 0, this.matModel, 0);
-    Matrix_getInstance().j9(this.matMVP, 0, this.matProjection, 0, this.matMVP, 0);
+    Matrix_getInstance().g9(this.matModel, 0);
+    Matrix_getInstance().h9(this.matModel, 0, tx, ty, tz);
+    Matrix_getInstance().i9(this.matModel, 0, rx, 1.0, 0.0, 0.0);
+    Matrix_getInstance().i9(this.matModel, 0, ry, 0.0, 1.0, 0.0);
+    Matrix_getInstance().i9(this.matModel, 0, rz, 0.0, 0.0, 1.0);
+    Matrix_getInstance().j9(this.matModel, 0, sx, sy, sz);
+    Matrix_getInstance().k9(this.matMVP, 0, this.matView, 0, this.matModel, 0);
+    Matrix_getInstance().k9(this.matMVP, 0, this.matProjection, 0, this.matMVP, 0);
   };
   protoOf(Scene).calculateMVPMatrixFromModelMatrix = function (modelMatrix) {
-    Matrix_getInstance().j9(this.matMVP, 0, this.matView, 0, modelMatrix, 0);
-    Matrix_getInstance().j9(this.matMVP, 0, this.matProjection, 0, this.matMVP, 0);
+    Matrix_getInstance().k9(this.matMVP, 0, this.matView, 0, modelMatrix, 0);
+    Matrix_getInstance().k9(this.matMVP, 0, this.matProjection, 0, this.matMVP, 0);
   };
   protoOf(Scene).setMvpUniform = function (uniform, tx, ty, tz, rx, ry, rz, sx, sy, sz) {
     this.calculateMVPMatrix(tx, ty, tz, rx, ry, rz, sx, sy, sz);
@@ -770,7 +770,7 @@
           // Inline function 'kotlin.js.asDynamic' call
           arrayCopy(tmp, destination, 0, 0, endIndex);
         } else {
-          this.calculateMVPMatrix(command.transform.k9_1.x, command.transform.k9_1.y, command.transform.k9_1.z, command.transform.l9_1.x, command.transform.l9_1.y, command.transform.l9_1.z, command.transform.m9_1.x, command.transform.m9_1.y, command.transform.m9_1.z);
+          this.calculateMVPMatrix(command.transform.l9_1.x, command.transform.l9_1.y, command.transform.l9_1.z, command.transform.m9_1.x, command.transform.m9_1.y, command.transform.m9_1.z, command.transform.n9_1.x, command.transform.n9_1.y, command.transform.n9_1.z);
         }
         if (command.indexUniformMvp >= 0) {
           setUniform(command.uniforms.q(command.indexUniformMvp), this.matMVP);
@@ -792,16 +792,16 @@
     this.name = name;
     this.id = -1;
   }
-  protoOf(Shader).a7 = function (_set____db54di) {
+  protoOf(Shader).b7 = function (_set____db54di) {
     this.name = _set____db54di;
   };
   protoOf(Shader).c4 = function () {
     return this.name;
   };
-  protoOf(Shader).b7 = function (_set____db54di) {
+  protoOf(Shader).c7 = function (_set____db54di) {
     this.id = _set____db54di;
   };
-  protoOf(Shader).c7 = function () {
+  protoOf(Shader).d7 = function () {
     return this.id;
   };
   var TextureFiltering_NEAREST_instance;
@@ -979,82 +979,82 @@
     this.format = TextureFormat_RGBA8_getInstance();
     this.anisotropy = 0;
   }
-  protoOf(Texture).y9 = function (_set____db54di) {
+  protoOf(Texture).z9 = function (_set____db54di) {
     this.type = _set____db54di;
   };
-  protoOf(Texture).z9 = function () {
+  protoOf(Texture).aa = function () {
     return this.type;
   };
-  protoOf(Texture).a7 = function (_set____db54di) {
+  protoOf(Texture).b7 = function (_set____db54di) {
     this.name = _set____db54di;
   };
   protoOf(Texture).c4 = function () {
     return this.name;
   };
-  protoOf(Texture).d7 = function (_set____db54di) {
+  protoOf(Texture).e7 = function (_set____db54di) {
     this.fileName = _set____db54di;
   };
-  protoOf(Texture).e7 = function () {
+  protoOf(Texture).f7 = function () {
     return this.fileName;
   };
-  protoOf(Texture).b7 = function (_set____db54di) {
+  protoOf(Texture).c7 = function (_set____db54di) {
     this.id = _set____db54di;
   };
-  protoOf(Texture).c7 = function () {
+  protoOf(Texture).d7 = function () {
     return this.id;
   };
-  protoOf(Texture).f7 = function (_set____db54di) {
+  protoOf(Texture).g7 = function (_set____db54di) {
     this.loaded = _set____db54di;
   };
-  protoOf(Texture).g7 = function () {
+  protoOf(Texture).h7 = function () {
     return this.loaded;
   };
-  protoOf(Texture).aa = function (_set____db54di) {
+  protoOf(Texture).ba = function (_set____db54di) {
     this.width = _set____db54di;
   };
-  protoOf(Texture).ba = function () {
+  protoOf(Texture).ca = function () {
     return this.width;
   };
-  protoOf(Texture).ca = function (_set____db54di) {
+  protoOf(Texture).da = function (_set____db54di) {
     this.height = _set____db54di;
   };
-  protoOf(Texture).da = function () {
+  protoOf(Texture).ea = function () {
     return this.height;
   };
-  protoOf(Texture).ea = function (_set____db54di) {
+  protoOf(Texture).fa = function (_set____db54di) {
     this.minFilter = _set____db54di;
   };
-  protoOf(Texture).fa = function () {
+  protoOf(Texture).ga = function () {
     return this.minFilter;
   };
-  protoOf(Texture).ga = function (_set____db54di) {
+  protoOf(Texture).ha = function (_set____db54di) {
     this.magFilter = _set____db54di;
   };
-  protoOf(Texture).ha = function () {
+  protoOf(Texture).ia = function () {
     return this.magFilter;
   };
-  protoOf(Texture).ia = function (_set____db54di) {
+  protoOf(Texture).ja = function (_set____db54di) {
     this.wrapping = _set____db54di;
   };
-  protoOf(Texture).ja = function () {
+  protoOf(Texture).ka = function () {
     return this.wrapping;
   };
-  protoOf(Texture).ka = function (_set____db54di) {
+  protoOf(Texture).la = function (_set____db54di) {
     this.mipmaps = _set____db54di;
   };
-  protoOf(Texture).la = function () {
+  protoOf(Texture).ma = function () {
     return this.mipmaps;
   };
-  protoOf(Texture).ma = function (_set____db54di) {
+  protoOf(Texture).na = function (_set____db54di) {
     this.format = _set____db54di;
   };
-  protoOf(Texture).na = function () {
+  protoOf(Texture).oa = function () {
     return this.format;
   };
-  protoOf(Texture).oa = function (_set____db54di) {
+  protoOf(Texture).pa = function (_set____db54di) {
     this.anisotropy = _set____db54di;
   };
-  protoOf(Texture).pa = function () {
+  protoOf(Texture).qa = function () {
     return this.anisotropy;
   };
   function TextureFiltering_NEAREST_getInstance() {
@@ -1148,7 +1148,7 @@
   function UniformFloatValueWithArray(value) {
     return UniformFloatValue_init_$Init$(value, objectCreate(protoOf(UniformFloatValue)));
   }
-  protoOf(UniformFloatValue).qa = function (_set____db54di) {
+  protoOf(UniformFloatValue).ra = function (_set____db54di) {
     this.value = _set____db54di;
   };
   protoOf(UniformFloatValue).k2 = function () {
@@ -1165,7 +1165,7 @@
   function UniformIntValueWithArray(value) {
     return UniformIntValue_init_$Init$(value, objectCreate(protoOf(UniformIntValue)));
   }
-  protoOf(UniformIntValue).ra = function (_set____db54di) {
+  protoOf(UniformIntValue).sa = function (_set____db54di) {
     this.value = _set____db54di;
   };
   protoOf(UniformIntValue).k2 = function () {
@@ -1177,7 +1177,7 @@
     UniformValue.call(this);
     this.value = value;
   }
-  protoOf(UniformTextureValue).sa = function (_set____db54di) {
+  protoOf(UniformTextureValue).ta = function (_set____db54di) {
     this.value = _set____db54di;
   };
   protoOf(UniformTextureValue).k2 = function () {
@@ -1446,16 +1446,16 @@
     this.format = format;
     this.offset = offset;
   }
-  protoOf(VertexAttribute).z9 = function () {
+  protoOf(VertexAttribute).aa = function () {
     return this.type;
   };
-  protoOf(VertexAttribute).va = function () {
+  protoOf(VertexAttribute).wa = function () {
     return this.index;
   };
-  protoOf(VertexAttribute).na = function () {
+  protoOf(VertexAttribute).oa = function () {
     return this.format;
   };
-  protoOf(VertexAttribute).wa = function () {
+  protoOf(VertexAttribute).xa = function () {
     return this.offset;
   };
   protoOf(VertexAttribute).j5 = function () {
@@ -1464,13 +1464,13 @@
   protoOf(VertexAttribute).k5 = function () {
     return this.index;
   };
-  protoOf(VertexAttribute).xa = function () {
+  protoOf(VertexAttribute).ya = function () {
     return this.format;
   };
-  protoOf(VertexAttribute).ya = function () {
+  protoOf(VertexAttribute).za = function () {
     return this.offset;
   };
-  protoOf(VertexAttribute).za = function (type, index, format, offset) {
+  protoOf(VertexAttribute).ab = function (type, index, format, offset) {
     return new VertexAttribute(type, index, format, offset);
   };
   protoOf(VertexAttribute).copy = function (type, index, format, offset, $super) {
@@ -1478,7 +1478,7 @@
     index = index === VOID ? this.index : index;
     format = format === VOID ? this.format : format;
     offset = offset === VOID ? this.offset : offset;
-    return this.za(type, index, format, offset);
+    return this.ab(type, index, format, offset);
   };
   protoOf(VertexAttribute).toString = function () {
     return 'VertexAttribute(type=' + this.type + ', index=' + this.index + ', format=' + this.format + ', offset=' + this.offset + ')';
@@ -1510,10 +1510,10 @@
     this.attributes = attributes;
     this.stride = stride;
   }
-  protoOf(VertexAttributesDescriptor).i7 = function () {
+  protoOf(VertexAttributesDescriptor).j7 = function () {
     return this.attributes;
   };
-  protoOf(VertexAttributesDescriptor).ab = function () {
+  protoOf(VertexAttributesDescriptor).bb = function () {
     return this.stride;
   };
   protoOf(VertexAttributesDescriptor).j5 = function () {
@@ -1522,13 +1522,13 @@
   protoOf(VertexAttributesDescriptor).k5 = function () {
     return this.stride;
   };
-  protoOf(VertexAttributesDescriptor).bb = function (attributes, stride) {
+  protoOf(VertexAttributesDescriptor).cb = function (attributes, stride) {
     return new VertexAttributesDescriptor(attributes, stride);
   };
   protoOf(VertexAttributesDescriptor).copy = function (attributes, stride, $super) {
     attributes = attributes === VOID ? this.attributes : attributes;
     stride = stride === VOID ? this.stride : stride;
-    return this.bb(attributes, stride);
+    return this.cb(attributes, stride);
   };
   protoOf(VertexAttributesDescriptor).toString = function () {
     return 'VertexAttributesDescriptor(attributes=' + this.attributes + ', stride=' + this.stride + ')';
@@ -1643,13 +1643,13 @@
     this.format = format;
     this.offset = offset;
   }
-  protoOf(MeshAttribute).z9 = function () {
+  protoOf(MeshAttribute).aa = function () {
     return this.type;
   };
-  protoOf(MeshAttribute).na = function () {
+  protoOf(MeshAttribute).oa = function () {
     return this.format;
   };
-  protoOf(MeshAttribute).wa = function () {
+  protoOf(MeshAttribute).xa = function () {
     return this.offset;
   };
   protoOf(MeshAttribute).j5 = function () {
@@ -1658,17 +1658,17 @@
   protoOf(MeshAttribute).k5 = function () {
     return this.format;
   };
-  protoOf(MeshAttribute).xa = function () {
+  protoOf(MeshAttribute).ya = function () {
     return this.offset;
   };
-  protoOf(MeshAttribute).eb = function (type, format, offset) {
+  protoOf(MeshAttribute).fb = function (type, format, offset) {
     return new MeshAttribute(type, format, offset);
   };
   protoOf(MeshAttribute).copy = function (type, format, offset, $super) {
     type = type === VOID ? this.type : type;
     format = format === VOID ? this.format : format;
     offset = offset === VOID ? this.offset : offset;
-    return this.eb(type, format, offset);
+    return this.fb(type, format, offset);
   };
   protoOf(MeshAttribute).toString = function () {
     return 'MeshAttribute(type=' + this.type + ', format=' + this.format + ', offset=' + this.offset + ')';
@@ -1697,10 +1697,10 @@
     this.attributes = attributes;
     this.stride = stride;
   }
-  protoOf(MeshAttributes).i7 = function () {
+  protoOf(MeshAttributes).j7 = function () {
     return this.attributes;
   };
-  protoOf(MeshAttributes).ab = function () {
+  protoOf(MeshAttributes).bb = function () {
     return this.stride;
   };
   protoOf(MeshAttributes).j5 = function () {
@@ -1709,13 +1709,13 @@
   protoOf(MeshAttributes).k5 = function () {
     return this.stride;
   };
-  protoOf(MeshAttributes).fb = function (attributes, stride) {
+  protoOf(MeshAttributes).gb = function (attributes, stride) {
     return new MeshAttributes(attributes, stride);
   };
   protoOf(MeshAttributes).copy = function (attributes, stride, $super) {
     attributes = attributes === VOID ? this.attributes : attributes;
     stride = stride === VOID ? this.stride : stride;
-    return this.fb(attributes, stride);
+    return this.gb(attributes, stride);
   };
   protoOf(MeshAttributes).toString = function () {
     return 'MeshAttributes(attributes=' + this.attributes + ', stride=' + this.stride + ')';
@@ -2006,34 +2006,34 @@
     return AttributeType_V2_instance;
   }
   function TextureAnimationChunked(textureWidth, vertices, frames) {
-    this.gb_1 = textureWidth;
-    this.hb_1 = frames;
-    this.ib_1 = 1.0 / this.gb_1 * 0.5;
+    this.hb_1 = textureWidth;
+    this.ib_1 = frames;
+    this.jb_1 = 1.0 / this.hb_1 * 0.5;
     var tmp = this;
     // Inline function 'kotlin.math.ceil' call
-    var x = vertices / this.gb_1;
+    var x = vertices / this.hb_1;
     var tmp$ret$0 = Math.ceil(x);
-    tmp.lb_1 = imul(numberToInt(tmp$ret$0), this.hb_1 + 1 | 0);
-    this.jb_1 = 1.0 / this.lb_1 * 0.5;
-    this.kb_1 = 1.0 / this.lb_1;
+    tmp.mb_1 = imul(numberToInt(tmp$ret$0), this.ib_1 + 1 | 0);
+    this.kb_1 = 1.0 / this.mb_1 * 0.5;
+    this.lb_1 = 1.0 / this.mb_1;
     var tmp_0 = this;
     // Inline function 'kotlin.math.ceil' call
-    var x_0 = vertices / this.gb_1;
-    tmp_0.mb_1 = 1.0 / Math.ceil(x_0);
+    var x_0 = vertices / this.hb_1;
+    tmp_0.nb_1 = 1.0 / Math.ceil(x_0);
   }
-  protoOf(TextureAnimationChunked).nb = function (timer) {
+  protoOf(TextureAnimationChunked).ob = function (timer) {
     var coeff = timer < 0.5 ? timer * 2 : (1 - timer) * 2;
-    var y = this.kb_1 * coeff * (this.hb_1 - 1 | 0) + this.jb_1;
+    var y = this.lb_1 * coeff * (this.ib_1 - 1 | 0) + this.kb_1;
     return y;
   };
-  protoOf(TextureAnimationChunked).ob = function (timer) {
-    return this.kb_1 * timer * (this.hb_1 - 1 | 0) + this.jb_1;
+  protoOf(TextureAnimationChunked).pb = function (timer) {
+    return this.lb_1 * timer * (this.ib_1 - 1 | 0) + this.kb_1;
   };
   function updateCameraInterpolator($this) {
-    var camera = $this.tb_1[$this.rb_1];
-    $this.pb_1.setMinDuration($this.minDuration * $this.ub_1);
-    $this.pb_1.setPosition(camera);
-    $this.pb_1.reset();
+    var camera = $this.ub_1[$this.sb_1];
+    $this.qb_1.setMinDuration($this.minDuration * $this.vb_1);
+    $this.qb_1.setPosition(camera);
+    $this.qb_1.reset();
   }
   function CameraPathAnimator(speed, minDuration, transitionDuration, isSmooth) {
     isSmooth = isSmooth === VOID ? false : isSmooth;
@@ -2041,50 +2041,50 @@
     this.minDuration = minDuration;
     this.transitionDuration = transitionDuration;
     this.enabled = true;
-    this.pb_1 = new CameraPositionInterpolator(isSmooth);
-    this.qb_1 = false;
-    this.rb_1 = 0;
-    this.sb_1 = CameraState_ANIMATING_getInstance();
+    this.qb_1 = new CameraPositionInterpolator(isSmooth);
+    this.rb_1 = false;
+    this.sb_1 = 0;
+    this.tb_1 = CameraState_ANIMATING_getInstance();
     var tmp = this;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.tb_1 = [];
-    this.ub_1 = 1.0;
-    this.vb_1 = 0.0;
-    this.pb_1.speed = this.speed;
-    this.pb_1.setMinDuration(this.minDuration * this.ub_1);
+    tmp.ub_1 = [];
+    this.vb_1 = 1.0;
+    this.wb_1 = 0.0;
+    this.qb_1.speed = this.speed;
+    this.qb_1.setMinDuration(this.minDuration * this.vb_1);
   }
-  protoOf(CameraPathAnimator).dc = function (_set____db54di) {
+  protoOf(CameraPathAnimator).ec = function (_set____db54di) {
     this.speed = _set____db54di;
   };
-  protoOf(CameraPathAnimator).ec = function () {
+  protoOf(CameraPathAnimator).fc = function () {
     return this.speed;
   };
-  protoOf(CameraPathAnimator).fc = function (_set____db54di) {
+  protoOf(CameraPathAnimator).gc = function (_set____db54di) {
     this.minDuration = _set____db54di;
   };
-  protoOf(CameraPathAnimator).gc = function () {
+  protoOf(CameraPathAnimator).hc = function () {
     return this.minDuration;
   };
-  protoOf(CameraPathAnimator).hc = function (_set____db54di) {
+  protoOf(CameraPathAnimator).ic = function (_set____db54di) {
     this.transitionDuration = _set____db54di;
   };
-  protoOf(CameraPathAnimator).ic = function () {
+  protoOf(CameraPathAnimator).jc = function () {
     return this.transitionDuration;
   };
-  protoOf(CameraPathAnimator).e6 = function (_set____db54di) {
+  protoOf(CameraPathAnimator).f6 = function (_set____db54di) {
     this.enabled = _set____db54di;
   };
-  protoOf(CameraPathAnimator).f6 = function () {
+  protoOf(CameraPathAnimator).g6 = function () {
     return this.enabled;
   };
-  protoOf(CameraPathAnimator).jc = function (value) {
-    this.ub_1 = value;
+  protoOf(CameraPathAnimator).kc = function (value) {
+    this.vb_1 = value;
     updateCameraInterpolator(this);
   };
-  protoOf(CameraPathAnimator).kc = function () {
-    return this.ub_1;
+  protoOf(CameraPathAnimator).lc = function () {
+    return this.vb_1;
   };
   protoOf(CameraPathAnimator).enable = function () {
     this.enabled = true;
@@ -2092,18 +2092,18 @@
   protoOf(CameraPathAnimator).disable = function () {
     this.enabled = false;
   };
-  protoOf(CameraPathAnimator).lc = function () {
-    return this.pb_1;
-  };
   protoOf(CameraPathAnimator).mc = function () {
-    return this.pb_1.timer;
+    return this.qb_1;
   };
   protoOf(CameraPathAnimator).nc = function () {
-    return this.sb_1;
+    return this.qb_1.timer;
   };
-  protoOf(CameraPathAnimator).oc = function (value, randomizeCamera) {
-    this.tb_1 = value;
-    this.rb_1 = 0;
+  protoOf(CameraPathAnimator).oc = function () {
+    return this.tb_1;
+  };
+  protoOf(CameraPathAnimator).pc = function (value, randomizeCamera) {
+    this.ub_1 = value;
+    this.sb_1 = 0;
     updateCameraInterpolator(this);
     if (randomizeCamera) {
       this.randomCamera();
@@ -2111,10 +2111,10 @@
   };
   protoOf(CameraPathAnimator).setCameras = function (value, randomizeCamera, $super) {
     randomizeCamera = randomizeCamera === VOID ? false : randomizeCamera;
-    return this.oc(value, randomizeCamera);
+    return this.pc(value, randomizeCamera);
   };
-  protoOf(CameraPathAnimator).pc = function () {
-    return this.tb_1[this.rb_1];
+  protoOf(CameraPathAnimator).qc = function () {
+    return this.ub_1[this.sb_1];
   };
   protoOf(CameraPathAnimator).nextCamera = function () {
     if (!this.enabled) {
@@ -2123,70 +2123,70 @@
     this.setCameraState(CameraState_TRANSITIONING_getInstance());
   };
   protoOf(CameraPathAnimator).randomCamera = function () {
-    this.rb_1 = MathUtils_instance.qc(this.tb_1.length, this.rb_1);
+    this.sb_1 = MathUtils_instance.rc(this.ub_1.length, this.sb_1);
     updateCameraInterpolator(this);
   };
   protoOf(CameraPathAnimator).setCameraState = function (state) {
-    if (this.sb_1.equals(state)) {
+    if (this.tb_1.equals(state)) {
       return Unit_instance;
     }
-    if (this.sb_1 === CameraState_ANIMATING_getInstance() ? state === CameraState_TRANSITIONING_getInstance() : false) {
-      this.rb_1 = this.rb_1 + 1 | 0;
-      this.rb_1 = this.rb_1 % this.tb_1.length | 0;
-      var camera = this.tb_1[this.rb_1];
-      this.pb_1.setMinDuration(this.transitionDuration);
-      this.pb_1.setPosition(new CameraPositionPair(new CameraPosition(new Vec3(this.pb_1.cameraPosition.x, this.pb_1.cameraPosition.y, this.pb_1.cameraPosition.z), new Vec3(this.pb_1.cameraRotation.x, this.pb_1.cameraRotation.y, this.pb_1.cameraRotation.z)), new CameraPosition(new Vec3((camera.uc_1.rc_1.x - camera.tc_1.rc_1.x) / 2.0 + camera.tc_1.rc_1.x, (camera.uc_1.rc_1.y - camera.tc_1.rc_1.y) / 2.0 + camera.tc_1.rc_1.y, (camera.uc_1.rc_1.z - camera.tc_1.rc_1.z) / 2.0 + camera.tc_1.rc_1.z), new Vec3((camera.uc_1.sc_1.x - camera.tc_1.sc_1.x) / 2.0 + camera.tc_1.sc_1.x, (camera.uc_1.sc_1.y - camera.tc_1.sc_1.y) / 2.0 + camera.tc_1.sc_1.y, (camera.uc_1.sc_1.z - camera.tc_1.sc_1.z) / 2.0 + camera.tc_1.sc_1.z))));
-      this.qb_1 = this.pb_1.reverse;
-      this.pb_1.reverse = false;
-      this.pb_1.reset();
-    } else if (this.sb_1 === CameraState_TRANSITIONING_getInstance() ? state === CameraState_ANIMATING_getInstance() : false) {
+    if (this.tb_1 === CameraState_ANIMATING_getInstance() ? state === CameraState_TRANSITIONING_getInstance() : false) {
+      this.sb_1 = this.sb_1 + 1 | 0;
+      this.sb_1 = this.sb_1 % this.ub_1.length | 0;
+      var camera = this.ub_1[this.sb_1];
+      this.qb_1.setMinDuration(this.transitionDuration);
+      this.qb_1.setPosition(new CameraPositionPair(new CameraPosition(new Vec3(this.qb_1.cameraPosition.x, this.qb_1.cameraPosition.y, this.qb_1.cameraPosition.z), new Vec3(this.qb_1.cameraRotation.x, this.qb_1.cameraRotation.y, this.qb_1.cameraRotation.z)), new CameraPosition(new Vec3((camera.vc_1.sc_1.x - camera.uc_1.sc_1.x) / 2.0 + camera.uc_1.sc_1.x, (camera.vc_1.sc_1.y - camera.uc_1.sc_1.y) / 2.0 + camera.uc_1.sc_1.y, (camera.vc_1.sc_1.z - camera.uc_1.sc_1.z) / 2.0 + camera.uc_1.sc_1.z), new Vec3((camera.vc_1.tc_1.x - camera.uc_1.tc_1.x) / 2.0 + camera.uc_1.tc_1.x, (camera.vc_1.tc_1.y - camera.uc_1.tc_1.y) / 2.0 + camera.uc_1.tc_1.y, (camera.vc_1.tc_1.z - camera.uc_1.tc_1.z) / 2.0 + camera.uc_1.tc_1.z))));
+      this.rb_1 = this.qb_1.reverse;
+      this.qb_1.reverse = false;
+      this.qb_1.reset();
+    } else if (this.tb_1 === CameraState_TRANSITIONING_getInstance() ? state === CameraState_ANIMATING_getInstance() : false) {
       updateCameraInterpolator(this);
-      this.pb_1.reverse = this.qb_1;
-      this.pb_1.setTimer(0.5);
+      this.qb_1.reverse = this.rb_1;
+      this.qb_1.setTimer(0.5);
     }
-    this.sb_1 = state;
+    this.tb_1 = state;
   };
   protoOf(CameraPathAnimator).animate = function (timeNow) {
-    if (!(this.vb_1 === 0.0)) {
-      this.pb_1.iterate(timeNow);
-      if (this.pb_1.timer === 1.0) {
-        if (this.sb_1 === CameraState_ANIMATING_getInstance()) {
-          this.pb_1.reverse = !this.pb_1.reverse;
-          this.pb_1.reset();
+    if (!(this.wb_1 === 0.0)) {
+      this.qb_1.iterate(timeNow);
+      if (this.qb_1.timer === 1.0) {
+        if (this.tb_1 === CameraState_ANIMATING_getInstance()) {
+          this.qb_1.reverse = !this.qb_1.reverse;
+          this.qb_1.reset();
         } else {
           this.setCameraState(CameraState_ANIMATING_getInstance());
         }
       }
     }
-    this.vb_1 = timeNow;
+    this.wb_1 = timeNow;
   };
   protoOf(CameraPathAnimator).changeDirection = function (impulse) {
-    if (this.sb_1 === CameraState_TRANSITIONING_getInstance()) {
+    if (this.tb_1 === CameraState_TRANSITIONING_getInstance()) {
       return Unit_instance;
     }
-    var prevReverse = this.pb_1.reverse;
+    var prevReverse = this.qb_1.reverse;
     if (impulse < 0.0) {
       if (prevReverse) {
-        this.pb_1.reverse = false;
-        this.pb_1.setTimer(1.0 - this.pb_1.timer);
+        this.qb_1.reverse = false;
+        this.qb_1.setTimer(1.0 - this.qb_1.timer);
       }
     } else {
       if (!prevReverse) {
-        this.pb_1.reverse = true;
-        this.pb_1.setTimer(1.0 - this.pb_1.timer);
+        this.qb_1.reverse = true;
+        this.qb_1.setTimer(1.0 - this.qb_1.timer);
       }
     }
   };
   function CameraPosition(position, rotation) {
-    this.rc_1 = position;
-    this.sc_1 = rotation;
+    this.sc_1 = position;
+    this.tc_1 = rotation;
   }
   protoOf(CameraPosition).toString = function () {
-    return 'CameraPosition(position=' + this.rc_1 + ', rotation=' + this.sc_1 + ')';
+    return 'CameraPosition(position=' + this.sc_1 + ', rotation=' + this.tc_1 + ')';
   };
   protoOf(CameraPosition).hashCode = function () {
-    var result = this.rc_1.hashCode();
-    result = imul(result, 31) + this.sc_1.hashCode() | 0;
+    var result = this.sc_1.hashCode();
+    result = imul(result, 31) + this.tc_1.hashCode() | 0;
     return result;
   };
   protoOf(CameraPosition).equals = function (other) {
@@ -2195,18 +2195,18 @@
     if (!(other instanceof CameraPosition))
       return false;
     var tmp0_other_with_cast = other instanceof CameraPosition ? other : THROW_CCE();
-    if (!this.rc_1.equals(tmp0_other_with_cast.rc_1))
-      return false;
     if (!this.sc_1.equals(tmp0_other_with_cast.sc_1))
+      return false;
+    if (!this.tc_1.equals(tmp0_other_with_cast.tc_1))
       return false;
     return true;
   };
   function _get_length__w7ahp7($this) {
-    if ($this.wb_1 == null) {
+    if ($this.xb_1 == null) {
       throw Exception_init_$Create$('position is not set');
     }
-    var start = ensureNotNull($this.wb_1).tc_1.rc_1;
-    var end = ensureNotNull($this.wb_1).uc_1.rc_1;
+    var start = ensureNotNull($this.xb_1).uc_1.sc_1;
+    var end = ensureNotNull($this.xb_1).vc_1.sc_1;
     // Inline function 'kotlin.math.sqrt' call
     // Inline function 'kotlin.math.pow' call
     var this_0 = end.x - start.x;
@@ -2220,29 +2220,29 @@
     return Math.sqrt(x);
   }
   function updateMatrix($this) {
-    if ($this.wb_1 == null) {
+    if ($this.xb_1 == null) {
       throw Exception_init_$Create$('position is not set');
     }
     var t = $this.timer;
     if ($this.isSmooth) {
-      t = MathUtils_instance.wc(0.0, 1.0, $this.timer);
+      t = MathUtils_instance.xc(0.0, 1.0, $this.timer);
     }
-    var start = $this.reverse ? ensureNotNull($this.wb_1).uc_1 : ensureNotNull($this.wb_1).tc_1;
-    var end = $this.reverse ? ensureNotNull($this.wb_1).tc_1 : ensureNotNull($this.wb_1).uc_1;
-    $this.bc_1.x = start.rc_1.x + t * (end.rc_1.x - start.rc_1.x);
-    $this.bc_1.y = start.rc_1.y + t * (end.rc_1.y - start.rc_1.y);
-    $this.bc_1.z = start.rc_1.z + t * (end.rc_1.z - start.rc_1.z);
+    var start = $this.reverse ? ensureNotNull($this.xb_1).vc_1 : ensureNotNull($this.xb_1).uc_1;
+    var end = $this.reverse ? ensureNotNull($this.xb_1).uc_1 : ensureNotNull($this.xb_1).vc_1;
     $this.cc_1.x = start.sc_1.x + t * (end.sc_1.x - start.sc_1.x);
     $this.cc_1.y = start.sc_1.y + t * (end.sc_1.y - start.sc_1.y);
     $this.cc_1.z = start.sc_1.z + t * (end.sc_1.z - start.sc_1.z);
-    Matrix_getInstance().f9($this.matrix, 0);
-    Matrix_getInstance().h9($this.matrix, 0, ($this.cc_1.x - 1.5707964) * 57.2958, 1.0, 0.0, 0.0);
-    Matrix_getInstance().h9($this.matrix, 0, $this.cc_1.y * 57.2958, 0.0, 0.0, 1.0);
-    Matrix_getInstance().h9($this.matrix, 0, $this.cc_1.z * 57.2958, 0.0, 1.0, 0.0);
-    Matrix_getInstance().g9($this.matrix, 0, -$this.bc_1.x, -$this.bc_1.y, -$this.bc_1.z);
+    $this.dc_1.x = start.tc_1.x + t * (end.tc_1.x - start.tc_1.x);
+    $this.dc_1.y = start.tc_1.y + t * (end.tc_1.y - start.tc_1.y);
+    $this.dc_1.z = start.tc_1.z + t * (end.tc_1.z - start.tc_1.z);
+    Matrix_getInstance().g9($this.matrix, 0);
+    Matrix_getInstance().i9($this.matrix, 0, ($this.dc_1.x - 1.5707964) * 57.2958, 1.0, 0.0, 0.0);
+    Matrix_getInstance().i9($this.matrix, 0, $this.dc_1.y * 57.2958, 0.0, 0.0, 1.0);
+    Matrix_getInstance().i9($this.matrix, 0, $this.dc_1.z * 57.2958, 0.0, 1.0, 0.0);
+    Matrix_getInstance().h9($this.matrix, 0, -$this.cc_1.x, -$this.cc_1.y, -$this.cc_1.z);
   }
   function Companion() {
-    this.xc_1 = 1.5707964;
+    this.yc_1 = 1.5707964;
   }
   var Companion_instance;
   function Companion_getInstance() {
@@ -2251,87 +2251,87 @@
   function CameraPositionInterpolator(isSmooth) {
     isSmooth = isSmooth === VOID ? false : isSmooth;
     this.isSmooth = isSmooth;
-    this.wb_1 = null;
+    this.xb_1 = null;
     this.speed = 0.0;
-    this.xb_1 = 0.0;
-    this.yb_1 = 3000.0;
-    this.zb_1 = 0.0;
-    this.timer = 0.0;
+    this.yb_1 = 0.0;
+    this.zb_1 = 3000.0;
     this.ac_1 = 0.0;
+    this.timer = 0.0;
+    this.bc_1 = 0.0;
     this.reverse = false;
-    this.bc_1 = new Vec3(0.0, 0.0, 0.0);
     this.cc_1 = new Vec3(0.0, 0.0, 0.0);
+    this.dc_1 = new Vec3(0.0, 0.0, 0.0);
     this.matrix = new Float32Array(16);
   }
-  protoOf(CameraPositionInterpolator).yc = function (_set____db54di) {
+  protoOf(CameraPositionInterpolator).zc = function (_set____db54di) {
     this.isSmooth = _set____db54di;
   };
-  protoOf(CameraPositionInterpolator).zc = function () {
+  protoOf(CameraPositionInterpolator).ad = function () {
     return this.isSmooth;
   };
-  protoOf(CameraPositionInterpolator).dc = function (_set____db54di) {
+  protoOf(CameraPositionInterpolator).ec = function (_set____db54di) {
     this.speed = _set____db54di;
   };
-  protoOf(CameraPositionInterpolator).ec = function () {
+  protoOf(CameraPositionInterpolator).fc = function () {
     return this.speed;
   };
-  protoOf(CameraPositionInterpolator).mc = function () {
+  protoOf(CameraPositionInterpolator).nc = function () {
     return this.timer;
   };
-  protoOf(CameraPositionInterpolator).ad = function (_set____db54di) {
+  protoOf(CameraPositionInterpolator).bd = function (_set____db54di) {
     this.reverse = _set____db54di;
   };
-  protoOf(CameraPositionInterpolator).bd = function () {
+  protoOf(CameraPositionInterpolator).cd = function () {
     return this.reverse;
   };
-  protoOf(CameraPositionInterpolator).cd = function () {
-    return this.matrix;
-  };
   protoOf(CameraPositionInterpolator).dd = function () {
-    return this.bc_1;
+    return this.matrix;
   };
   protoOf(CameraPositionInterpolator).ed = function () {
     return this.cc_1;
   };
+  protoOf(CameraPositionInterpolator).fd = function () {
+    return this.dc_1;
+  };
   protoOf(CameraPositionInterpolator).setMinDuration = function (value) {
-    this.yb_1 = value;
+    this.zb_1 = value;
   };
   protoOf(CameraPositionInterpolator).setPosition = function (value) {
-    this.wb_1 = value;
+    this.xb_1 = value;
     var tmp = this;
     // Inline function 'kotlin.math.max' call
     var a = _get_length__w7ahp7(this) / this.speed;
-    var b = this.yb_1;
-    tmp.xb_1 = Math.max(a, b);
+    var b = this.zb_1;
+    tmp.yb_1 = Math.max(a, b);
   };
   protoOf(CameraPositionInterpolator).setTimer = function (value) {
-    this.zb_1 = value;
+    this.ac_1 = value;
     this.timer = value;
     updateMatrix(this);
   };
   protoOf(CameraPositionInterpolator).iterate = function (timeNow) {
-    if (!(this.ac_1 === 0.0)) {
-      var elapsed = timeNow - this.ac_1;
-      this.zb_1 = this.zb_1 + elapsed / this.xb_1;
-      if (this.zb_1 > 1.0) {
-        this.zb_1 = 1.0;
+    if (!(this.bc_1 === 0.0)) {
+      var elapsed = timeNow - this.bc_1;
+      this.ac_1 = this.ac_1 + elapsed / this.yb_1;
+      if (this.ac_1 > 1.0) {
+        this.ac_1 = 1.0;
       }
     }
-    this.timer = this.zb_1;
-    this.ac_1 = timeNow;
+    this.timer = this.ac_1;
+    this.bc_1 = timeNow;
     updateMatrix(this);
   };
   protoOf(CameraPositionInterpolator).reset = function () {
+    this.bc_1 = 0.0;
     this.ac_1 = 0.0;
-    this.zb_1 = 0.0;
     this.timer = 0.0;
     updateMatrix(this);
   };
   function CameraPositionPair(start, end, speedMultiplier) {
     speedMultiplier = speedMultiplier === VOID ? 1.0 : speedMultiplier;
-    this.tc_1 = start;
-    this.uc_1 = end;
-    this.vc_1 = speedMultiplier;
+    this.uc_1 = start;
+    this.vc_1 = end;
+    this.wc_1 = speedMultiplier;
   }
   var CameraState_ANIMATING_instance;
   var CameraState_TRANSITIONING_instance;
@@ -2376,12 +2376,12 @@
   function Spline_init_$Init$(y, bPrepareEnds, $this) {
     Spline.call($this);
     if (bPrepareEnds) {
-      $this.hd_1 = prepareSplineCoords($this, y);
+      $this.jd_1 = prepareSplineCoords($this, y);
     } else {
-      $this.hd_1 = y;
+      $this.jd_1 = y;
     }
     var n = y.length;
-    $this.jd_1 = new Float64Array(n);
+    $this.kd_1 = new Float64Array(n);
     var u = new Float64Array(n);
     var inductionVariable = 1;
     var last = n - 1 | 0;
@@ -2389,8 +2389,8 @@
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        $this.jd_1[i] = -1.0 / (4.0 + $this.jd_1[i - 1 | 0]);
-        u[i] = (6.0 * (y[i + 1 | 0] - 2.0 * y[i] + y[i - 1 | 0]) - u[i - 1 | 0]) / (4.0 + $this.jd_1[i - 1 | 0]);
+        $this.kd_1[i] = -1.0 / (4.0 + $this.kd_1[i - 1 | 0]);
+        u[i] = (6.0 * (y[i + 1 | 0] - 2.0 * y[i] + y[i - 1 | 0]) - u[i - 1 | 0]) / (4.0 + $this.kd_1[i - 1 | 0]);
       }
        while (inductionVariable < last);
     var inductionVariable_0 = n - 2 | 0;
@@ -2398,7 +2398,7 @@
       do {
         var i_0 = inductionVariable_0;
         inductionVariable_0 = inductionVariable_0 + -1 | 0;
-        $this.jd_1[i_0] = $this.jd_1[i_0] * $this.jd_1[i_0 + 1 | 0] + u[i_0];
+        $this.kd_1[i_0] = $this.kd_1[i_0] * $this.kd_1[i_0 + 1 | 0] + u[i_0];
       }
        while (0 <= inductionVariable_0);
     return $this;
@@ -2413,73 +2413,73 @@
     array[array.length - 1 | 0] = array[3];
     return array;
   }
-  protoOf(Spline).kd = function (i, low, high) {
+  protoOf(Spline).ld = function (i, low, high) {
     // Inline function 'kotlin.math.max' call
     // Inline function 'kotlin.math.min' call
     var a = Math.min(i, high);
     return Math.max(a, low);
   };
-  protoOf(Spline).ld = function (m) {
-    var clampedM = this.kd(m, 0.0, 1.0);
+  protoOf(Spline).md = function (m) {
+    var clampedM = this.ld(m, 0.0, 1.0);
     if (clampedM === 0.0)
-      return this.hd_1[2];
+      return this.jd_1[2];
     if (clampedM === 1.0)
-      return this.hd_1[this.hd_1.length - 2 | 0];
+      return this.jd_1[this.jd_1.length - 2 | 0];
     // Inline function 'kotlin.math.floor' call
-    var x = clampedM * (this.hd_1.length - 4 | 0) + 2;
+    var x = clampedM * (this.jd_1.length - 4 | 0) + 2;
     var tmp$ret$0 = Math.floor(x);
     var n = numberToInt(tmp$ret$0);
-    var t = clampedM * (this.hd_1.length - 4 | 0) + 2 - n;
-    return this.md(n, t);
+    var t = clampedM * (this.jd_1.length - 4 | 0) + 2 - n;
+    return this.nd(n, t);
   };
-  protoOf(Spline).md = function (n, t) {
-    return t * this.hd_1[n + 1 | 0] - (t - 1.0) * t * ((t - 2.0) * this.jd_1[n] - (t + 1.0) * this.jd_1[n + 1 | 0]) / 6.0 + this.hd_1[n] - t * this.hd_1[n];
+  protoOf(Spline).nd = function (n, t) {
+    return t * this.jd_1[n + 1 | 0] - (t - 1.0) * t * ((t - 2.0) * this.kd_1[n] - (t + 1.0) * this.kd_1[n + 1 | 0]) / 6.0 + this.jd_1[n] - t * this.jd_1[n];
   };
   function Spline() {
   }
   function Spline3D_init_$Init$(bPrepareEnds, x, y, z, $this) {
     Spline3D.call($this);
-    $this.nd_1 = Spline_init_$Create$(x, bPrepareEnds);
-    $this.od_1 = Spline_init_$Create$(y, bPrepareEnds);
-    $this.pd_1 = Spline_init_$Create$(z, bPrepareEnds);
-    $this.qd_1 = new Vec3();
+    $this.od_1 = Spline_init_$Create$(x, bPrepareEnds);
+    $this.pd_1 = Spline_init_$Create$(y, bPrepareEnds);
+    $this.qd_1 = Spline_init_$Create$(z, bPrepareEnds);
     $this.rd_1 = new Vec3();
+    $this.sd_1 = new Vec3();
     return $this;
   }
   function Spline3D_init_$Create$(bPrepareEnds, x, y, z) {
     return Spline3D_init_$Init$(bPrepareEnds, x, y, z, objectCreate(protoOf(Spline3D)));
   }
-  protoOf(Spline3D).ld = function (m) {
-    this.qd_1.x = this.nd_1.ld(m);
-    this.qd_1.y = this.od_1.ld(m);
-    this.qd_1.z = this.pd_1.ld(m);
-    return this.qd_1;
+  protoOf(Spline3D).md = function (m) {
+    this.rd_1.x = this.od_1.md(m);
+    this.rd_1.y = this.pd_1.md(m);
+    this.rd_1.z = this.qd_1.md(m);
+    return this.rd_1;
   };
-  protoOf(Spline3D).sd = function (a) {
-    this.ld(a);
+  protoOf(Spline3D).td = function (a) {
+    this.md(a);
     var headingA = a + 1.0E-4;
     if (headingA > 1.0) {
       headingA = 1 - headingA;
     }
-    var tempPointX = this.nd_1.ld(headingA);
-    var tempPointY = this.od_1.ld(headingA);
-    var tempPointZ = this.pd_1.ld(headingA);
-    var tmp = ensureNotNull(this.rd_1);
+    var tempPointX = this.od_1.md(headingA);
+    var tempPointY = this.pd_1.md(headingA);
+    var tempPointZ = this.qd_1.md(headingA);
+    var tmp = ensureNotNull(this.sd_1);
     // Inline function 'kotlin.math.atan2' call
-    var y = this.qd_1.z - tempPointZ;
-    var x = this.qd_1.y - tempPointY;
+    var y = this.rd_1.z - tempPointZ;
+    var x = this.rd_1.y - tempPointY;
     tmp.x = Math.atan2(y, x) * 180.0 / get_PI();
-    var tmp_0 = ensureNotNull(this.rd_1);
+    var tmp_0 = ensureNotNull(this.sd_1);
     // Inline function 'kotlin.math.atan2' call
-    var y_0 = this.qd_1.z - tempPointZ;
-    var x_0 = this.qd_1.x - tempPointX;
+    var y_0 = this.rd_1.z - tempPointZ;
+    var x_0 = this.rd_1.x - tempPointX;
     tmp_0.y = Math.atan2(y_0, x_0) * 180.0 / get_PI();
-    var tmp_1 = ensureNotNull(this.rd_1);
+    var tmp_1 = ensureNotNull(this.sd_1);
     // Inline function 'kotlin.math.atan2' call
-    var y_1 = this.qd_1.y - tempPointY;
-    var x_1 = this.qd_1.x - tempPointX;
+    var y_1 = this.rd_1.y - tempPointY;
+    var x_1 = this.rd_1.x - tempPointX;
     tmp_1.z = Math.atan2(y_1, x_1) * 180.0 / get_PI();
-    return this.rd_1;
+    return this.sd_1;
   };
   function Spline3D() {
   }
@@ -2521,65 +2521,65 @@
   }
   function BlurredPassCommand() {
     RenderPassCommand_init_$Init$(this);
-    this.wd_1 = CommandType_BLURRED_PASS_getInstance();
+    this.xd_1 = CommandType_BLURRED_PASS_getInstance();
     this.minSize = 200;
     this.brightness = 1.0;
     this.blurSize = BlurSize_KERNEL_4_getInstance();
     this.additionalBlur = false;
     this.id = 0;
   }
-  protoOf(BlurredPassCommand).z9 = function () {
-    return this.wd_1;
+  protoOf(BlurredPassCommand).aa = function () {
+    return this.xd_1;
   };
-  protoOf(BlurredPassCommand).xd = function (_set____db54di) {
+  protoOf(BlurredPassCommand).yd = function (_set____db54di) {
     this.minSize = _set____db54di;
   };
-  protoOf(BlurredPassCommand).yd = function () {
+  protoOf(BlurredPassCommand).zd = function () {
     return this.minSize;
   };
-  protoOf(BlurredPassCommand).zd = function (_set____db54di) {
+  protoOf(BlurredPassCommand).ae = function (_set____db54di) {
     this.brightness = _set____db54di;
   };
-  protoOf(BlurredPassCommand).ae = function () {
+  protoOf(BlurredPassCommand).be = function () {
     return this.brightness;
   };
-  protoOf(BlurredPassCommand).be = function (_set____db54di) {
+  protoOf(BlurredPassCommand).ce = function (_set____db54di) {
     this.blurSize = _set____db54di;
   };
-  protoOf(BlurredPassCommand).ce = function () {
+  protoOf(BlurredPassCommand).de = function () {
     return this.blurSize;
   };
-  protoOf(BlurredPassCommand).de = function (_set____db54di) {
+  protoOf(BlurredPassCommand).ee = function (_set____db54di) {
     this.additionalBlur = _set____db54di;
   };
-  protoOf(BlurredPassCommand).ee = function () {
+  protoOf(BlurredPassCommand).fe = function () {
     return this.additionalBlur;
   };
-  protoOf(BlurredPassCommand).b7 = function (_set____db54di) {
+  protoOf(BlurredPassCommand).c7 = function (_set____db54di) {
     this.id = _set____db54di;
   };
-  protoOf(BlurredPassCommand).c7 = function () {
+  protoOf(BlurredPassCommand).d7 = function () {
     return this.id;
   };
   function DrawBlurredCommand() {
     Command.call(this);
-    this.fe_1 = CommandType_DRAW_BLURRED_getInstance();
+    this.ge_1 = CommandType_DRAW_BLURRED_getInstance();
     this.blending = get_BLENDING_NONE();
     this.id = 0;
   }
-  protoOf(DrawBlurredCommand).z9 = function () {
-    return this.fe_1;
+  protoOf(DrawBlurredCommand).aa = function () {
+    return this.ge_1;
   };
-  protoOf(DrawBlurredCommand).ge = function (_set____db54di) {
+  protoOf(DrawBlurredCommand).he = function (_set____db54di) {
     this.blending = _set____db54di;
   };
-  protoOf(DrawBlurredCommand).he = function () {
+  protoOf(DrawBlurredCommand).ie = function () {
     return this.blending;
   };
-  protoOf(DrawBlurredCommand).b7 = function (_set____db54di) {
+  protoOf(DrawBlurredCommand).c7 = function (_set____db54di) {
     this.id = _set____db54di;
   };
-  protoOf(DrawBlurredCommand).c7 = function () {
+  protoOf(DrawBlurredCommand).d7 = function () {
     return this.id;
   };
   function BlurSize_KERNEL_5_getInstance() {
@@ -2600,16 +2600,16 @@
   }
   function ClearColorCommand() {
     Command.call(this);
-    this.ie_1 = CommandType_CLEAR_COLOR_getInstance();
+    this.je_1 = CommandType_CLEAR_COLOR_getInstance();
     this.color = new Vec4(0.0, 0.0, 0.0, 0.0);
   }
-  protoOf(ClearColorCommand).z9 = function () {
-    return this.ie_1;
+  protoOf(ClearColorCommand).aa = function () {
+    return this.je_1;
   };
-  protoOf(ClearColorCommand).je = function (_set____db54di) {
+  protoOf(ClearColorCommand).ke = function (_set____db54di) {
     this.color = _set____db54di;
   };
-  protoOf(ClearColorCommand).ke = function () {
+  protoOf(ClearColorCommand).le = function () {
     return this.color;
   };
   var ClearCommandClearType_COLOR_instance;
@@ -2646,16 +2646,16 @@
   }
   function ClearCommand() {
     Command.call(this);
-    this.ne_1 = CommandType_CLEAR_getInstance();
+    this.oe_1 = CommandType_CLEAR_getInstance();
     this.clearType = ClearCommandClearType_COLOR_AND_DEPTH_getInstance();
   }
-  protoOf(ClearCommand).z9 = function () {
-    return this.ne_1;
+  protoOf(ClearCommand).aa = function () {
+    return this.oe_1;
   };
-  protoOf(ClearCommand).oe = function (_set____db54di) {
+  protoOf(ClearCommand).pe = function (_set____db54di) {
     this.clearType = _set____db54di;
   };
-  protoOf(ClearCommand).pe = function () {
+  protoOf(ClearCommand).qe = function () {
     return this.clearType;
   };
   function ClearCommandClearType_COLOR_getInstance() {
@@ -2674,13 +2674,13 @@
     this.enabled = true;
     this.name = '';
   }
-  protoOf(Command).e6 = function (_set____db54di) {
+  protoOf(Command).f6 = function (_set____db54di) {
     this.enabled = _set____db54di;
   };
-  protoOf(Command).f6 = function () {
+  protoOf(Command).g6 = function () {
     return this.enabled;
   };
-  protoOf(Command).a7 = function (_set____db54di) {
+  protoOf(Command).b7 = function (_set____db54di) {
     this.name = _set____db54di;
   };
   protoOf(Command).c4 = function () {
@@ -2805,34 +2805,34 @@
     this.culling = culling;
     this.vertexAttributes = vertexAttributes;
   }
-  protoOf(DrawMeshState).se = function (_set____db54di) {
+  protoOf(DrawMeshState).te = function (_set____db54di) {
     this.shader = _set____db54di;
   };
-  protoOf(DrawMeshState).te = function () {
+  protoOf(DrawMeshState).ue = function () {
     return this.shader;
   };
-  protoOf(DrawMeshState).ge = function (_set____db54di) {
+  protoOf(DrawMeshState).he = function (_set____db54di) {
     this.blending = _set____db54di;
   };
-  protoOf(DrawMeshState).he = function () {
+  protoOf(DrawMeshState).ie = function () {
     return this.blending;
   };
-  protoOf(DrawMeshState).ue = function (_set____db54di) {
+  protoOf(DrawMeshState).ve = function (_set____db54di) {
     this.depthMode = _set____db54di;
   };
-  protoOf(DrawMeshState).ve = function () {
+  protoOf(DrawMeshState).we = function () {
     return this.depthMode;
   };
-  protoOf(DrawMeshState).we = function (_set____db54di) {
+  protoOf(DrawMeshState).xe = function (_set____db54di) {
     this.culling = _set____db54di;
   };
-  protoOf(DrawMeshState).xe = function () {
+  protoOf(DrawMeshState).ye = function () {
     return this.culling;
   };
-  protoOf(DrawMeshState).ye = function (_set____db54di) {
+  protoOf(DrawMeshState).ze = function (_set____db54di) {
     this.vertexAttributes = _set____db54di;
   };
-  protoOf(DrawMeshState).ze = function () {
+  protoOf(DrawMeshState).af = function () {
     return this.vertexAttributes;
   };
   var PrimitiveType_TRIANGLES_instance;
@@ -2876,48 +2876,48 @@
     this.state = state;
     this.primitiveType = primitiveType;
     this.primitiveCount = primitiveCount;
-    this.p9_1 = CommandType_DRAW_MESH_getInstance();
+    this.q9_1 = CommandType_DRAW_MESH_getInstance();
     var tmp = this;
     // Inline function 'kotlin.collections.mutableListOf' call
     tmp.hints = ArrayList_init_$Create$();
   }
-  protoOf(DrawMeshCommand).cf = function (_set____db54di) {
+  protoOf(DrawMeshCommand).df = function (_set____db54di) {
     this.mesh = _set____db54di;
   };
-  protoOf(DrawMeshCommand).df = function () {
+  protoOf(DrawMeshCommand).ef = function () {
     return this.mesh;
   };
-  protoOf(DrawMeshCommand).ef = function (_set____db54di) {
+  protoOf(DrawMeshCommand).ff = function (_set____db54di) {
     this.uniforms = _set____db54di;
   };
-  protoOf(DrawMeshCommand).ff = function () {
+  protoOf(DrawMeshCommand).gf = function () {
     return this.uniforms;
   };
-  protoOf(DrawMeshCommand).gf = function (_set____db54di) {
+  protoOf(DrawMeshCommand).hf = function (_set____db54di) {
     this.state = _set____db54di;
   };
-  protoOf(DrawMeshCommand).nc = function () {
+  protoOf(DrawMeshCommand).oc = function () {
     return this.state;
   };
-  protoOf(DrawMeshCommand).hf = function (_set____db54di) {
+  protoOf(DrawMeshCommand).if = function (_set____db54di) {
     this.primitiveType = _set____db54di;
   };
-  protoOf(DrawMeshCommand).if = function () {
+  protoOf(DrawMeshCommand).jf = function () {
     return this.primitiveType;
   };
-  protoOf(DrawMeshCommand).jf = function (_set____db54di) {
+  protoOf(DrawMeshCommand).kf = function (_set____db54di) {
     this.primitiveCount = _set____db54di;
   };
-  protoOf(DrawMeshCommand).kf = function () {
+  protoOf(DrawMeshCommand).lf = function () {
     return this.primitiveCount;
   };
-  protoOf(DrawMeshCommand).z9 = function () {
-    return this.p9_1;
+  protoOf(DrawMeshCommand).aa = function () {
+    return this.q9_1;
   };
-  protoOf(DrawMeshCommand).lf = function (_set____db54di) {
+  protoOf(DrawMeshCommand).mf = function (_set____db54di) {
     this.hints = _set____db54di;
   };
-  protoOf(DrawMeshCommand).mf = function () {
+  protoOf(DrawMeshCommand).nf = function () {
     return this.hints;
   };
   function PrimitiveType_TRIANGLES_getInstance() {
@@ -2945,34 +2945,34 @@
     this.indexUniformView = indexUniformView;
     this.indexUniformProjection = indexUniformProjection;
   }
-  protoOf(DrawTransformedMeshCommand).nf = function (_set____db54di) {
+  protoOf(DrawTransformedMeshCommand).of = function (_set____db54di) {
     this.transform = _set____db54di;
   };
-  protoOf(DrawTransformedMeshCommand).of = function () {
+  protoOf(DrawTransformedMeshCommand).pf = function () {
     return this.transform;
   };
-  protoOf(DrawTransformedMeshCommand).pf = function (_set____db54di) {
+  protoOf(DrawTransformedMeshCommand).qf = function (_set____db54di) {
     this.indexUniformMvp = _set____db54di;
   };
-  protoOf(DrawTransformedMeshCommand).qf = function () {
+  protoOf(DrawTransformedMeshCommand).rf = function () {
     return this.indexUniformMvp;
   };
-  protoOf(DrawTransformedMeshCommand).rf = function (_set____db54di) {
+  protoOf(DrawTransformedMeshCommand).sf = function (_set____db54di) {
     this.indexUniformModel = _set____db54di;
   };
-  protoOf(DrawTransformedMeshCommand).sf = function () {
+  protoOf(DrawTransformedMeshCommand).tf = function () {
     return this.indexUniformModel;
   };
-  protoOf(DrawTransformedMeshCommand).tf = function (_set____db54di) {
+  protoOf(DrawTransformedMeshCommand).uf = function (_set____db54di) {
     this.indexUniformView = _set____db54di;
   };
-  protoOf(DrawTransformedMeshCommand).uf = function () {
+  protoOf(DrawTransformedMeshCommand).vf = function () {
     return this.indexUniformView;
   };
-  protoOf(DrawTransformedMeshCommand).vf = function (_set____db54di) {
+  protoOf(DrawTransformedMeshCommand).wf = function (_set____db54di) {
     this.indexUniformProjection = _set____db54di;
   };
-  protoOf(DrawTransformedMeshCommand).wf = function () {
+  protoOf(DrawTransformedMeshCommand).xf = function () {
     return this.indexUniformProjection;
   };
   function DrawStaticMeshCommand_init_$Init$(mesh, uniforms, state, transform, indexUniformMvp, indexUniformModel, indexUniformView, indexUniformProjection, primitiveType, $this) {
@@ -2983,18 +2983,18 @@
     primitiveType = primitiveType === VOID ? PrimitiveType_TRIANGLES_getInstance() : primitiveType;
     DrawTransformedMeshCommand.call($this, mesh, uniforms, state, transform, indexUniformMvp, indexUniformModel, indexUniformView, indexUniformProjection, primitiveType);
     DrawStaticMeshCommand.call($this);
-    Matrix_getInstance().f9($this.modelMatrix, 0);
-    Matrix_getInstance().g9($this.modelMatrix, 0, transform.k9_1.x, transform.k9_1.y, transform.k9_1.z);
-    Matrix_getInstance().h9($this.modelMatrix, 0, transform.l9_1.x, 1.0, 0.0, 0.0);
-    Matrix_getInstance().h9($this.modelMatrix, 0, transform.l9_1.y, 0.0, 1.0, 0.0);
-    Matrix_getInstance().h9($this.modelMatrix, 0, transform.l9_1.z, 0.0, 0.0, 1.0);
-    Matrix_getInstance().i9($this.modelMatrix, 0, transform.m9_1.x, transform.m9_1.y, transform.m9_1.z);
+    Matrix_getInstance().g9($this.modelMatrix, 0);
+    Matrix_getInstance().h9($this.modelMatrix, 0, transform.l9_1.x, transform.l9_1.y, transform.l9_1.z);
+    Matrix_getInstance().i9($this.modelMatrix, 0, transform.m9_1.x, 1.0, 0.0, 0.0);
+    Matrix_getInstance().i9($this.modelMatrix, 0, transform.m9_1.y, 0.0, 1.0, 0.0);
+    Matrix_getInstance().i9($this.modelMatrix, 0, transform.m9_1.z, 0.0, 0.0, 1.0);
+    Matrix_getInstance().j9($this.modelMatrix, 0, transform.n9_1.x, transform.n9_1.y, transform.n9_1.z);
     return $this;
   }
   function DrawStaticMeshCommandConstructor(mesh, uniforms, state, transform, indexUniformMvp, indexUniformModel, indexUniformView, indexUniformProjection, primitiveType) {
     return DrawStaticMeshCommand_init_$Init$(mesh, uniforms, state, transform, indexUniformMvp, indexUniformModel, indexUniformView, indexUniformProjection, primitiveType, objectCreate(protoOf(DrawStaticMeshCommand)));
   }
-  protoOf(DrawStaticMeshCommand).xf = function () {
+  protoOf(DrawStaticMeshCommand).yf = function () {
     return this.modelMatrix;
   };
   function DrawStaticMeshCommand() {
@@ -3004,17 +3004,17 @@
     translation = translation === VOID ? new Vec3(0.0, 0.0, 0.0) : translation;
     rotation = rotation === VOID ? new Vec3(0.0, 0.0, 0.0) : rotation;
     scale = scale === VOID ? new Vec3(1.0, 1.0, 1.0) : scale;
-    this.k9_1 = translation;
-    this.l9_1 = rotation;
-    this.m9_1 = scale;
+    this.l9_1 = translation;
+    this.m9_1 = rotation;
+    this.n9_1 = scale;
   }
   protoOf(AffineTranformation).toString = function () {
-    return 'AffineTranformation(translation=' + this.k9_1 + ', rotation=' + this.l9_1 + ', scale=' + this.m9_1 + ')';
+    return 'AffineTranformation(translation=' + this.l9_1 + ', rotation=' + this.m9_1 + ', scale=' + this.n9_1 + ')';
   };
   protoOf(AffineTranformation).hashCode = function () {
-    var result = this.k9_1.hashCode();
-    result = imul(result, 31) + this.l9_1.hashCode() | 0;
+    var result = this.l9_1.hashCode();
     result = imul(result, 31) + this.m9_1.hashCode() | 0;
+    result = imul(result, 31) + this.n9_1.hashCode() | 0;
     return result;
   };
   protoOf(AffineTranformation).equals = function (other) {
@@ -3023,11 +3023,11 @@
     if (!(other instanceof AffineTranformation))
       return false;
     var tmp0_other_with_cast = other instanceof AffineTranformation ? other : THROW_CCE();
-    if (!this.k9_1.equals(tmp0_other_with_cast.k9_1))
-      return false;
     if (!this.l9_1.equals(tmp0_other_with_cast.l9_1))
       return false;
     if (!this.m9_1.equals(tmp0_other_with_cast.m9_1))
+      return false;
+    if (!this.n9_1.equals(tmp0_other_with_cast.n9_1))
       return false;
     return true;
   };
@@ -3046,13 +3046,13 @@
     // Inline function 'kotlin.collections.mutableListOf' call
     tmp.commands = ArrayList_init_$Create$();
   }
-  protoOf(GroupCommand).z9 = function () {
+  protoOf(GroupCommand).aa = function () {
     return CommandType_GROUP_getInstance();
   };
-  protoOf(GroupCommand).w8 = function (_set____db54di) {
+  protoOf(GroupCommand).x8 = function (_set____db54di) {
     this.commands = _set____db54di;
   };
-  protoOf(GroupCommand).x8 = function () {
+  protoOf(GroupCommand).y8 = function () {
     return this.commands;
   };
   function get_HINT_VRS_NONE() {
@@ -3127,7 +3127,7 @@
     Hint.call(this);
     this.shadingRate = shadingRate;
   }
-  protoOf(VrsHint).ag = function () {
+  protoOf(VrsHint).bg = function () {
     return this.shadingRate;
   };
   function ShadingRate_SHADING_RATE_1X1_getInstance() {
@@ -3182,16 +3182,16 @@
   function MainPassCommandArr(enabled, commands) {
     return MainPassCommand_init_$Init$_0(enabled, commands, objectCreate(protoOf(MainPassCommand)));
   }
-  protoOf(MainPassCommand).z9 = function () {
-    return this.cg_1;
+  protoOf(MainPassCommand).aa = function () {
+    return this.dg_1;
   };
   function MainPassCommand() {
-    this.cg_1 = CommandType_MAIN_PASS_getInstance();
+    this.dg_1 = CommandType_MAIN_PASS_getInstance();
   }
   function NoopCommand() {
     Command.call(this);
   }
-  protoOf(NoopCommand).z9 = function () {
+  protoOf(NoopCommand).aa = function () {
     return CommandType_NOOP_getInstance();
   };
   function RenderPassCommand_init_$Init$($this) {
@@ -3210,31 +3210,31 @@
   function RenderPassCommandArr(enabled, commands) {
     return RenderPassCommand_init_$Init$_0(enabled, commands, objectCreate(protoOf(RenderPassCommand)));
   }
-  protoOf(RenderPassCommand).z9 = function () {
-    return this.dg_1;
+  protoOf(RenderPassCommand).aa = function () {
+    return this.eg_1;
   };
   function RenderPassCommand() {
-    this.dg_1 = CommandType_RENDER_PASS_getInstance();
+    this.eg_1 = CommandType_RENDER_PASS_getInstance();
   }
   function VignetteCommand() {
     Command.call(this);
-    this.eg_1 = CommandType_VIGNETTE_getInstance();
+    this.fg_1 = CommandType_VIGNETTE_getInstance();
     this.color0 = new Vec4(0.0, 0.0, 0.0, 1.0);
     this.color1 = new Vec4(0.0, 0.0, 0.0, 1.0);
   }
-  protoOf(VignetteCommand).z9 = function () {
-    return this.eg_1;
+  protoOf(VignetteCommand).aa = function () {
+    return this.fg_1;
   };
-  protoOf(VignetteCommand).fg = function (_set____db54di) {
+  protoOf(VignetteCommand).gg = function (_set____db54di) {
     this.color0 = _set____db54di;
   };
-  protoOf(VignetteCommand).gg = function () {
+  protoOf(VignetteCommand).hg = function () {
     return this.color0;
   };
-  protoOf(VignetteCommand).hg = function (_set____db54di) {
+  protoOf(VignetteCommand).ig = function (_set____db54di) {
     this.color1 = _set____db54di;
   };
-  protoOf(VignetteCommand).ig = function () {
+  protoOf(VignetteCommand).jg = function () {
     return this.color1;
   };
   var ColorMode_Normal_instance;
@@ -3331,20 +3331,25 @@
   }
   function MathUtils() {
   }
-  protoOf(MathUtils).lg = function (i, low, high) {
+  protoOf(MathUtils).mg = function (i, low, high) {
     // Inline function 'kotlin.math.max' call
     // Inline function 'kotlin.math.min' call
     var a = Math.min(i, high);
     return Math.max(a, low);
   };
-  protoOf(MathUtils).wc = function (edge0, edge1, x) {
-    var t = this.lg((x - edge0) / (edge1 - edge0), 0.0, 1.0);
+  protoOf(MathUtils).xc = function (edge0, edge1, x) {
+    var t = this.mg((x - edge0) / (edge1 - edge0), 0.0, 1.0);
     return t * t * (3.0 - 2.0 * t);
   };
-  protoOf(MathUtils).qc = function (length, current) {
-    return ((current + 1 | 0) + numberToInt(Default_getInstance().o5() * (length - 2 | 0)) | 0) % length | 0;
+  protoOf(MathUtils).ng = function (edge0, edge1, x) {
+    var x_0 = x;
+    x_0 = this.mg((x_0 - edge0) / (edge1 - edge0), 0.0, 1.0);
+    return x_0 * x_0 * x_0 * (x_0 * (x_0 * 6 - 15) + 10);
   };
-  protoOf(MathUtils).mg = function (rad) {
+  protoOf(MathUtils).rc = function (length, current) {
+    return ((current + 1 | 0) + numberToInt(Default_getInstance().q5() * (length - 2 | 0)) | 0) % length | 0;
+  };
+  protoOf(MathUtils).og = function (rad) {
     return rad * 57.29578;
   };
   var MathUtils_instance;
@@ -3353,22 +3358,22 @@
   }
   function Matrix() {
     Matrix_instance = this;
-    this.j7_1 = new Float32Array(32);
-    this.k7_1 = new Float32Array(16);
+    this.k7_1 = new Float32Array(32);
     this.l7_1 = new Float32Array(16);
     this.m7_1 = new Float32Array(16);
-    this.n7_1 = new Float32Array(4);
-    this.o7_1 = new Float32Array(16);
-    this.p7_1 = new Float32Array(4);
+    this.n7_1 = new Float32Array(16);
+    this.o7_1 = new Float32Array(4);
+    this.p7_1 = new Float32Array(16);
+    this.q7_1 = new Float32Array(4);
   }
-  protoOf(Matrix).j9 = function (result, resultOffset, lhs, lhsOffset, rhs, rhsOffset) {
-    this.ng(result, resultOffset, this.k7_1, 0, 16);
-    this.ng(lhs, lhsOffset, this.l7_1, 0, 16);
-    this.ng(rhs, rhsOffset, this.m7_1, 0, 16);
-    this.og(this.k7_1, this.l7_1, this.m7_1);
-    this.ng(this.k7_1, 0, result, resultOffset, 16);
+  protoOf(Matrix).k9 = function (result, resultOffset, lhs, lhsOffset, rhs, rhsOffset) {
+    this.pg(result, resultOffset, this.l7_1, 0, 16);
+    this.pg(lhs, lhsOffset, this.m7_1, 0, 16);
+    this.pg(rhs, rhsOffset, this.n7_1, 0, 16);
+    this.qg(this.l7_1, this.m7_1, this.n7_1);
+    this.pg(this.l7_1, 0, result, resultOffset, 16);
   };
-  protoOf(Matrix).ng = function (src, srcPos, dest, destPos, length) {
+  protoOf(Matrix).pg = function (src, srcPos, dest, destPos, length) {
     // Inline function 'kotlin.collections.copyInto' call
     var endIndex = srcPos + length | 0;
     // Inline function 'kotlin.js.unsafeCast' call
@@ -3378,16 +3383,16 @@
     // Inline function 'kotlin.js.asDynamic' call
     arrayCopy(tmp, dest, destPos, srcPos, endIndex);
   };
-  protoOf(Matrix).pg = function (_i, _j) {
+  protoOf(Matrix).rg = function (_i, _j) {
     return _j + imul(4, _i) | 0;
   };
-  protoOf(Matrix).og = function (r, lhs, rhs) {
+  protoOf(Matrix).qg = function (r, lhs, rhs) {
     var inductionVariable = 0;
     if (inductionVariable <= 3)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var rhs_i0 = rhs[this.pg(i, 0)];
+        var rhs_i0 = rhs[this.rg(i, 0)];
         var ri0 = lhs[0] * rhs_i0;
         var ri1 = lhs[1] * rhs_i0;
         var ri2 = lhs[2] * rhs_i0;
@@ -3397,21 +3402,21 @@
           do {
             var j = inductionVariable_0;
             inductionVariable_0 = inductionVariable_0 + 1 | 0;
-            var rhs_ij = rhs[this.pg(i, j)];
-            ri0 = ri0 + lhs[this.pg(j, 0)] * rhs_ij;
-            ri1 = ri1 + lhs[this.pg(j, 1)] * rhs_ij;
-            ri2 = ri2 + lhs[this.pg(j, 2)] * rhs_ij;
-            ri3 = ri3 + lhs[this.pg(j, 3)] * rhs_ij;
+            var rhs_ij = rhs[this.rg(i, j)];
+            ri0 = ri0 + lhs[this.rg(j, 0)] * rhs_ij;
+            ri1 = ri1 + lhs[this.rg(j, 1)] * rhs_ij;
+            ri2 = ri2 + lhs[this.rg(j, 2)] * rhs_ij;
+            ri3 = ri3 + lhs[this.rg(j, 3)] * rhs_ij;
           }
            while (inductionVariable_0 <= 3);
-        r[this.pg(i, 0)] = ri0;
-        r[this.pg(i, 1)] = ri1;
-        r[this.pg(i, 2)] = ri2;
-        r[this.pg(i, 3)] = ri3;
+        r[this.rg(i, 0)] = ri0;
+        r[this.rg(i, 1)] = ri1;
+        r[this.rg(i, 2)] = ri2;
+        r[this.rg(i, 3)] = ri3;
       }
        while (inductionVariable <= 3);
   };
-  protoOf(Matrix).q7 = function (m, offset, left, right, bottom, top, near, far) {
+  protoOf(Matrix).r7 = function (m, offset, left, right, bottom, top, near, far) {
     // Inline function 'kotlin.require' call
     // Inline function 'kotlin.contracts.contract' call
     if (!!(left === right)) {
@@ -3473,12 +3478,12 @@
     m[offset + 13 | 0] = 0.0;
     m[offset + 15 | 0] = 0.0;
   };
-  protoOf(Matrix).qg = function (x, y, z) {
+  protoOf(Matrix).sg = function (x, y, z) {
     // Inline function 'kotlin.math.sqrt' call
     var x_0 = x * x + y * y + z * z;
     return Math.sqrt(x_0);
   };
-  protoOf(Matrix).f9 = function (sm, smOffset) {
+  protoOf(Matrix).g9 = function (sm, smOffset) {
     var inductionVariable = 0;
     if (inductionVariable <= 15)
       do {
@@ -3493,7 +3498,7 @@
       i_0 = i_0 + 5 | 0;
     }
   };
-  protoOf(Matrix).i9 = function (m, mOffset, x, y, z) {
+  protoOf(Matrix).j9 = function (m, mOffset, x, y, z) {
     var inductionVariable = 0;
     if (inductionVariable <= 3)
       do {
@@ -3508,7 +3513,7 @@
       }
        while (inductionVariable <= 3);
   };
-  protoOf(Matrix).g9 = function (m, mOffset, x, y, z) {
+  protoOf(Matrix).h9 = function (m, mOffset, x, y, z) {
     var inductionVariable = 0;
     if (inductionVariable <= 3)
       do {
@@ -3520,12 +3525,12 @@
       }
        while (inductionVariable <= 3);
   };
-  protoOf(Matrix).h9 = function (m, mOffset, a, x, y, z) {
-    this.rg(this.j7_1, 0, a, x, y, z);
-    this.j9(this.j7_1, 16, m, mOffset, this.j7_1, 0);
-    this.ng(this.j7_1, 16, m, mOffset, 16);
+  protoOf(Matrix).i9 = function (m, mOffset, a, x, y, z) {
+    this.tg(this.k7_1, 0, a, x, y, z);
+    this.k9(this.k7_1, 16, m, mOffset, this.k7_1, 0);
+    this.pg(this.k7_1, 16, m, mOffset, 16);
   };
-  protoOf(Matrix).rg = function (rm, rmOffset, a, x, y, z) {
+  protoOf(Matrix).tg = function (rm, rmOffset, a, x, y, z) {
     var a_0 = a;
     var x_0 = x;
     var y_0 = y;
@@ -3575,7 +3580,7 @@
       rm[rmOffset + 9 | 0] = 0.0;
       rm[rmOffset + 10 | 0] = 1.0;
     } else {
-      var len = this.qg(x_0, y_0, z_0);
+      var len = this.sg(x_0, y_0, z_0);
       if (!(1.0 === len)) {
         var recipLen = 1.0 / len;
         x_0 = x_0 * recipLen;
@@ -3600,18 +3605,18 @@
       rm[rmOffset + 10 | 0] = z_0 * z_0 * nc + c;
     }
   };
-  protoOf(Matrix).sg = function (rm, rmOffset, eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ) {
+  protoOf(Matrix).ug = function (rm, rmOffset, eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ) {
     var fx = centerX - eyeX;
     var fy = centerY - eyeY;
     var fz = centerZ - eyeZ;
-    var rlf = 1.0 / this.qg(fx, fy, fz);
+    var rlf = 1.0 / this.sg(fx, fy, fz);
     fx = fx * rlf;
     fy = fy * rlf;
     fz = fz * rlf;
     var sx = fy * upZ - fz * upY;
     var sy = fz * upX - fx * upZ;
     var sz = fx * upY - fy * upX;
-    var rls = 1.0 / this.qg(sx, sy, sz);
+    var rls = 1.0 / this.sg(sx, sy, sz);
     sx = sx * rls;
     sy = sy * rls;
     sz = sz * rls;
@@ -3634,7 +3639,7 @@
     rm[rmOffset + 13 | 0] = 0.0;
     rm[rmOffset + 14 | 0] = 0.0;
     rm[rmOffset + 15 | 0] = 1.0;
-    this.g9(rm, rmOffset, -eyeX, -eyeY, -eyeZ);
+    this.h9(rm, rmOffset, -eyeX, -eyeY, -eyeZ);
   };
   var Matrix_instance;
   function Matrix_getInstance() {
@@ -3645,47 +3650,47 @@
   function Vec2(_x, _y) {
     _x = _x === VOID ? 0.0 : _x;
     _y = _y === VOID ? 0.0 : _y;
-    this.tg_1 = _x;
-    this.ug_1 = _y;
+    this.vg_1 = _x;
+    this.wg_1 = _y;
   }
-  protoOf(Vec2).vg = function (value) {
-    this.tg_1 = value;
-  };
-  protoOf(Vec2).wg = function () {
-    return this.tg_1;
-  };
   protoOf(Vec2).xg = function (value) {
-    this.tg_1 = value;
+    this.vg_1 = value;
   };
   protoOf(Vec2).yg = function () {
-    return this.tg_1;
+    return this.vg_1;
   };
   protoOf(Vec2).zg = function (value) {
-    this.ug_1 = value;
+    this.vg_1 = value;
   };
   protoOf(Vec2).ah = function () {
-    return this.ug_1;
+    return this.vg_1;
   };
   protoOf(Vec2).bh = function (value) {
-    this.ug_1 = value;
+    this.wg_1 = value;
   };
   protoOf(Vec2).ch = function () {
-    return this.ug_1;
+    return this.wg_1;
   };
-  protoOf(Vec2).dh = function (_x, _y) {
+  protoOf(Vec2).dh = function (value) {
+    this.wg_1 = value;
+  };
+  protoOf(Vec2).eh = function () {
+    return this.wg_1;
+  };
+  protoOf(Vec2).fh = function (_x, _y) {
     return new Vec2(_x, _y);
   };
   protoOf(Vec2).copy = function (_x, _y, $super) {
-    _x = _x === VOID ? this.tg_1 : _x;
-    _y = _y === VOID ? this.ug_1 : _y;
-    return this.dh(_x, _y);
+    _x = _x === VOID ? this.vg_1 : _x;
+    _y = _y === VOID ? this.wg_1 : _y;
+    return this.fh(_x, _y);
   };
   protoOf(Vec2).toString = function () {
-    return 'Vec2(_x=' + this.tg_1 + ', _y=' + this.ug_1 + ')';
+    return 'Vec2(_x=' + this.vg_1 + ', _y=' + this.wg_1 + ')';
   };
   protoOf(Vec2).hashCode = function () {
-    var result = getNumberHashCode(this.tg_1);
-    result = imul(result, 31) + getNumberHashCode(this.ug_1) | 0;
+    var result = getNumberHashCode(this.vg_1);
+    result = imul(result, 31) + getNumberHashCode(this.wg_1) | 0;
     return result;
   };
   protoOf(Vec2).equals = function (other) {
@@ -3694,9 +3699,9 @@
     if (!(other instanceof Vec2))
       return false;
     var tmp0_other_with_cast = other instanceof Vec2 ? other : THROW_CCE();
-    if (!equals(this.tg_1, tmp0_other_with_cast.tg_1))
+    if (!equals(this.vg_1, tmp0_other_with_cast.vg_1))
       return false;
-    if (!equals(this.ug_1, tmp0_other_with_cast.ug_1))
+    if (!equals(this.wg_1, tmp0_other_with_cast.wg_1))
       return false;
     return true;
   };
@@ -3704,62 +3709,62 @@
     _x = _x === VOID ? 0.0 : _x;
     _y = _y === VOID ? 0.0 : _y;
     _z = _z === VOID ? 0.0 : _z;
-    this.eh_1 = _x;
-    this.fh_1 = _y;
-    this.gh_1 = _z;
+    this.gh_1 = _x;
+    this.hh_1 = _y;
+    this.ih_1 = _z;
   }
-  protoOf(Vec3).vg = function (value) {
-    this.eh_1 = value;
-  };
-  protoOf(Vec3).wg = function () {
-    return this.eh_1;
-  };
   protoOf(Vec3).xg = function (value) {
-    this.eh_1 = value;
+    this.gh_1 = value;
   };
   protoOf(Vec3).yg = function () {
-    return this.eh_1;
+    return this.gh_1;
   };
   protoOf(Vec3).zg = function (value) {
-    this.fh_1 = value;
+    this.gh_1 = value;
   };
   protoOf(Vec3).ah = function () {
-    return this.fh_1;
+    return this.gh_1;
   };
   protoOf(Vec3).bh = function (value) {
-    this.fh_1 = value;
+    this.hh_1 = value;
   };
   protoOf(Vec3).ch = function () {
-    return this.fh_1;
+    return this.hh_1;
   };
-  protoOf(Vec3).hh = function (value) {
-    this.gh_1 = value;
+  protoOf(Vec3).dh = function (value) {
+    this.hh_1 = value;
   };
-  protoOf(Vec3).ih = function () {
-    return this.gh_1;
+  protoOf(Vec3).eh = function () {
+    return this.hh_1;
   };
   protoOf(Vec3).jh = function (value) {
-    this.gh_1 = value;
+    this.ih_1 = value;
   };
   protoOf(Vec3).kh = function () {
-    return this.gh_1;
+    return this.ih_1;
   };
-  protoOf(Vec3).lh = function (_x, _y, _z) {
+  protoOf(Vec3).lh = function (value) {
+    this.ih_1 = value;
+  };
+  protoOf(Vec3).mh = function () {
+    return this.ih_1;
+  };
+  protoOf(Vec3).nh = function (_x, _y, _z) {
     return new Vec3(_x, _y, _z);
   };
   protoOf(Vec3).copy = function (_x, _y, _z, $super) {
-    _x = _x === VOID ? this.eh_1 : _x;
-    _y = _y === VOID ? this.fh_1 : _y;
-    _z = _z === VOID ? this.gh_1 : _z;
-    return this.lh(_x, _y, _z);
+    _x = _x === VOID ? this.gh_1 : _x;
+    _y = _y === VOID ? this.hh_1 : _y;
+    _z = _z === VOID ? this.ih_1 : _z;
+    return this.nh(_x, _y, _z);
   };
   protoOf(Vec3).toString = function () {
-    return 'Vec3(_x=' + this.eh_1 + ', _y=' + this.fh_1 + ', _z=' + this.gh_1 + ')';
+    return 'Vec3(_x=' + this.gh_1 + ', _y=' + this.hh_1 + ', _z=' + this.ih_1 + ')';
   };
   protoOf(Vec3).hashCode = function () {
-    var result = getNumberHashCode(this.eh_1);
-    result = imul(result, 31) + getNumberHashCode(this.fh_1) | 0;
-    result = imul(result, 31) + getNumberHashCode(this.gh_1) | 0;
+    var result = getNumberHashCode(this.gh_1);
+    result = imul(result, 31) + getNumberHashCode(this.hh_1) | 0;
+    result = imul(result, 31) + getNumberHashCode(this.ih_1) | 0;
     return result;
   };
   protoOf(Vec3).equals = function (other) {
@@ -3768,11 +3773,11 @@
     if (!(other instanceof Vec3))
       return false;
     var tmp0_other_with_cast = other instanceof Vec3 ? other : THROW_CCE();
-    if (!equals(this.eh_1, tmp0_other_with_cast.eh_1))
-      return false;
-    if (!equals(this.fh_1, tmp0_other_with_cast.fh_1))
-      return false;
     if (!equals(this.gh_1, tmp0_other_with_cast.gh_1))
+      return false;
+    if (!equals(this.hh_1, tmp0_other_with_cast.hh_1))
+      return false;
+    if (!equals(this.ih_1, tmp0_other_with_cast.ih_1))
       return false;
     return true;
   };
@@ -3781,77 +3786,77 @@
     _y = _y === VOID ? 0.0 : _y;
     _z = _z === VOID ? 0.0 : _z;
     _w = _w === VOID ? 0.0 : _w;
-    this.mh_1 = _x;
-    this.nh_1 = _y;
-    this.oh_1 = _z;
-    this.ph_1 = _w;
+    this.oh_1 = _x;
+    this.ph_1 = _y;
+    this.qh_1 = _z;
+    this.rh_1 = _w;
   }
-  protoOf(Vec4).vg = function (value) {
-    this.mh_1 = value;
-  };
-  protoOf(Vec4).wg = function () {
-    return this.mh_1;
-  };
   protoOf(Vec4).xg = function (value) {
-    this.mh_1 = value;
+    this.oh_1 = value;
   };
   protoOf(Vec4).yg = function () {
-    return this.mh_1;
+    return this.oh_1;
   };
   protoOf(Vec4).zg = function (value) {
-    this.nh_1 = value;
+    this.oh_1 = value;
   };
   protoOf(Vec4).ah = function () {
-    return this.nh_1;
+    return this.oh_1;
   };
   protoOf(Vec4).bh = function (value) {
-    this.nh_1 = value;
+    this.ph_1 = value;
   };
   protoOf(Vec4).ch = function () {
-    return this.nh_1;
+    return this.ph_1;
   };
-  protoOf(Vec4).hh = function (value) {
-    this.oh_1 = value;
+  protoOf(Vec4).dh = function (value) {
+    this.ph_1 = value;
   };
-  protoOf(Vec4).ih = function () {
-    return this.oh_1;
+  protoOf(Vec4).eh = function () {
+    return this.ph_1;
   };
   protoOf(Vec4).jh = function (value) {
-    this.oh_1 = value;
+    this.qh_1 = value;
   };
   protoOf(Vec4).kh = function () {
-    return this.oh_1;
+    return this.qh_1;
   };
-  protoOf(Vec4).qh = function (value) {
-    this.ph_1 = value;
+  protoOf(Vec4).lh = function (value) {
+    this.qh_1 = value;
   };
-  protoOf(Vec4).rh = function () {
-    return this.ph_1;
+  protoOf(Vec4).mh = function () {
+    return this.qh_1;
   };
   protoOf(Vec4).sh = function (value) {
-    this.ph_1 = value;
+    this.rh_1 = value;
   };
   protoOf(Vec4).th = function () {
-    return this.ph_1;
+    return this.rh_1;
   };
-  protoOf(Vec4).uh = function (_x, _y, _z, _w) {
+  protoOf(Vec4).uh = function (value) {
+    this.rh_1 = value;
+  };
+  protoOf(Vec4).vh = function () {
+    return this.rh_1;
+  };
+  protoOf(Vec4).wh = function (_x, _y, _z, _w) {
     return new Vec4(_x, _y, _z, _w);
   };
   protoOf(Vec4).copy = function (_x, _y, _z, _w, $super) {
-    _x = _x === VOID ? this.mh_1 : _x;
-    _y = _y === VOID ? this.nh_1 : _y;
-    _z = _z === VOID ? this.oh_1 : _z;
-    _w = _w === VOID ? this.ph_1 : _w;
-    return this.uh(_x, _y, _z, _w);
+    _x = _x === VOID ? this.oh_1 : _x;
+    _y = _y === VOID ? this.ph_1 : _y;
+    _z = _z === VOID ? this.qh_1 : _z;
+    _w = _w === VOID ? this.rh_1 : _w;
+    return this.wh(_x, _y, _z, _w);
   };
   protoOf(Vec4).toString = function () {
-    return 'Vec4(_x=' + this.mh_1 + ', _y=' + this.nh_1 + ', _z=' + this.oh_1 + ', _w=' + this.ph_1 + ')';
+    return 'Vec4(_x=' + this.oh_1 + ', _y=' + this.ph_1 + ', _z=' + this.qh_1 + ', _w=' + this.rh_1 + ')';
   };
   protoOf(Vec4).hashCode = function () {
-    var result = getNumberHashCode(this.mh_1);
-    result = imul(result, 31) + getNumberHashCode(this.nh_1) | 0;
-    result = imul(result, 31) + getNumberHashCode(this.oh_1) | 0;
+    var result = getNumberHashCode(this.oh_1);
     result = imul(result, 31) + getNumberHashCode(this.ph_1) | 0;
+    result = imul(result, 31) + getNumberHashCode(this.qh_1) | 0;
+    result = imul(result, 31) + getNumberHashCode(this.rh_1) | 0;
     return result;
   };
   protoOf(Vec4).equals = function (other) {
@@ -3860,35 +3865,35 @@
     if (!(other instanceof Vec4))
       return false;
     var tmp0_other_with_cast = other instanceof Vec4 ? other : THROW_CCE();
-    if (!equals(this.mh_1, tmp0_other_with_cast.mh_1))
-      return false;
-    if (!equals(this.nh_1, tmp0_other_with_cast.nh_1))
-      return false;
     if (!equals(this.oh_1, tmp0_other_with_cast.oh_1))
       return false;
     if (!equals(this.ph_1, tmp0_other_with_cast.ph_1))
       return false;
+    if (!equals(this.qh_1, tmp0_other_with_cast.qh_1))
+      return false;
+    if (!equals(this.rh_1, tmp0_other_with_cast.rh_1))
+      return false;
     return true;
   };
   function TimerParams(timer, period, rotating) {
-    this.vh_1 = timer;
-    this.wh_1 = period;
-    this.xh_1 = rotating;
+    this.xh_1 = timer;
+    this.yh_1 = period;
+    this.zh_1 = rotating;
   }
   function TimersMap() {
     var tmp = this;
     // Inline function 'kotlin.collections.mutableMapOf' call
-    tmp.yh_1 = LinkedHashMap_init_$Create$();
-    this.zh_1 = 0.0;
+    tmp.ai_1 = LinkedHashMap_init_$Create$();
+    this.bi_1 = 0.0;
   }
-  protoOf(TimersMap).ai = function (key, period) {
-    this.yh_1.c1(key, new TimerParams(0.0, period, true));
+  protoOf(TimersMap).ci = function (key, period) {
+    this.ai_1.c1(key, new TimerParams(0.0, period, true));
   };
-  protoOf(TimersMap).bi = function (key, period, rotating) {
-    this.yh_1.c1(key, new TimerParams(0.0, period, rotating));
+  protoOf(TimersMap).di = function (key, period, rotating) {
+    this.ai_1.c1(key, new TimerParams(0.0, period, rotating));
   };
-  protoOf(TimersMap).ci = function (index) {
-    var tmp0_elvis_lhs = this.yh_1.i1(index);
+  protoOf(TimersMap).ei = function (index) {
+    var tmp0_elvis_lhs = this.ai_1.i1(index);
     var tmp;
     if (tmp0_elvis_lhs == null) {
       throw Exception_init_$Create$('Timer not found');
@@ -3896,10 +3901,10 @@
       tmp = tmp0_elvis_lhs;
     }
     var timer = tmp;
-    return timer.vh_1;
+    return timer.xh_1;
   };
-  protoOf(TimersMap).di = function (index, value) {
-    var tmp0_elvis_lhs = this.yh_1.i1(index);
+  protoOf(TimersMap).fi = function (index, value) {
+    var tmp0_elvis_lhs = this.ai_1.i1(index);
     var tmp;
     if (tmp0_elvis_lhs == null) {
       throw Exception_init_$Create$('Timer not found');
@@ -3907,24 +3912,24 @@
       tmp = tmp0_elvis_lhs;
     }
     var timer = tmp;
-    timer.vh_1 = value;
+    timer.xh_1 = value;
   };
-  protoOf(TimersMap).ei = function (timeNow) {
+  protoOf(TimersMap).gi = function (timeNow) {
     // Inline function 'kotlin.collections.iterator' call
-    var tmp0_iterator = this.yh_1.b1().h();
+    var tmp0_iterator = this.ai_1.b1().h();
     while (tmp0_iterator.o()) {
       var timer = tmp0_iterator.p();
-      var delta = (timeNow - this.zh_1) / timer.wh_1;
-      timer.vh_1 = timer.vh_1 + delta;
-      if (timer.xh_1) {
-        timer.vh_1 = timer.vh_1 % 1.0;
+      var delta = (timeNow - this.bi_1) / timer.yh_1;
+      timer.xh_1 = timer.xh_1 + delta;
+      if (timer.zh_1) {
+        timer.xh_1 = timer.xh_1 % 1.0;
       } else {
-        if (timer.vh_1 > 1.0) {
-          timer.vh_1 = 1.0;
+        if (timer.xh_1 > 1.0) {
+          timer.xh_1 = 1.0;
         }
       }
     }
-    this.zh_1 = timeNow;
+    this.bi_1 = timeNow;
   };
   //region block: post-declaration
   defineProp(protoOf(BackendMode), 'name', protoOf(BackendMode).c4);
@@ -3935,26 +3940,26 @@
   defineProp(protoOf(BlendingFactor), 'ordinal', protoOf(BlendingFactor).d4);
   defineProp(protoOf(CullFace), 'name', protoOf(CullFace).c4);
   defineProp(protoOf(CullFace), 'ordinal', protoOf(CullFace).d4);
-  defineProp(protoOf(Scene), 'loaded', protoOf(Scene).g7, protoOf(Scene).f7);
+  defineProp(protoOf(Scene), 'loaded', protoOf(Scene).h7, protoOf(Scene).g7);
   defineProp(protoOf(Scene), 'commands', function () {
-    return this.x8();
+    return this.y8();
   }, function (value) {
-    this.w8(value);
+    this.x8(value);
   });
   defineProp(protoOf(Scene), 'meshes', function () {
-    return this.z8();
+    return this.a9();
   }, function (value) {
-    this.y8(value);
+    this.z8(value);
   });
   defineProp(protoOf(Scene), 'textures', function () {
-    return this.b9();
+    return this.c9();
   }, function (value) {
-    this.a9(value);
+    this.b9(value);
   });
   defineProp(protoOf(Scene), 'shaders', function () {
-    return this.d9();
+    return this.e9();
   }, function (value) {
-    this.c9(value);
+    this.d9(value);
   });
   defineProp(protoOf(TextureFiltering), 'name', protoOf(TextureFiltering).c4);
   defineProp(protoOf(TextureFiltering), 'ordinal', protoOf(TextureFiltering).d4);
@@ -3968,19 +3973,19 @@
   defineProp(protoOf(VertexFormat), 'ordinal', protoOf(VertexFormat).d4);
   defineProp(protoOf(AttributeType), 'name', protoOf(AttributeType).c4);
   defineProp(protoOf(AttributeType), 'ordinal', protoOf(AttributeType).d4);
-  defineProp(protoOf(CameraPathAnimator), 'minDurationCoefficient', protoOf(CameraPathAnimator).kc, protoOf(CameraPathAnimator).jc);
-  defineProp(protoOf(CameraPathAnimator), 'positionInterpolator', protoOf(CameraPathAnimator).lc);
-  defineProp(protoOf(CameraPathAnimator), 'timer', protoOf(CameraPathAnimator).mc);
-  defineProp(protoOf(CameraPathAnimator), 'state', protoOf(CameraPathAnimator).nc);
-  defineProp(protoOf(CameraPathAnimator), 'currentCameraPair', protoOf(CameraPathAnimator).pc);
-  defineProp(protoOf(CameraPositionInterpolator), 'cameraPosition', protoOf(CameraPositionInterpolator).dd);
-  defineProp(protoOf(CameraPositionInterpolator), 'cameraRotation', protoOf(CameraPositionInterpolator).ed);
+  defineProp(protoOf(CameraPathAnimator), 'minDurationCoefficient', protoOf(CameraPathAnimator).lc, protoOf(CameraPathAnimator).kc);
+  defineProp(protoOf(CameraPathAnimator), 'positionInterpolator', protoOf(CameraPathAnimator).mc);
+  defineProp(protoOf(CameraPathAnimator), 'timer', protoOf(CameraPathAnimator).nc);
+  defineProp(protoOf(CameraPathAnimator), 'state', protoOf(CameraPathAnimator).oc);
+  defineProp(protoOf(CameraPathAnimator), 'currentCameraPair', protoOf(CameraPathAnimator).qc);
+  defineProp(protoOf(CameraPositionInterpolator), 'cameraPosition', protoOf(CameraPositionInterpolator).ed);
+  defineProp(protoOf(CameraPositionInterpolator), 'cameraRotation', protoOf(CameraPositionInterpolator).fd);
   defineProp(protoOf(CameraState), 'name', protoOf(CameraState).c4);
   defineProp(protoOf(CameraState), 'ordinal', protoOf(CameraState).d4);
   defineProp(protoOf(BlurSize), 'name', protoOf(BlurSize).c4);
   defineProp(protoOf(BlurSize), 'ordinal', protoOf(BlurSize).d4);
   defineProp(protoOf(Command), 'type', function () {
-    return this.z9();
+    return this.aa();
   });
   defineProp(protoOf(ClearCommandClearType), 'name', protoOf(ClearCommandClearType).c4);
   defineProp(protoOf(ClearCommandClearType), 'ordinal', protoOf(ClearCommandClearType).d4);
@@ -3992,24 +3997,24 @@
   defineProp(protoOf(ShadingRate), 'ordinal', protoOf(ShadingRate).d4);
   defineProp(protoOf(ColorMode), 'name', protoOf(ColorMode).c4);
   defineProp(protoOf(ColorMode), 'ordinal', protoOf(ColorMode).d4);
-  defineProp(protoOf(Vec2), 'x', protoOf(Vec2).wg, protoOf(Vec2).vg);
-  defineProp(protoOf(Vec2), 'r', protoOf(Vec2).yg, protoOf(Vec2).xg);
-  defineProp(protoOf(Vec2), 'y', protoOf(Vec2).ah, protoOf(Vec2).zg);
-  defineProp(protoOf(Vec2), 'g', protoOf(Vec2).ch, protoOf(Vec2).bh);
-  defineProp(protoOf(Vec3), 'x', protoOf(Vec3).wg, protoOf(Vec3).vg);
-  defineProp(protoOf(Vec3), 'r', protoOf(Vec3).yg, protoOf(Vec3).xg);
-  defineProp(protoOf(Vec3), 'y', protoOf(Vec3).ah, protoOf(Vec3).zg);
-  defineProp(protoOf(Vec3), 'g', protoOf(Vec3).ch, protoOf(Vec3).bh);
-  defineProp(protoOf(Vec3), 'z', protoOf(Vec3).ih, protoOf(Vec3).hh);
-  defineProp(protoOf(Vec3), 'b', protoOf(Vec3).kh, protoOf(Vec3).jh);
-  defineProp(protoOf(Vec4), 'x', protoOf(Vec4).wg, protoOf(Vec4).vg);
-  defineProp(protoOf(Vec4), 'r', protoOf(Vec4).yg, protoOf(Vec4).xg);
-  defineProp(protoOf(Vec4), 'y', protoOf(Vec4).ah, protoOf(Vec4).zg);
-  defineProp(protoOf(Vec4), 'g', protoOf(Vec4).ch, protoOf(Vec4).bh);
-  defineProp(protoOf(Vec4), 'z', protoOf(Vec4).ih, protoOf(Vec4).hh);
-  defineProp(protoOf(Vec4), 'b', protoOf(Vec4).kh, protoOf(Vec4).jh);
-  defineProp(protoOf(Vec4), 'w', protoOf(Vec4).rh, protoOf(Vec4).qh);
-  defineProp(protoOf(Vec4), 'a', protoOf(Vec4).th, protoOf(Vec4).sh);
+  defineProp(protoOf(Vec2), 'x', protoOf(Vec2).yg, protoOf(Vec2).xg);
+  defineProp(protoOf(Vec2), 'r', protoOf(Vec2).ah, protoOf(Vec2).zg);
+  defineProp(protoOf(Vec2), 'y', protoOf(Vec2).ch, protoOf(Vec2).bh);
+  defineProp(protoOf(Vec2), 'g', protoOf(Vec2).eh, protoOf(Vec2).dh);
+  defineProp(protoOf(Vec3), 'x', protoOf(Vec3).yg, protoOf(Vec3).xg);
+  defineProp(protoOf(Vec3), 'r', protoOf(Vec3).ah, protoOf(Vec3).zg);
+  defineProp(protoOf(Vec3), 'y', protoOf(Vec3).ch, protoOf(Vec3).bh);
+  defineProp(protoOf(Vec3), 'g', protoOf(Vec3).eh, protoOf(Vec3).dh);
+  defineProp(protoOf(Vec3), 'z', protoOf(Vec3).kh, protoOf(Vec3).jh);
+  defineProp(protoOf(Vec3), 'b', protoOf(Vec3).mh, protoOf(Vec3).lh);
+  defineProp(protoOf(Vec4), 'x', protoOf(Vec4).yg, protoOf(Vec4).xg);
+  defineProp(protoOf(Vec4), 'r', protoOf(Vec4).ah, protoOf(Vec4).zg);
+  defineProp(protoOf(Vec4), 'y', protoOf(Vec4).ch, protoOf(Vec4).bh);
+  defineProp(protoOf(Vec4), 'g', protoOf(Vec4).eh, protoOf(Vec4).dh);
+  defineProp(protoOf(Vec4), 'z', protoOf(Vec4).kh, protoOf(Vec4).jh);
+  defineProp(protoOf(Vec4), 'b', protoOf(Vec4).mh, protoOf(Vec4).lh);
+  defineProp(protoOf(Vec4), 'w', protoOf(Vec4).th, protoOf(Vec4).sh);
+  defineProp(protoOf(Vec4), 'a', protoOf(Vec4).vh, protoOf(Vec4).uh);
   //endregion
   //region block: init
   Companion_instance = new Companion();
@@ -4404,64 +4409,65 @@
   _.$_$.y = TextureFormat_RGBA8_getInstance;
   _.$_$.z = TextureType_CUBEMAP_getInstance;
   _.$_$.a1 = TextureWrapping_CLAMP_TO_EDGE_getInstance;
-  _.$_$.b1 = VertexFormat_BYTE2_NORMALIZED_getInstance;
-  _.$_$.c1 = VertexFormat_FLOAT2_getInstance;
-  _.$_$.d1 = VertexFormat_FLOAT3_getInstance;
-  _.$_$.e1 = VertexFormat_HALF2_getInstance;
-  _.$_$.f1 = VertexFormat_HALF3_getInstance;
-  _.$_$.g1 = VertexFormat_HALF_getInstance;
-  _.$_$.h1 = VertexFormat_UBYTE2_NORMALIZED_getInstance;
-  _.$_$.i1 = VertexFormat_UBYTE_NORMALIZED_getInstance;
-  _.$_$.j1 = Spline3D_init_$Create$;
-  _.$_$.k1 = DrawStaticMeshCommandConstructor;
-  _.$_$.l1 = GroupCommandArr;
-  _.$_$.m1 = MainPassCommandArr;
-  _.$_$.n1 = MeshConstructor1;
-  _.$_$.o1 = MeshConstructor2;
-  _.$_$.p1 = UniformFloatValueWithArray;
-  _.$_$.q1 = UniformIntValueWithArray;
-  _.$_$.r1 = MathUtils_instance;
-  _.$_$.s1 = Matrix_getInstance;
-  _.$_$.t1 = TextureAnimationChunked;
-  _.$_$.u1 = CameraPathAnimator;
-  _.$_$.v1 = CameraPositionPair;
-  _.$_$.w1 = CameraPosition;
-  _.$_$.x1 = AffineTranformation;
-  _.$_$.y1 = BlurredPassCommand;
-  _.$_$.z1 = ClearColorCommand;
-  _.$_$.a2 = ClearCommand;
-  _.$_$.b2 = Command;
-  _.$_$.c2 = DrawBlurredCommand;
-  _.$_$.d2 = DrawMeshCommand;
-  _.$_$.e2 = DrawMeshState;
-  _.$_$.f2 = DrawTransformedMeshCommand;
-  _.$_$.g2 = GroupCommand;
-  _.$_$.h2 = get_HINT_VRS_2X2;
-  _.$_$.i2 = get_HINT_VRS_4X4;
-  _.$_$.j2 = get_HINT_VRS_NONE;
-  _.$_$.k2 = NoopCommand;
-  _.$_$.l2 = VignetteCommand;
-  _.$_$.m2 = Vec3;
-  _.$_$.n2 = Vec4;
-  _.$_$.o2 = TimersMap;
-  _.$_$.p2 = get_BLENDING_NONE;
-  _.$_$.q2 = Blending;
-  _.$_$.r2 = get_DEPTH_NO_WRITE;
-  _.$_$.s2 = get_DEPTH_TEST_ENABLED;
-  _.$_$.t2 = MeshAttributes;
-  _.$_$.u2 = MeshAttribute;
-  _.$_$.v2 = Scene;
-  _.$_$.w2 = Shader;
-  _.$_$.x2 = Texture;
-  _.$_$.y2 = UniformFloatValue;
-  _.$_$.z2 = UniformTextureValue;
-  _.$_$.a3 = VertexAttributesDescriptor;
-  _.$_$.b3 = VertexAttribute;
-  _.$_$.c3 = setUniform_2;
-  _.$_$.d3 = setUniform_3;
-  _.$_$.e3 = setUniform_1;
-  _.$_$.f3 = setUniform_0;
-  _.$_$.g3 = setUniform_4;
+  _.$_$.b1 = TextureWrapping_REPEAT_getInstance;
+  _.$_$.c1 = VertexFormat_BYTE2_NORMALIZED_getInstance;
+  _.$_$.d1 = VertexFormat_FLOAT2_getInstance;
+  _.$_$.e1 = VertexFormat_FLOAT3_getInstance;
+  _.$_$.f1 = VertexFormat_HALF2_getInstance;
+  _.$_$.g1 = VertexFormat_HALF3_getInstance;
+  _.$_$.h1 = VertexFormat_HALF_getInstance;
+  _.$_$.i1 = VertexFormat_UBYTE2_NORMALIZED_getInstance;
+  _.$_$.j1 = VertexFormat_UBYTE_NORMALIZED_getInstance;
+  _.$_$.k1 = Spline3D_init_$Create$;
+  _.$_$.l1 = DrawStaticMeshCommandConstructor;
+  _.$_$.m1 = GroupCommandArr;
+  _.$_$.n1 = MainPassCommandArr;
+  _.$_$.o1 = MeshConstructor1;
+  _.$_$.p1 = MeshConstructor2;
+  _.$_$.q1 = UniformFloatValueWithArray;
+  _.$_$.r1 = UniformIntValueWithArray;
+  _.$_$.s1 = MathUtils_instance;
+  _.$_$.t1 = Matrix_getInstance;
+  _.$_$.u1 = TextureAnimationChunked;
+  _.$_$.v1 = CameraPathAnimator;
+  _.$_$.w1 = CameraPositionPair;
+  _.$_$.x1 = CameraPosition;
+  _.$_$.y1 = AffineTranformation;
+  _.$_$.z1 = BlurredPassCommand;
+  _.$_$.a2 = ClearColorCommand;
+  _.$_$.b2 = ClearCommand;
+  _.$_$.c2 = Command;
+  _.$_$.d2 = DrawBlurredCommand;
+  _.$_$.e2 = DrawMeshCommand;
+  _.$_$.f2 = DrawMeshState;
+  _.$_$.g2 = DrawTransformedMeshCommand;
+  _.$_$.h2 = GroupCommand;
+  _.$_$.i2 = get_HINT_VRS_2X2;
+  _.$_$.j2 = get_HINT_VRS_4X4;
+  _.$_$.k2 = get_HINT_VRS_NONE;
+  _.$_$.l2 = NoopCommand;
+  _.$_$.m2 = VignetteCommand;
+  _.$_$.n2 = Vec3;
+  _.$_$.o2 = Vec4;
+  _.$_$.p2 = TimersMap;
+  _.$_$.q2 = get_BLENDING_NONE;
+  _.$_$.r2 = Blending;
+  _.$_$.s2 = get_DEPTH_NO_WRITE;
+  _.$_$.t2 = get_DEPTH_TEST_ENABLED;
+  _.$_$.u2 = MeshAttributes;
+  _.$_$.v2 = MeshAttribute;
+  _.$_$.w2 = Scene;
+  _.$_$.x2 = Shader;
+  _.$_$.y2 = Texture;
+  _.$_$.z2 = UniformFloatValue;
+  _.$_$.a3 = UniformTextureValue;
+  _.$_$.b3 = VertexAttributesDescriptor;
+  _.$_$.c3 = VertexAttribute;
+  _.$_$.d3 = setUniform_2;
+  _.$_$.e3 = setUniform_3;
+  _.$_$.f3 = setUniform_1;
+  _.$_$.g3 = setUniform_0;
+  _.$_$.h3 = setUniform_4;
   //endregion
   return _;
 }));

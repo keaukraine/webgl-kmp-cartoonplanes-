@@ -73,7 +73,7 @@ function initUI(): void {
     gui.add(renderer.settings, "autoSwitchCameras");
 
     gui.add(renderer, "randomizeSky");
-    gui.add(renderer, "nextCamera");
+    gui.add(renderer, "randomizePlane");
     gui.add(fullscreen, "toggleFullscreen");
 
     initDebugUI();
@@ -88,8 +88,6 @@ function initDebugUI(): void {
     document.addEventListener("keypress", event => {
         if (event.key === "f") {
             renderer.currentCameraMode = renderer.currentCameraMode === CameraMode.FPS ? CameraMode.FrontEnd : CameraMode.FPS;
-        } else if (event.key === "n") {
-            renderer.nextCamera();
         }
     });
 }

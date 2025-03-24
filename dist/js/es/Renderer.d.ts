@@ -19,7 +19,7 @@ export declare class Renderer extends SceneRenderer<lib.org.androidworks.cartoon
     protected initCommands(): void;
     createScene(): lib.org.androidworks.cartoonplanes.CartoonPlanesScene;
     createShader(name: string): (BaseShader & ShaderInputs);
-    nextCamera(): void;
     get settings(): lib.org.androidworks.cartoonplanes.CartoonPlanesSettings;
     randomizeSky(): Promise<void>;
+    randomizePlane(): Promise<void>;
 }

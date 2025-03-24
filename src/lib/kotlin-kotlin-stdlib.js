@@ -73,17 +73,17 @@ if (typeof Math.imul === 'undefined') {
   setMetadataFor(AbstractMutableCollection, 'AbstractMutableCollection', classMeta, AbstractCollection, [AbstractCollection, Collection]);
   setMetadataFor(IteratorImpl, 'IteratorImpl', classMeta);
   setMetadataFor(List, 'List', interfaceMeta, VOID, [Collection]);
-  setMetadataFor(AbstractMutableList, 'AbstractMutableList', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Collection, List]);
+  setMetadataFor(AbstractMutableList, 'AbstractMutableList', classMeta, AbstractMutableCollection, [AbstractMutableCollection, List, Collection]);
   setMetadataFor(Map_0, 'Map', interfaceMeta);
   setMetadataFor(AbstractMap, 'AbstractMap', classMeta, VOID, [Map_0]);
   setMetadataFor(AbstractMutableMap, 'AbstractMutableMap', classMeta, AbstractMap, [AbstractMap, Map_0]);
   setMetadataFor(Set, 'Set', interfaceMeta, VOID, [Collection]);
-  setMetadataFor(AbstractMutableSet, 'AbstractMutableSet', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Set, Collection]);
+  setMetadataFor(AbstractMutableSet, 'AbstractMutableSet', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Collection, Set]);
   setMetadataFor(Companion, 'Companion', objectMeta);
-  setMetadataFor(ArrayList, 'ArrayList', classMeta, AbstractMutableList, [AbstractMutableList, Collection, List], ArrayList_init_$Create$);
+  setMetadataFor(ArrayList, 'ArrayList', classMeta, AbstractMutableList, [AbstractMutableList, List, Collection], ArrayList_init_$Create$);
   setMetadataFor(HashMap, 'HashMap', classMeta, AbstractMutableMap, [AbstractMutableMap, Map_0], HashMap_init_$Create$);
   setMetadataFor(HashMapValues, 'HashMapValues', classMeta, AbstractMutableCollection, [Collection, AbstractMutableCollection]);
-  setMetadataFor(HashMapEntrySetBase, 'HashMapEntrySetBase', classMeta, AbstractMutableSet, [Set, Collection, AbstractMutableSet]);
+  setMetadataFor(HashMapEntrySetBase, 'HashMapEntrySetBase', classMeta, AbstractMutableSet, [Collection, Set, AbstractMutableSet]);
   setMetadataFor(HashMapEntrySet, 'HashMapEntrySet', classMeta, HashMapEntrySetBase);
   setMetadataFor(HashMapValuesDefault$iterator$1, VOID, classMeta);
   setMetadataFor(HashMapValuesDefault, 'HashMapValuesDefault', classMeta, AbstractMutableCollection);
@@ -3139,6 +3139,12 @@ if (typeof Math.imul === 'undefined') {
   protoOf(Default).o5 = function () {
     return this.m5_1.o5();
   };
+  protoOf(Default).p5 = function (from, until) {
+    return this.m5_1.p5(from, until);
+  };
+  protoOf(Default).q5 = function () {
+    return this.m5_1.q5();
+  };
   var Default_instance;
   function Default_getInstance() {
     if (Default_instance == null)
@@ -3149,8 +3155,55 @@ if (typeof Math.imul === 'undefined') {
     Default_getInstance();
   }
   protoOf(Random).o5 = function () {
+    return this.n5(32);
+  };
+  protoOf(Random).p5 = function (from, until) {
+    checkRangeBounds(from, until);
+    var n = until - from | 0;
+    if (n > 0 ? true : n === IntCompanionObject_instance.MIN_VALUE) {
+      var tmp;
+      if ((n & (-n | 0)) === n) {
+        var bitCount = fastLog2(n);
+        tmp = this.n5(bitCount);
+      } else {
+        var v;
+        do {
+          var bits = this.o5() >>> 1 | 0;
+          v = bits % n | 0;
+        }
+         while (((bits - v | 0) + (n - 1 | 0) | 0) < 0);
+        tmp = v;
+      }
+      var rnd = tmp;
+      return from + rnd | 0;
+    } else {
+      while (true) {
+        var rnd_0 = this.o5();
+        if (from <= rnd_0 ? rnd_0 < until : false)
+          return rnd_0;
+      }
+    }
+  };
+  protoOf(Random).q5 = function () {
     return this.n5(24) / 1.6777216E7;
   };
+  function checkRangeBounds(from, until) {
+    // Inline function 'kotlin.contracts.contract' call
+    var tmp;
+    if (!(until > from)) {
+      // Inline function 'kotlin.random.checkRangeBounds.<anonymous>' call
+      var message = boundsErrorMessage(from, until);
+      throw IllegalArgumentException_init_$Create$_0(toString_1(message));
+    }
+    return tmp;
+  }
+  function fastLog2(value) {
+    // Inline function 'kotlin.countLeadingZeroBits' call
+    return 31 - clz32(value) | 0;
+  }
+  function boundsErrorMessage(from, until) {
+    return 'Random range is empty: [' + toString_1(from) + ', ' + toString_1(until) + ').';
+  }
   function Random_0(seed) {
     return XorWowRandom_init_$Create$(seed, seed >> 31);
   }
@@ -3166,7 +3219,7 @@ if (typeof Math.imul === 'undefined') {
   }
   function Companion_6() {
     Companion_instance_6 = this;
-    this.p5_1 = new Long(0, 0);
+    this.r5_1 = new Long(0, 0);
   }
   var Companion_instance_6;
   function Companion_getInstance_6() {
@@ -3177,15 +3230,15 @@ if (typeof Math.imul === 'undefined') {
   function XorWowRandom(x, y, z, w, v, addend) {
     Companion_getInstance_6();
     Random.call(this);
-    this.q5_1 = x;
-    this.r5_1 = y;
-    this.s5_1 = z;
-    this.t5_1 = w;
-    this.u5_1 = v;
-    this.v5_1 = addend;
+    this.s5_1 = x;
+    this.t5_1 = y;
+    this.u5_1 = z;
+    this.v5_1 = w;
+    this.w5_1 = v;
+    this.x5_1 = addend;
     // Inline function 'kotlin.require' call
     // Inline function 'kotlin.contracts.contract' call
-    if (!!((this.q5_1 | this.r5_1 | this.s5_1 | this.t5_1 | this.u5_1) === 0)) {
+    if (!!((this.s5_1 | this.t5_1 | this.u5_1 | this.v5_1 | this.w5_1) === 0)) {
       // Inline function 'kotlin.random.XorWowRandom.<anonymous>' call
       var message = 'Initial state must have at least one non-zero element.';
       throw IllegalArgumentException_init_$Create$_0(toString_1(message));
@@ -3198,25 +3251,25 @@ if (typeof Math.imul === 'undefined') {
         var index = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
         // Inline function 'kotlin.random.XorWowRandom.<anonymous>' call
-        this.w5();
+        this.o5();
       }
        while (inductionVariable < 64);
   }
-  protoOf(XorWowRandom).w5 = function () {
-    var t = this.q5_1;
+  protoOf(XorWowRandom).o5 = function () {
+    var t = this.s5_1;
     t = t ^ (t >>> 2 | 0);
-    this.q5_1 = this.r5_1;
-    this.r5_1 = this.s5_1;
     this.s5_1 = this.t5_1;
-    var v0 = this.u5_1;
-    this.t5_1 = v0;
+    this.t5_1 = this.u5_1;
+    this.u5_1 = this.v5_1;
+    var v0 = this.w5_1;
+    this.v5_1 = v0;
     t = t ^ t << 1 ^ v0 ^ v0 << 4;
-    this.u5_1 = t;
-    this.v5_1 = this.v5_1 + 362437 | 0;
-    return t + this.v5_1 | 0;
+    this.w5_1 = t;
+    this.x5_1 = this.x5_1 + 362437 | 0;
+    return t + this.x5_1 | 0;
   };
   protoOf(XorWowRandom).n5 = function (bitCount) {
-    return takeUpperBits(this.w5(), bitCount);
+    return takeUpperBits(this.o5(), bitCount);
   };
   function appendElement(_this__u8e3s4, element, transform) {
     if (!(transform == null)) {
@@ -3226,7 +3279,7 @@ if (typeof Math.imul === 'undefined') {
         _this__u8e3s4.z3(element);
       } else {
         if (element instanceof Char) {
-          _this__u8e3s4.u3(element.x5_1);
+          _this__u8e3s4.u3(element.y5_1);
         } else {
           _this__u8e3s4.z3(toString_0(element));
         }
