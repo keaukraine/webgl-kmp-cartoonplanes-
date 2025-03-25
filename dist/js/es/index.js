@@ -1872,12 +1872,12 @@ if (typeof Math.imul === 'undefined') {
   setMetadataFor(AbstractMap, 'AbstractMap', classMeta, VOID, [Map_0]);
   setMetadataFor(AbstractMutableMap, 'AbstractMutableMap', classMeta, AbstractMap, [AbstractMap, Map_0]);
   setMetadataFor(Set, 'Set', interfaceMeta, VOID, [Collection]);
-  setMetadataFor(AbstractMutableSet, 'AbstractMutableSet', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Collection, Set]);
+  setMetadataFor(AbstractMutableSet, 'AbstractMutableSet', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Set, Collection]);
   setMetadataFor(Companion, 'Companion', objectMeta);
   setMetadataFor(ArrayList, 'ArrayList', classMeta, AbstractMutableList, [AbstractMutableList, List, Collection], ArrayList_init_$Create$);
   setMetadataFor(HashMap, 'HashMap', classMeta, AbstractMutableMap, [AbstractMutableMap, Map_0], HashMap_init_$Create$);
   setMetadataFor(HashMapValues, 'HashMapValues', classMeta, AbstractMutableCollection, [Collection, AbstractMutableCollection]);
-  setMetadataFor(HashMapEntrySetBase, 'HashMapEntrySetBase', classMeta, AbstractMutableSet, [Collection, Set, AbstractMutableSet]);
+  setMetadataFor(HashMapEntrySetBase, 'HashMapEntrySetBase', classMeta, AbstractMutableSet, [Set, Collection, AbstractMutableSet]);
   setMetadataFor(HashMapEntrySet, 'HashMapEntrySet', classMeta, HashMapEntrySetBase);
   setMetadataFor(HashMapValuesDefault$iterator$1, VOID, classMeta);
   setMetadataFor(HashMapValuesDefault, 'HashMapValuesDefault', classMeta, AbstractMutableCollection);
@@ -11882,6 +11882,13 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
       $this.texSky.id = $this.texSky2.id;
       $this.texSky.fileName = $this.texSky2.fileName;
     }
+    // Inline function 'kotlin.math.sin' call
+    var x = timer * $this.PIf * 2.0 - $this.PIf * 0.5;
+    var sineInOut = (Math.sin(x) + 1.0) * 0.5;
+    var dimming = sineInOut * 0.7;
+    $this.aq_1.color0.x = 0.7 - dimming;
+    $this.aq_1.color0.y = 0.7 - dimming;
+    $this.aq_1.color0.z = 0.7 - dimming;
   }
   function updatePlaneTransforms($this, current) {
     var txPlane = current ? $this.lq_1 : $this.kq_1;
@@ -11889,6 +11896,8 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     var props = Props_getInstance().ep_1[current ? $this.settings.nextPlane : $this.settings.currentPlane];
     var phase = current ? 0.0 : 0.0;
     var scaleProps = Props_getInstance().fp_1[current ? $this.settings.nextPlane : $this.settings.currentPlane] * $this.qp_1;
+    var commandDiffuse = current ? $this.gq_1 : $this.eq_1;
+    var commandOutline = current ? $this.hq_1 : $this.fq_1;
     var timer = $this.lp_1.ei(Timers_SwapPlanes_getInstance());
     var scale = current ? MathUtils_instance.xc(0.0, 0.3, timer) : 1.0 - MathUtils_instance.xc(0.0, 1.0, timer);
     var timerOffset = MathUtils_instance.ng(0.0, 1.0, timer);
@@ -11905,6 +11914,13 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     while (tmp0_iterator.o()) {
       var command = tmp0_iterator.p();
       command.enabled = false;
+    }
+    if (scale === 0.0) {
+      commandDiffuse.enabled = false;
+      commandOutline.enabled = false;
+    } else {
+      commandDiffuse.enabled = true;
+      commandOutline.enabled = true;
     }
     if (scale > 0.33) {
       var inductionVariable = 0;
@@ -12152,7 +12168,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     var this_4 = new VignetteCommand();
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
-    this_4.color0 = new Vec4(0.6, 0.6, 0.6, 1.0);
+    this_4.color0 = new Vec4(0.7, 0.7, 0.7, 1.0);
     this_4.color1 = new Vec4(1.0, 1.0, 1.0, 1.0);
     tmp_36.aq_1 = this_4;
     this.vp_1 = GroupCommandArr(true, [MainPassCommandArr(true, [this.yp_1, this.eq_1, this.fq_1, this.gq_1, this.hq_1, this.dq_1, this.cq_1, this.iq_1, this.jq_1, this.aq_1])]);
@@ -12448,7 +12464,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     timers.ci(Timers_PlaneBanking_getInstance(), 22800.0);
     timers.di(Timers_Camera_getInstance(), 28800.0, false);
     timers.di(Timers_SwapPlanes_getInstance(), 4000.0, false);
-    timers.di(Timers_SwapSky_getInstance(), 4000.0, false);
+    timers.di(Timers_SwapSky_getInstance(), 7000.0, false);
   };
   var Companion_instance_0;
   var Timers_entriesInitialized_0;
@@ -15952,7 +15968,7 @@ class Renderer extends SceneRenderer {
         const length = 7;
         const currentSky = +(this.scene.texSky.fileName.charAt(this.scene.texSky.fileName.length - 1));
         const newSkyId = (currentSky + 1 + Math.trunc(Math.random() * (length - 2))) % length;
-        const timeOfDay = "day";
+        const timeOfDay = ["day", "night", "morning"][Math.trunc(Math.random() * 3)];
         this.scene.texSky.id;
         const id1 = this.scene.texSky1.id;
         const id2 = this.scene.texSky2.id;
@@ -15969,8 +15985,6 @@ class Renderer extends SceneRenderer {
         this.textures[id1] = newSkyTexture2;
         this.scene.texSky2.id = id1;
         (_a = this.scene) === null || _a === void 0 ? void 0 : _a.changeSky();
-        // Update draw commands after changing sky
-        // this.processCommands(this.commands);
     }
     async randomizePlane() {
         var _a;

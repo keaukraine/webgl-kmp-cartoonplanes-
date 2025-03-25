@@ -70,7 +70,7 @@ export class Renderer extends SceneRenderer<lib.org.androidworks.cartoonplanes.C
         const length = 7;
         const currentSky = +(this.scene.texSky.fileName.charAt(this.scene.texSky.fileName.length - 1));
         const newSkyId = (currentSky + 1 + Math.trunc(Math.random() * (length - 2))) % length;
-        const timeOfDay = "day";
+        const timeOfDay = ["day", "night", "morning"][Math.trunc(Math.random() * 3)];
 
         const id = this.scene.texSky.id;
         const id1 = this.scene.texSky1.id;
@@ -92,9 +92,6 @@ export class Renderer extends SceneRenderer<lib.org.androidworks.cartoonplanes.C
         this.scene.texSky2.id = id1;
 
         this.scene?.changeSky();
-
-        // Update draw commands after changing sky
-        // this.processCommands(this.commands);
     }
 
     public async randomizePlane(): Promise<void> {
