@@ -2337,7 +2337,7 @@
     // Inline function 'kotlin.math.sin' call
     var x = timer * $this.PIf * 2.0 - $this.PIf * 0.5;
     var sineInOut = (Math.sin(x) + 1.0) * 0.5;
-    var dimming = sineInOut * 0.7;
+    var dimming = sineInOut * 0.5;
     $this.bq_1.color0.x = 0.7 - dimming;
     $this.bq_1.color0.y = 0.7 - dimming;
     $this.bq_1.color0.z = 0.7 - dimming;
@@ -2434,8 +2434,8 @@
       tmp_1.z = Math.sin(angleY) * $this.wq_1;
       Matrix_getInstance().ug($this.matView, 0, $this.xq_1.x, $this.xq_1.y, $this.xq_1.z, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
       if (timer === 1.0) {
-        $this.mp_1.fi(Timers_Camera_getInstance(), 0.0);
         randomizeCamera($this);
+        $this.mp_1.fi(Timers_Camera_getInstance(), 0.0);
       }
     }
   }
@@ -2474,7 +2474,7 @@
       $this.uq_1 = Default_getInstance().q5() * $this.PIf * 2.0;
       $this.vq_1 = (Default_getInstance().q5() - 0.3) * $this.PIf * 0.9;
     }
-    $this.wq_1 = 2700.0 + Default_getInstance().q5() * 800.0;
+    $this.wq_1 = 3300.0;
   }
   function CartoonPlanesScene() {
     Scene.call(this);
