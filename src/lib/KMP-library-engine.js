@@ -3914,7 +3914,18 @@
     var timer = tmp;
     timer.xh_1 = value;
   };
-  protoOf(TimersMap).gi = function (timeNow) {
+  protoOf(TimersMap).gi = function (index) {
+    var tmp0_elvis_lhs = this.ai_1.i1(index);
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      throw Exception_init_$Create$('Timer not found');
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    var timer = tmp;
+    return timer;
+  };
+  protoOf(TimersMap).hi = function (timeNow) {
     // Inline function 'kotlin.collections.iterator' call
     var tmp0_iterator = this.ai_1.b1().h();
     while (tmp0_iterator.o()) {

@@ -1,4 +1,4 @@
-JAVA_PATH=C:\Users\keauk\.jdks\corretto-21.0.5
+JAVA_PATH=C:\Users\keaukraine\.jdks\corretto-21.0.6
 
 rmdir .\node_modules\.cache /s /q
 

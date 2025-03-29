@@ -1333,13 +1333,34 @@ export declare namespace org.androidworks.cartoonplanes {
         updateViewportSize(width: number, height: number): void;
         initialize(): void;
         changeSky(): void;
+        preventChangeSky(): void;
         randomizePropTexture(): void;
         setPropTexture(id: number): void;
         canChangePlanes(): boolean;
+        canChangeSky(): boolean;
         changePlanes(plane1: number, plane2: number): void;
     }
 }
 export declare namespace org.androidworks.cartoonplanes {
+    abstract class TimeOfDay {
+        private constructor();
+        static get Day(): org.androidworks.cartoonplanes.TimeOfDay & {
+            get name(): "Day";
+            get ordinal(): 0;
+        };
+        static get Night(): org.androidworks.cartoonplanes.TimeOfDay & {
+            get name(): "Night";
+            get ordinal(): 1;
+        };
+        static get Sunrise(): org.androidworks.cartoonplanes.TimeOfDay & {
+            get name(): "Sunrise";
+            get ordinal(): 2;
+        };
+        static values(): Array<org.androidworks.cartoonplanes.TimeOfDay>;
+        static valueOf(value: string): org.androidworks.cartoonplanes.TimeOfDay;
+        get name(): "Day" | "Night" | "Sunrise";
+        get ordinal(): 0 | 1 | 2;
+    }
     class CartoonPlanesSettings {
         constructor();
         get cameraPeriod(): number;
@@ -1358,6 +1379,8 @@ export declare namespace org.androidworks.cartoonplanes {
         set currentPlane(value: number);
         get nextPlane(): number;
         set nextPlane(value: number);
+        get timeOfDay(): org.androidworks.cartoonplanes.TimeOfDay;
+        set timeOfDay(value: org.androidworks.cartoonplanes.TimeOfDay);
     }
 }
 export declare namespace org.androidworks.example {
