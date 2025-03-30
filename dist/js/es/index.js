@@ -1872,12 +1872,12 @@ if (typeof Math.imul === 'undefined') {
   setMetadataFor(AbstractMap, 'AbstractMap', classMeta, VOID, [Map_0]);
   setMetadataFor(AbstractMutableMap, 'AbstractMutableMap', classMeta, AbstractMap, [AbstractMap, Map_0]);
   setMetadataFor(Set, 'Set', interfaceMeta, VOID, [Collection]);
-  setMetadataFor(AbstractMutableSet, 'AbstractMutableSet', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Collection, Set]);
+  setMetadataFor(AbstractMutableSet, 'AbstractMutableSet', classMeta, AbstractMutableCollection, [AbstractMutableCollection, Set, Collection]);
   setMetadataFor(Companion, 'Companion', objectMeta);
   setMetadataFor(ArrayList, 'ArrayList', classMeta, AbstractMutableList, [AbstractMutableList, List, Collection], ArrayList_init_$Create$);
   setMetadataFor(HashMap, 'HashMap', classMeta, AbstractMutableMap, [AbstractMutableMap, Map_0], HashMap_init_$Create$);
   setMetadataFor(HashMapValues, 'HashMapValues', classMeta, AbstractMutableCollection, [Collection, AbstractMutableCollection]);
-  setMetadataFor(HashMapEntrySetBase, 'HashMapEntrySetBase', classMeta, AbstractMutableSet, [Collection, Set, AbstractMutableSet]);
+  setMetadataFor(HashMapEntrySetBase, 'HashMapEntrySetBase', classMeta, AbstractMutableSet, [Set, Collection, AbstractMutableSet]);
   setMetadataFor(HashMapEntrySet, 'HashMapEntrySet', classMeta, HashMapEntrySetBase);
   setMetadataFor(HashMapValuesDefault$iterator$1, VOID, classMeta);
   setMetadataFor(HashMapValuesDefault, 'HashMapValuesDefault', classMeta, AbstractMutableCollection);
@@ -11863,12 +11863,13 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     return Props_instance;
   }
   function applySettings($this) {
-    $this.wp_1.enabled = !$this.settings.blurred;
-    $this.xp_1.enabled = $this.settings.blurred;
-    $this.bq_1.enabled = $this.settings.vignette;
-    $this.yp_1.additionalBlur = !$this.settings.lowQuality;
-    $this.bq_1.enabled = !$this.settings.lowQuality;
-    var cameraPeriod = $this.settings.cameraPeriod * Companion_instance_0.yq_1;
+    $this.kq_1.s(0, $this.settings.lowQuality ? get_HINT_VRS_2X2() : get_HINT_VRS_NONE());
+    $this.tp_1.enabled = !$this.settings.blurred;
+    $this.up_1.enabled = $this.settings.blurred;
+    $this.yp_1.enabled = $this.settings.vignette;
+    $this.vp_1.additionalBlur = !$this.settings.lowQuality;
+    $this.yp_1.enabled = !$this.settings.lowQuality;
+    var cameraPeriod = $this.settings.cameraPeriod * Companion_instance_0.vq_1;
     var params = $this.mp_1.gi(Timers_Camera_getInstance());
     if (!(params.yh_1 === cameraPeriod)) {
       $this.mp_1.di(Timers_Camera_getInstance(), cameraPeriod, false);
@@ -11879,7 +11880,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     applySettings($this);
     positionCamera($this);
     $this.calculateProjection();
-    calculatePlanePosition($this, $this.rq_1, 0.0);
+    calculatePlanePosition($this, $this.oq_1, 0.0);
     updatePlaneTransforms($this, true);
     updatePlaneTransforms($this, false);
     updateSky($this);
@@ -11888,14 +11889,14 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   function updateSky($this) {
     var timer = $this.mp_1.ei(Timers_SwapSky_getInstance());
     if (timer > 0.1 ? timer < 0.9 : false) {
-      $this.eq_1.enabled = false;
-      $this.dq_1.enabled = true;
-      setUniform_1($this.dq_1.uniforms.q(4), timer);
-      $this.dq_1.transform.l9_1 = $this.xq_1;
+      $this.bq_1.enabled = false;
+      $this.aq_1.enabled = true;
+      setUniform_1($this.aq_1.uniforms.q(4), timer);
+      $this.aq_1.transform.l9_1 = $this.uq_1;
     } else {
-      $this.eq_1.enabled = true;
-      $this.dq_1.enabled = false;
-      $this.eq_1.transform.l9_1 = $this.xq_1;
+      $this.bq_1.enabled = true;
+      $this.aq_1.enabled = false;
+      $this.bq_1.transform.l9_1 = $this.uq_1;
     }
     if (timer > 0.5) {
       $this.texSky.id = $this.texSky2.id;
@@ -11905,27 +11906,27 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     var x = timer * $this.PIf * 2.0 - $this.PIf * 0.5;
     var sineInOut = (Math.sin(x) + 1.0) * 0.5;
     var dimming = sineInOut * 0.5;
-    $this.bq_1.color0.x = 0.7 - dimming;
-    $this.bq_1.color0.y = 0.7 - dimming;
-    $this.bq_1.color0.z = 0.7 - dimming;
+    $this.yp_1.color0.x = 0.7 - dimming;
+    $this.yp_1.color0.y = 0.7 - dimming;
+    $this.yp_1.color0.z = 0.7 - dimming;
   }
   function updatePlaneTransforms($this, current) {
-    var txPlane = current ? $this.mq_1 : $this.lq_1;
-    var groupProps = current ? $this.kq_1 : $this.jq_1;
+    var txPlane = current ? $this.jq_1 : $this.iq_1;
+    var groupProps = current ? $this.hq_1 : $this.gq_1;
     var props = Props_getInstance().fp_1[current ? $this.settings.nextPlane : $this.settings.currentPlane];
     var phase = current ? 0.0 : 0.0;
     var scaleProps = Props_getInstance().gp_1[current ? $this.settings.nextPlane : $this.settings.currentPlane] * $this.rp_1;
-    var commandDiffuse = current ? $this.hq_1 : $this.fq_1;
-    var commandOutline = current ? $this.iq_1 : $this.gq_1;
+    var commandDiffuse = current ? $this.eq_1 : $this.cq_1;
+    var commandOutline = current ? $this.fq_1 : $this.dq_1;
     var timer = $this.mp_1.ei(Timers_SwapPlanes_getInstance());
     var scale = current ? MathUtils_instance.xc(0.0, 0.3, timer) : 1.0 - MathUtils_instance.xc(0.0, 1.0, timer);
     var timerOffset = MathUtils_instance.ng(0.0, 1.0, timer);
     var offsetZ = current ? 18000.0 * (1.0 - timerOffset) : timerOffset * -12000.0;
     var offsetX = current ? offsetZ * 0.25 : offsetZ * 1.3;
-    txPlane.l9_1.x = $this.pq_1.x + offsetX;
-    txPlane.l9_1.y = $this.pq_1.y;
-    txPlane.l9_1.z = $this.pq_1.z + offsetZ;
-    txPlane.m9_1.x = MathUtils_instance.og($this.qq_1);
+    txPlane.l9_1.x = $this.mq_1.x + offsetX;
+    txPlane.l9_1.y = $this.mq_1.y;
+    txPlane.l9_1.z = $this.mq_1.z + offsetZ;
+    txPlane.m9_1.x = MathUtils_instance.og($this.nq_1);
     txPlane.n9_1.x = $this.qp_1 * scale;
     txPlane.n9_1.y = $this.qp_1 * scale;
     txPlane.n9_1.z = $this.qp_1 * scale;
@@ -11950,19 +11951,19 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
         inductionVariable = inductionVariable + 1 | 0;
         var tmp = prop.y;
         // Inline function 'kotlin.math.cos' call
-        var x = $this.qq_1;
+        var x = $this.nq_1;
         var tmp_0 = tmp * Math.cos(x);
         var tmp_1 = prop.z;
         // Inline function 'kotlin.math.sin' call
-        var x_0 = $this.qq_1;
+        var x_0 = $this.nq_1;
         var propY = tmp_0 - tmp_1 * Math.sin(x_0);
         var tmp_2 = prop.z;
         // Inline function 'kotlin.math.cos' call
-        var x_1 = $this.qq_1;
+        var x_1 = $this.nq_1;
         var tmp_3 = tmp_2 * Math.cos(x_1);
         var tmp_4 = prop.y;
         // Inline function 'kotlin.math.sin' call
-        var x_2 = $this.qq_1;
+        var x_2 = $this.nq_1;
         var propZ = tmp_3 + tmp_4 * Math.sin(x_2);
         var rotation = MathUtils_instance.og($this.mp_1.ei(Timers_PropRotate_getInstance()) * $this.PIf * 2.0 + propIndex + phase);
         // Inline function 'kotlin.math.sin' call
@@ -11975,9 +11976,9 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
         command_0.transform.m9_1.x = MathUtils_instance.og(rotation);
         command_0.transform.m9_1.y = 0.0;
         command_0.transform.m9_1.z = 0.0;
-        command_0.transform.l9_1.x = ($this.pq_1.x + prop.x) * scale + offsetX;
-        command_0.transform.l9_1.y = ($this.pq_1.y + propY) * scale;
-        command_0.transform.l9_1.z = ($this.pq_1.z + propZ) * scale + offsetZ;
+        command_0.transform.l9_1.x = ($this.mq_1.x + prop.x) * scale + offsetX;
+        command_0.transform.l9_1.y = ($this.mq_1.y + propY) * scale;
+        command_0.transform.l9_1.z = ($this.mq_1.z + propZ) * scale + offsetZ;
         command_0.transform.n9_1.x = scaleProps * scale;
         command_0.transform.n9_1.y = scaleProps * scale;
         command_0.transform.n9_1.z = scaleProps * scale;
@@ -11988,18 +11989,18 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     if (!$this.useExternalViewMatrix) {
       var timer = $this.mp_1.ei(Timers_Camera_getInstance());
       timer = MathUtils_instance.xc(0.0, 1.0, timer);
-      var angleX = $this.sq_1 + timer * ($this.uq_1 - $this.sq_1);
-      var angleY = $this.tq_1 + timer * ($this.vq_1 - $this.tq_1);
-      var tmp = $this.xq_1;
+      var angleX = $this.pq_1 + timer * ($this.rq_1 - $this.pq_1);
+      var angleY = $this.qq_1 + timer * ($this.sq_1 - $this.qq_1);
+      var tmp = $this.uq_1;
       // Inline function 'kotlin.math.sin' call
-      tmp.x = Math.sin(angleX) * $this.wq_1;
-      var tmp_0 = $this.xq_1;
+      tmp.x = Math.sin(angleX) * $this.tq_1;
+      var tmp_0 = $this.uq_1;
       // Inline function 'kotlin.math.cos' call
-      tmp_0.y = Math.cos(angleX) * $this.wq_1;
-      var tmp_1 = $this.xq_1;
+      tmp_0.y = Math.cos(angleX) * $this.tq_1;
+      var tmp_1 = $this.uq_1;
       // Inline function 'kotlin.math.sin' call
-      tmp_1.z = Math.sin(angleY) * $this.wq_1;
-      Matrix_getInstance().ug($this.matView, 0, $this.xq_1.x, $this.xq_1.y, $this.xq_1.z, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+      tmp_1.z = Math.sin(angleY) * $this.tq_1;
+      Matrix_getInstance().ug($this.matView, 0, $this.uq_1.x, $this.uq_1.y, $this.uq_1.z, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
       if (timer === 1.0) {
         randomizeCamera($this);
         $this.mp_1.fi(Timers_Camera_getInstance(), 0.0);
@@ -12013,35 +12014,35 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     // Inline function 'kotlin.math.sin' call
     var x = time1 * 3.0 * $this.PIf * 2.0;
     var tmp$ret$0 = Math.sin(x);
-    $this.pq_1.x = tmp + tmp$ret$0 * $this.op_1 * 3.0;
+    $this.mq_1.x = tmp + tmp$ret$0 * $this.op_1 * 3.0;
     var tmp_0 = offset.y;
     // Inline function 'kotlin.math.cos' call
     var x_0 = time1 * 5.0 * $this.PIf * 2.0;
     var tmp$ret$1 = Math.cos(x_0);
-    $this.pq_1.y = tmp_0 + tmp$ret$1 * $this.op_1;
+    $this.mq_1.y = tmp_0 + tmp$ret$1 * $this.op_1;
     var tmp_1 = offset.z;
     // Inline function 'kotlin.math.cos' call
     var x_1 = time2 * $this.PIf * 2.0;
     var tmp$ret$2 = Math.cos(x_1);
-    $this.pq_1.z = tmp_1 + tmp$ret$2 * $this.pp_1;
+    $this.mq_1.z = tmp_1 + tmp$ret$2 * $this.pp_1;
     var tmp_2 = $this;
     // Inline function 'kotlin.math.sin' call
     var x_2 = $this.mp_1.ei(Timers_PlaneBanking_getInstance()) * $this.PIf * 2.0;
-    tmp_2.qq_1 = Math.sin(x_2) * $this.np_1 * 1.0;
+    tmp_2.nq_1 = Math.sin(x_2) * $this.np_1 * 1.0;
   }
   function randomizeCamera($this) {
     if ($this.mp_1.ei(Timers_Camera_getInstance()) === 0.0) {
-      $this.sq_1 = Default_getInstance().q5() * $this.PIf * 2.0;
-      $this.tq_1 = (Default_getInstance().q5() - 0.3) * $this.PIf * 0.9;
-      $this.uq_1 = Default_getInstance().q5() * $this.PIf * 2.0;
-      $this.vq_1 = (Default_getInstance().q5() - 0.3) * $this.PIf * 0.9;
+      $this.pq_1 = Default_getInstance().q5() * $this.PIf * 2.0;
+      $this.qq_1 = (Default_getInstance().q5() - 0.3) * $this.PIf * 0.9;
+      $this.rq_1 = Default_getInstance().q5() * $this.PIf * 2.0;
+      $this.sq_1 = (Default_getInstance().q5() - 0.3) * $this.PIf * 0.9;
     } else {
-      $this.sq_1 = $this.uq_1;
-      $this.tq_1 = $this.vq_1;
-      $this.uq_1 = Default_getInstance().q5() * $this.PIf * 2.0;
-      $this.vq_1 = (Default_getInstance().q5() - 0.3) * $this.PIf * 0.9;
+      $this.pq_1 = $this.rq_1;
+      $this.qq_1 = $this.sq_1;
+      $this.rq_1 = Default_getInstance().q5() * $this.PIf * 2.0;
+      $this.sq_1 = (Default_getInstance().q5() - 0.3) * $this.PIf * 0.9;
     }
-    $this.wq_1 = 3300.0;
+    $this.tq_1 = 3300.0;
   }
   function CartoonPlanesScene() {
     Scene.call(this);
@@ -12051,37 +12052,34 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this.pp_1 = 100.0;
     this.qp_1 = 10.0;
     this.rp_1 = 500.0;
-    this.sp_1 = 1.5;
-    this.tp_1 = 1000000.0;
-    this.up_1 = 29000.0;
-    this.vp_1 = 2600.0;
-    this.lq_1 = new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.qp_1, this.qp_1, this.qp_1));
-    this.mq_1 = new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.qp_1, this.qp_1, this.qp_1));
-    this.nq_1 = mutableListOf([get_HINT_VRS_2X2()]);
+    this.sp_1 = 1.7;
+    this.iq_1 = new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.qp_1, this.qp_1, this.qp_1));
+    this.jq_1 = new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.qp_1, this.qp_1, this.qp_1));
+    this.kq_1 = mutableListOf([get_HINT_VRS_NONE()]);
     this.PIf = 3.1415927;
     var tmp = this;
     // Inline function 'kotlin.floatArrayOf' call
-    tmp.oq_1 = new Float32Array([0.5]);
-    this.pq_1 = new Vec3();
+    tmp.lq_1 = new Float32Array([0.5]);
+    this.mq_1 = new Vec3();
+    this.nq_1 = 0.0;
+    this.oq_1 = new Vec3(0.0, 0.0, 0.0);
+    this.pq_1 = 0.0;
     this.qq_1 = 0.0;
-    this.rq_1 = new Vec3(0.0, 0.0, 0.0);
+    this.rq_1 = 0.0;
     this.sq_1 = 0.0;
-    this.tq_1 = 0.0;
-    this.uq_1 = 0.0;
-    this.vq_1 = 0.0;
-    this.wq_1 = 3000.0;
-    this.xq_1 = new Vec3();
-    this.texSky = Textures_getInstance_0().cr_1;
-    this.texSky1 = Textures_getInstance_0().ar_1;
-    this.texSky2 = Textures_getInstance_0().br_1;
+    this.tq_1 = 3000.0;
+    this.uq_1 = new Vec3();
+    this.texSky = Textures_getInstance_0().zq_1;
+    this.texSky1 = Textures_getInstance_0().xq_1;
+    this.texSky2 = Textures_getInstance_0().yq_1;
     this.meshPlane1 = Meshes_getInstance_0().cp_1;
     this.meshPlane2 = Meshes_getInstance_0().dp_1;
-    this.texPlane1 = Textures_getInstance_0().dr_1;
-    this.texPlane2 = Textures_getInstance_0().er_1;
+    this.texPlane1 = Textures_getInstance_0().ar_1;
+    this.texPlane2 = Textures_getInstance_0().br_1;
     this.meshes = Meshes_getInstance_0().ep_1;
-    this.textures = Textures_getInstance_0().gr_1;
-    this.shaders = Shaders_getInstance_0().lr_1;
-    Companion_instance_0.mr(this.mp_1);
+    this.textures = Textures_getInstance_0().dr_1;
+    this.shaders = Shaders_getInstance_0().ir_1;
+    Companion_instance_0.jr(this.mp_1);
     this.Z_NEAR = 30.0;
     this.Z_FAR = 30000.0;
     this.FOV_LANDSCAPE = 75.0;
@@ -12106,120 +12104,138 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_1.color = new Vec4(0.0, 0.7843137254901961, 0.0, 1.0);
     this_1.name = 'clear color';
     this_1.enabled = true;
-    tmp_1.aq_1 = this_1;
+    tmp_1.xp_1 = this_1;
     new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(1.0, 1.0, 1.0));
-    var stateSky = new DrawMeshState(Shaders_getInstance_0().ir_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 12));
-    this.dq_1 = new DrawTransformedMeshCommand(Meshes_getInstance_0().ap_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_0().ar_1), new UniformTextureValue(Textures_getInstance_0().br_1), new UniformTextureValue(Textures_getInstance_0().zq_1), UniformFloatValueWithArray(this.oq_1)]), stateSky, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(350.0, 350.0, 350.0)));
-    var stateSkyStatic = new DrawMeshState(Shaders_getInstance_0().hr_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 12));
-    this.eq_1 = new DrawTransformedMeshCommand(Meshes_getInstance_0().ap_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(this.texSky)]), stateSkyStatic, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(350.0, 350.0, 350.0)));
-    var statePlaneDiffuse = new DrawMeshState(Shaders_getInstance_0().hr_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 16));
-    this.fq_1 = new DrawTransformedMeshCommand(Meshes_getInstance_0().cp_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_0().dr_1)]), statePlaneDiffuse, this.lq_1);
-    this.hq_1 = new DrawTransformedMeshCommand(Meshes_getInstance_0().dp_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_0().er_1)]), statePlaneDiffuse, this.mq_1);
-    var statePlaneOutline = new DrawMeshState(Shaders_getInstance_0().jr_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_FRONT_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_NORMAL_getInstance(), 1, VertexFormat_HALF3_getInstance(), 10)]), 16));
+    var stateSky = new DrawMeshState(Shaders_getInstance_0().fr_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 12));
+    this.aq_1 = new DrawTransformedMeshCommand(Meshes_getInstance_0().ap_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_0().xq_1), new UniformTextureValue(Textures_getInstance_0().yq_1), new UniformTextureValue(Textures_getInstance_0().wq_1), UniformFloatValueWithArray(this.lq_1)]), stateSky, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(350.0, 350.0, 350.0)));
+    var stateSkyStatic = new DrawMeshState(Shaders_getInstance_0().er_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 12));
     var tmp_2 = this;
-    var tmp_3 = Meshes_getInstance_0().cp_1;
-    var tmp_4 = UniformFloatValueWithArray(new Float32Array(16));
-    // Inline function 'kotlin.floatArrayOf' call
-    var tmp$ret$3 = new Float32Array([1.5]);
-    var tmp_5 = UniformFloatValueWithArray(tmp$ret$3);
-    // Inline function 'kotlin.floatArrayOf' call
-    var tmp$ret$4 = new Float32Array([0.0, 0.0, 0.0, 1.0]);
-    tmp_2.gq_1 = new DrawTransformedMeshCommand(tmp_3, listOf([tmp_4, tmp_5, UniformFloatValueWithArray(tmp$ret$4)]), statePlaneOutline, this.lq_1);
-    var tmp_6 = this;
-    var tmp_7 = Meshes_getInstance_0().dp_1;
-    var tmp_8 = UniformFloatValueWithArray(new Float32Array(16));
-    // Inline function 'kotlin.floatArrayOf' call
-    var tmp$ret$5 = new Float32Array([1.5]);
-    var tmp_9 = UniformFloatValueWithArray(tmp$ret$5);
-    // Inline function 'kotlin.floatArrayOf' call
-    var tmp$ret$6 = new Float32Array([0.0, 0.0, 0.0, 1.0]);
-    tmp_6.iq_1 = new DrawTransformedMeshCommand(tmp_7, listOf([tmp_8, tmp_9, UniformFloatValueWithArray(tmp$ret$6)]), statePlaneOutline, this.mq_1);
-    var tmp_10 = Shaders_getInstance_0().kr_1;
     // Inline function 'kotlin.apply' call
-    var this_2 = new Blending();
+    var this_2 = new DrawTransformedMeshCommand(Meshes_getInstance_0().ap_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(this.texSky)]), stateSkyStatic, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(350.0, 350.0, 350.0)));
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
-    this_2.enabled = true;
-    this_2.equationColor = BlendingEquation_ADD_getInstance();
-    this_2.sourceFactorColor = BlendingFactor_SRC_ALPHA_getInstance();
-    this_2.destinationFactorColor = BlendingFactor_ONE_getInstance();
-    var stateProp = new DrawMeshState(tmp_10, this_2, get_DEPTH_NO_WRITE(), CullFace_DISABLED_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 12));
-    var tmp_11 = this;
-    var tmp_12 = Meshes_getInstance_0().bp_1;
-    var tmp_13 = UniformFloatValueWithArray(new Float32Array(16));
-    var tmp_14 = new UniformTextureValue(Textures_getInstance_0().fr_1);
+    this_2.hints = this.kq_1;
+    tmp_2.bq_1 = this_2;
+    var statePlaneDiffuse = new DrawMeshState(Shaders_getInstance_0().er_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 16));
+    var tmp_3 = this;
+    // Inline function 'kotlin.apply' call
+    var this_3 = new DrawTransformedMeshCommand(Meshes_getInstance_0().cp_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_0().ar_1)]), statePlaneDiffuse, this.iq_1);
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
+    this_3.hints = this.kq_1;
+    tmp_3.cq_1 = this_3;
+    var tmp_4 = this;
+    // Inline function 'kotlin.apply' call
+    var this_4 = new DrawTransformedMeshCommand(Meshes_getInstance_0().dp_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_0().br_1)]), statePlaneDiffuse, this.jq_1);
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
+    this_4.hints = this.kq_1;
+    tmp_4.eq_1 = this_4;
+    var statePlaneOutline = new DrawMeshState(Shaders_getInstance_0().gr_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_FRONT_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_NORMAL_getInstance(), 1, VertexFormat_HALF3_getInstance(), 10)]), 16));
+    var tmp_5 = this;
+    var tmp_6 = Meshes_getInstance_0().cp_1;
+    var tmp_7 = UniformFloatValueWithArray(new Float32Array(16));
     // Inline function 'kotlin.floatArrayOf' call
-    var tmp$ret$8 = new Float32Array([1.5]);
-    var tmp_15 = new DrawTransformedMeshCommand(tmp_12, listOf([tmp_13, tmp_14, UniformFloatValueWithArray(tmp$ret$8)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)));
-    var tmp_16 = Meshes_getInstance_0().bp_1;
-    var tmp_17 = UniformFloatValueWithArray(new Float32Array(16));
-    var tmp_18 = new UniformTextureValue(Textures_getInstance_0().fr_1);
+    var tmp$ret$6 = new Float32Array([this.sp_1]);
+    var tmp_8 = UniformFloatValueWithArray(tmp$ret$6);
     // Inline function 'kotlin.floatArrayOf' call
-    var tmp$ret$9 = new Float32Array([1.5]);
-    var tmp_19 = new DrawTransformedMeshCommand(tmp_16, listOf([tmp_17, tmp_18, UniformFloatValueWithArray(tmp$ret$9)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)));
-    var tmp_20 = Meshes_getInstance_0().bp_1;
-    var tmp_21 = UniformFloatValueWithArray(new Float32Array(16));
-    var tmp_22 = new UniformTextureValue(Textures_getInstance_0().fr_1);
+    var tmp$ret$7 = new Float32Array([0.0, 0.0, 0.0, 1.0]);
+    tmp_5.dq_1 = new DrawTransformedMeshCommand(tmp_6, listOf([tmp_7, tmp_8, UniformFloatValueWithArray(tmp$ret$7)]), statePlaneOutline, this.iq_1);
+    var tmp_9 = this;
+    var tmp_10 = Meshes_getInstance_0().dp_1;
+    var tmp_11 = UniformFloatValueWithArray(new Float32Array(16));
     // Inline function 'kotlin.floatArrayOf' call
-    var tmp$ret$10 = new Float32Array([1.5]);
-    tmp_11.jq_1 = GroupCommandArr(true, [tmp_15, tmp_19, new DrawTransformedMeshCommand(tmp_20, listOf([tmp_21, tmp_22, UniformFloatValueWithArray(tmp$ret$10)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)))]);
-    var tmp_23 = this;
-    var tmp_24 = Meshes_getInstance_0().bp_1;
-    var tmp_25 = UniformFloatValueWithArray(new Float32Array(16));
-    var tmp_26 = new UniformTextureValue(Textures_getInstance_0().fr_1);
+    var tmp$ret$8 = new Float32Array([this.sp_1]);
+    var tmp_12 = UniformFloatValueWithArray(tmp$ret$8);
+    // Inline function 'kotlin.floatArrayOf' call
+    var tmp$ret$9 = new Float32Array([0.0, 0.0, 0.0, 1.0]);
+    tmp_9.fq_1 = new DrawTransformedMeshCommand(tmp_10, listOf([tmp_11, tmp_12, UniformFloatValueWithArray(tmp$ret$9)]), statePlaneOutline, this.jq_1);
+    var tmp_13 = Shaders_getInstance_0().hr_1;
+    // Inline function 'kotlin.apply' call
+    var this_5 = new Blending();
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
+    this_5.enabled = true;
+    this_5.equationColor = BlendingEquation_ADD_getInstance();
+    this_5.sourceFactorColor = BlendingFactor_SRC_ALPHA_getInstance();
+    this_5.destinationFactorColor = BlendingFactor_ONE_getInstance();
+    var stateProp = new DrawMeshState(tmp_13, this_5, get_DEPTH_NO_WRITE(), CullFace_DISABLED_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 12));
+    var tmp_14 = this;
+    var tmp_15 = Meshes_getInstance_0().bp_1;
+    var tmp_16 = UniformFloatValueWithArray(new Float32Array(16));
+    var tmp_17 = new UniformTextureValue(Textures_getInstance_0().cr_1);
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$11 = new Float32Array([1.5]);
-    var tmp_27 = new DrawTransformedMeshCommand(tmp_24, listOf([tmp_25, tmp_26, UniformFloatValueWithArray(tmp$ret$11)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)));
-    var tmp_28 = Meshes_getInstance_0().bp_1;
-    var tmp_29 = UniformFloatValueWithArray(new Float32Array(16));
-    var tmp_30 = new UniformTextureValue(Textures_getInstance_0().fr_1);
+    var tmp_18 = new DrawTransformedMeshCommand(tmp_15, listOf([tmp_16, tmp_17, UniformFloatValueWithArray(tmp$ret$11)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)));
+    var tmp_19 = Meshes_getInstance_0().bp_1;
+    var tmp_20 = UniformFloatValueWithArray(new Float32Array(16));
+    var tmp_21 = new UniformTextureValue(Textures_getInstance_0().cr_1);
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$12 = new Float32Array([1.5]);
-    var tmp_31 = new DrawTransformedMeshCommand(tmp_28, listOf([tmp_29, tmp_30, UniformFloatValueWithArray(tmp$ret$12)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)));
-    var tmp_32 = Meshes_getInstance_0().bp_1;
-    var tmp_33 = UniformFloatValueWithArray(new Float32Array(16));
-    var tmp_34 = new UniformTextureValue(Textures_getInstance_0().fr_1);
+    var tmp_22 = new DrawTransformedMeshCommand(tmp_19, listOf([tmp_20, tmp_21, UniformFloatValueWithArray(tmp$ret$12)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)));
+    var tmp_23 = Meshes_getInstance_0().bp_1;
+    var tmp_24 = UniformFloatValueWithArray(new Float32Array(16));
+    var tmp_25 = new UniformTextureValue(Textures_getInstance_0().cr_1);
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$13 = new Float32Array([1.5]);
-    tmp_23.kq_1 = GroupCommandArr(true, [tmp_27, tmp_31, new DrawTransformedMeshCommand(tmp_32, listOf([tmp_33, tmp_34, UniformFloatValueWithArray(tmp$ret$13)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)))]);
-    var tmp_35 = this;
-    // Inline function 'kotlin.apply' call
-    var this_3 = new ClearCommand();
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
-    this_3.clearType = ClearCommandClearType_COLOR_AND_DEPTH_getInstance();
-    tmp_35.zp_1 = GroupCommandArr(true, [this.aq_1, this_3]);
-    var tmp_36 = this;
-    // Inline function 'kotlin.apply' call
-    var this_4 = new VignetteCommand();
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
-    this_4.color0 = new Vec4(0.7, 0.7, 0.7, 1.0);
-    this_4.color1 = new Vec4(1.0, 1.0, 1.0, 1.0);
-    tmp_36.bq_1 = this_4;
-    this.wp_1 = GroupCommandArr(true, [MainPassCommandArr(true, [this.zp_1, this.fq_1, this.gq_1, this.hq_1, this.iq_1, this.eq_1, this.dq_1, this.jq_1, this.kq_1, this.bq_1])]);
-    var tmp_37 = this;
-    // Inline function 'kotlin.apply' call
-    var this_5 = new BlurredPassCommand();
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
-    this_5.name = 'blurred-main';
-    this_5.enabled = true;
-    this_5.minSize = 180;
-    this_5.brightness = 0.95;
-    this_5.blurSize = BlurSize_KERNEL_4_getInstance();
-    this_5.commands = mutableListOf([this.zp_1, this.fq_1, this.gq_1, this.hq_1, this.iq_1, this.eq_1, this.dq_1, this.jq_1, this.kq_1, this.bq_1]);
-    tmp_37.yp_1 = this_5;
+    tmp_14.gq_1 = GroupCommandArr(true, [tmp_18, tmp_22, new DrawTransformedMeshCommand(tmp_23, listOf([tmp_24, tmp_25, UniformFloatValueWithArray(tmp$ret$13)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)))]);
+    var tmp_26 = this;
+    var tmp_27 = Meshes_getInstance_0().bp_1;
+    var tmp_28 = UniformFloatValueWithArray(new Float32Array(16));
+    var tmp_29 = new UniformTextureValue(Textures_getInstance_0().cr_1);
+    // Inline function 'kotlin.floatArrayOf' call
+    var tmp$ret$14 = new Float32Array([1.5]);
+    var tmp_30 = new DrawTransformedMeshCommand(tmp_27, listOf([tmp_28, tmp_29, UniformFloatValueWithArray(tmp$ret$14)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)));
+    var tmp_31 = Meshes_getInstance_0().bp_1;
+    var tmp_32 = UniformFloatValueWithArray(new Float32Array(16));
+    var tmp_33 = new UniformTextureValue(Textures_getInstance_0().cr_1);
+    // Inline function 'kotlin.floatArrayOf' call
+    var tmp$ret$15 = new Float32Array([1.5]);
+    var tmp_34 = new DrawTransformedMeshCommand(tmp_31, listOf([tmp_32, tmp_33, UniformFloatValueWithArray(tmp$ret$15)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)));
+    var tmp_35 = Meshes_getInstance_0().bp_1;
+    var tmp_36 = UniformFloatValueWithArray(new Float32Array(16));
+    var tmp_37 = new UniformTextureValue(Textures_getInstance_0().cr_1);
+    // Inline function 'kotlin.floatArrayOf' call
+    var tmp$ret$16 = new Float32Array([1.5]);
+    tmp_26.hq_1 = GroupCommandArr(true, [tmp_30, tmp_34, new DrawTransformedMeshCommand(tmp_35, listOf([tmp_36, tmp_37, UniformFloatValueWithArray(tmp$ret$16)]), stateProp, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.rp_1 * 3.0, this.rp_1 * 3.0, this.rp_1 * 3.0)))]);
     var tmp_38 = this;
     // Inline function 'kotlin.apply' call
-    var this_6 = new DrawBlurredCommand();
+    var this_6 = new ClearCommand();
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
-    this_6.name = 'draw blurred';
-    this_6.blending = get_BLENDING_NONE();
-    tmp_38.cq_1 = this_6;
-    this.xp_1 = GroupCommandArr(false, [this.yp_1, MainPassCommandArr(true, [this.zp_1, this.cq_1])]);
-    this.commands = mutableListOf([this.wp_1, this.xp_1]);
+    this_6.clearType = ClearCommandClearType_COLOR_AND_DEPTH_getInstance();
+    tmp_38.wp_1 = GroupCommandArr(true, [this.xp_1, this_6]);
+    var tmp_39 = this;
+    // Inline function 'kotlin.apply' call
+    var this_7 = new VignetteCommand();
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
+    this_7.color0 = new Vec4(0.7, 0.7, 0.7, 1.0);
+    this_7.color1 = new Vec4(1.0, 1.0, 1.0, 1.0);
+    tmp_39.yp_1 = this_7;
+    this.tp_1 = GroupCommandArr(true, [MainPassCommandArr(true, [this.wp_1, this.cq_1, this.dq_1, this.eq_1, this.fq_1, this.bq_1, this.aq_1, this.gq_1, this.hq_1, this.yp_1])]);
+    var tmp_40 = this;
+    // Inline function 'kotlin.apply' call
+    var this_8 = new BlurredPassCommand();
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
+    this_8.name = 'blurred-main';
+    this_8.enabled = true;
+    this_8.minSize = 180;
+    this_8.brightness = 0.95;
+    this_8.blurSize = BlurSize_KERNEL_4_getInstance();
+    this_8.commands = mutableListOf([this.wp_1, this.cq_1, this.dq_1, this.eq_1, this.fq_1, this.bq_1, this.aq_1, this.gq_1, this.hq_1, this.yp_1]);
+    tmp_40.vp_1 = this_8;
+    var tmp_41 = this;
+    // Inline function 'kotlin.apply' call
+    var this_9 = new DrawBlurredCommand();
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'org.androidworks.cartoonplanes.CartoonPlanesScene.<anonymous>' call
+    this_9.name = 'draw blurred';
+    this_9.blending = get_BLENDING_NONE();
+    tmp_41.zp_1 = this_9;
+    this.up_1 = GroupCommandArr(false, [this.vp_1, MainPassCommandArr(true, [this.wp_1, this.zp_1])]);
+    this.commands = mutableListOf([this.tp_1, this.up_1]);
   }
   protoOf(CartoonPlanesScene).nm = function () {
     return this.settings;
@@ -12227,46 +12243,46 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   protoOf(CartoonPlanesScene).dn = function () {
     return this.PIf;
   };
-  protoOf(CartoonPlanesScene).nr = function (_set____db54di) {
+  protoOf(CartoonPlanesScene).kr = function (_set____db54di) {
     this.texSky = _set____db54di;
   };
-  protoOf(CartoonPlanesScene).or = function () {
+  protoOf(CartoonPlanesScene).lr = function () {
     return this.texSky;
   };
-  protoOf(CartoonPlanesScene).pr = function (_set____db54di) {
+  protoOf(CartoonPlanesScene).mr = function (_set____db54di) {
     this.texSky1 = _set____db54di;
   };
-  protoOf(CartoonPlanesScene).qr = function () {
+  protoOf(CartoonPlanesScene).nr = function () {
     return this.texSky1;
   };
-  protoOf(CartoonPlanesScene).rr = function (_set____db54di) {
+  protoOf(CartoonPlanesScene).or = function (_set____db54di) {
     this.texSky2 = _set____db54di;
   };
-  protoOf(CartoonPlanesScene).sr = function () {
+  protoOf(CartoonPlanesScene).pr = function () {
     return this.texSky2;
   };
-  protoOf(CartoonPlanesScene).tr = function (_set____db54di) {
+  protoOf(CartoonPlanesScene).qr = function (_set____db54di) {
     this.meshPlane1 = _set____db54di;
   };
-  protoOf(CartoonPlanesScene).ur = function () {
+  protoOf(CartoonPlanesScene).rr = function () {
     return this.meshPlane1;
   };
-  protoOf(CartoonPlanesScene).vr = function (_set____db54di) {
+  protoOf(CartoonPlanesScene).sr = function (_set____db54di) {
     this.meshPlane2 = _set____db54di;
   };
-  protoOf(CartoonPlanesScene).wr = function () {
+  protoOf(CartoonPlanesScene).tr = function () {
     return this.meshPlane2;
   };
-  protoOf(CartoonPlanesScene).xr = function (_set____db54di) {
+  protoOf(CartoonPlanesScene).ur = function (_set____db54di) {
     this.texPlane1 = _set____db54di;
   };
-  protoOf(CartoonPlanesScene).yr = function () {
+  protoOf(CartoonPlanesScene).vr = function () {
     return this.texPlane1;
   };
-  protoOf(CartoonPlanesScene).zr = function (_set____db54di) {
+  protoOf(CartoonPlanesScene).wr = function (_set____db54di) {
     this.texPlane2 = _set____db54di;
   };
-  protoOf(CartoonPlanesScene).as = function () {
+  protoOf(CartoonPlanesScene).xr = function () {
     return this.texPlane2;
   };
   protoOf(CartoonPlanesScene).updateTimers = function (time) {
@@ -12288,10 +12304,10 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   };
   protoOf(CartoonPlanesScene).randomizePropTexture = function () {
     var id = Default_getInstance().p5(2, 6);
-    Textures_getInstance_0().fr_1.fileName = 'prop/' + id;
+    Textures_getInstance_0().cr_1.fileName = 'prop/' + id;
   };
   protoOf(CartoonPlanesScene).setPropTexture = function (id) {
-    Textures_getInstance_0().fr_1.fileName = 'prop/' + id;
+    Textures_getInstance_0().cr_1.fileName = 'prop/' + id;
   };
   protoOf(CartoonPlanesScene).canChangePlanes = function () {
     return this.mp_1.ei(Timers_SwapPlanes_getInstance()) === 1.0;
@@ -12304,9 +12320,17 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this.settings.nextPlane = plane2;
     Meshes_getInstance_0().cp_1.fileName = 'plane' + plane1;
     Meshes_getInstance_0().dp_1.fileName = 'plane' + plane2;
-    Textures_getInstance_0().dr_1.fileName = 'plane' + plane1;
-    Textures_getInstance_0().er_1.fileName = 'plane' + plane2;
-    this.mp_1.fi(Timers_SwapPlanes_getInstance(), 0.0);
+    Textures_getInstance_0().ar_1.fileName = 'plane' + plane1;
+    Textures_getInstance_0().br_1.fileName = 'plane' + plane2;
+    if (!(plane1 === plane2)) {
+      this.mp_1.fi(Timers_SwapPlanes_getInstance(), 0.0);
+    } else {
+      if (Default_getInstance().q5() > 0.75) {
+        this.mp_1.fi(Timers_SwapPlanes_getInstance(), 0.0);
+      } else {
+        this.mp_1.fi(Timers_SwapPlanes_getInstance(), 1.0);
+      }
+    }
     animate(this);
   };
   var TimeOfDay_Day_instance_0;
@@ -12388,19 +12412,19 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   protoOf(CartoonPlanesSettings).rn = function () {
     return this.clock;
   };
-  protoOf(CartoonPlanesSettings).ds = function (_set____db54di) {
+  protoOf(CartoonPlanesSettings).as = function (_set____db54di) {
     this.currentPlane = _set____db54di;
   };
-  protoOf(CartoonPlanesSettings).es = function () {
+  protoOf(CartoonPlanesSettings).bs = function () {
     return this.currentPlane;
   };
-  protoOf(CartoonPlanesSettings).fs = function (_set____db54di) {
+  protoOf(CartoonPlanesSettings).cs = function (_set____db54di) {
     this.nextPlane = _set____db54di;
   };
-  protoOf(CartoonPlanesSettings).gs = function () {
+  protoOf(CartoonPlanesSettings).ds = function () {
     return this.nextPlane;
   };
-  protoOf(CartoonPlanesSettings).hs = function (_set____db54di) {
+  protoOf(CartoonPlanesSettings).es = function (_set____db54di) {
     this.timeOfDay = _set____db54di;
   };
   protoOf(CartoonPlanesSettings).pn = function () {
@@ -12420,11 +12444,11 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   }
   function Shaders_0() {
     Shaders_instance_0 = this;
-    this.hr_1 = new Shader('Diffuse');
-    this.ir_1 = new Shader('SkyTransition');
-    this.jr_1 = new Shader('Outline');
-    this.kr_1 = new Shader('Prop');
-    this.lr_1 = mutableListOf([this.hr_1, this.ir_1, this.jr_1, this.kr_1]);
+    this.er_1 = new Shader('Diffuse');
+    this.fr_1 = new Shader('SkyTransition');
+    this.gr_1 = new Shader('Outline');
+    this.hr_1 = new Shader('Prop');
+    this.ir_1 = mutableListOf([this.er_1, this.fr_1, this.gr_1, this.hr_1]);
   }
   var Shaders_instance_0;
   function Shaders_getInstance_0() {
@@ -12445,7 +12469,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_0.minFilter = TextureFiltering_LINEAR_getInstance();
     this_0.magFilter = TextureFiltering_LINEAR_getInstance();
     this_0.wrapping = TextureWrapping_CLAMP_TO_EDGE_getInstance();
-    tmp.zq_1 = this_0;
+    tmp.wq_1 = this_0;
     var tmp_0 = this;
     // Inline function 'kotlin.apply' call
     var this_1 = new Texture();
@@ -12457,7 +12481,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_1.minFilter = TextureFiltering_LINEAR_getInstance();
     this_1.magFilter = TextureFiltering_LINEAR_getInstance();
     this_1.wrapping = TextureWrapping_CLAMP_TO_EDGE_getInstance();
-    tmp_0.ar_1 = this_1;
+    tmp_0.xq_1 = this_1;
     var tmp_1 = this;
     // Inline function 'kotlin.apply' call
     var this_2 = new Texture();
@@ -12469,7 +12493,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_2.minFilter = TextureFiltering_LINEAR_getInstance();
     this_2.magFilter = TextureFiltering_LINEAR_getInstance();
     this_2.wrapping = TextureWrapping_CLAMP_TO_EDGE_getInstance();
-    tmp_1.br_1 = this_2;
+    tmp_1.yq_1 = this_2;
     var tmp_2 = this;
     // Inline function 'kotlin.apply' call
     var this_3 = new Texture();
@@ -12481,7 +12505,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_3.minFilter = TextureFiltering_LINEAR_getInstance();
     this_3.magFilter = TextureFiltering_LINEAR_getInstance();
     this_3.wrapping = TextureWrapping_CLAMP_TO_EDGE_getInstance();
-    tmp_2.cr_1 = this_3;
+    tmp_2.zq_1 = this_3;
     var tmp_3 = this;
     // Inline function 'kotlin.apply' call
     var this_4 = new Texture();
@@ -12494,7 +12518,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_4.magFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_4.wrapping = TextureWrapping_REPEAT_getInstance();
     this_4.mipmaps = 10;
-    tmp_3.dr_1 = this_4;
+    tmp_3.ar_1 = this_4;
     var tmp_4 = this;
     // Inline function 'kotlin.apply' call
     var this_5 = new Texture();
@@ -12507,7 +12531,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_5.magFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_5.wrapping = TextureWrapping_REPEAT_getInstance();
     this_5.mipmaps = 10;
-    tmp_4.er_1 = this_5;
+    tmp_4.br_1 = this_5;
     var tmp_5 = this;
     // Inline function 'kotlin.apply' call
     var this_6 = new Texture();
@@ -12520,8 +12544,8 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_6.minFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_6.magFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_6.mipmaps = 8;
-    tmp_5.fr_1 = this_6;
-    this.gr_1 = mutableListOf([this.zq_1, this.cr_1, this.ar_1, this.br_1, this.dr_1, this.er_1, this.fr_1]);
+    tmp_5.cr_1 = this_6;
+    this.dr_1 = mutableListOf([this.wq_1, this.zq_1, this.xq_1, this.yq_1, this.ar_1, this.br_1, this.cr_1]);
   }
   var Textures_instance_0;
   function Textures_getInstance_0() {
@@ -12538,15 +12562,15 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   var Timers_SwapPlanes_instance;
   var Timers_SwapSky_instance;
   function Companion_0() {
-    this.yq_1 = 27800.0;
+    this.vq_1 = 27800.0;
   }
-  protoOf(Companion_0).mr = function (timers) {
+  protoOf(Companion_0).jr = function (timers) {
     timers.ci(Timers_PropRotate_getInstance(), 741000.0);
     timers.ci(Timers_PropFlicker_getInstance(), 10.0);
     timers.ci(Timers_PlaneWonder1_getInstance(), 25000.0);
     timers.ci(Timers_PlaneWonder2_getInstance(), 6000.0);
     timers.ci(Timers_PlaneBanking_getInstance(), 22800.0);
-    timers.di(Timers_Camera_getInstance(), this.yq_1, false);
+    timers.di(Timers_Camera_getInstance(), this.vq_1, false);
     timers.di(Timers_SwapPlanes_getInstance(), 4000.0, false);
     timers.di(Timers_SwapSky_getInstance(), 3000.0, false);
   };
@@ -12606,7 +12630,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.is_1 = [InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(4.84, -644.785, -25.362), new Vec3(4.673, -1.741, 4.447)), new CameraPosition(new Vec3(2.56, -126.0, -8.595), new Vec3(2.533, -1.741, 3.993)), 1.0, '', false), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(-137.0, -115.0, -12.0), new Vec3(3.485, -0.679, -16.321)), new CameraPosition(new Vec3(138.0, -110.0, 20.0), new Vec3(3.485, -0.679, -16.321)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(208.0, -208.0, -21.0), new Vec3(0.0, 0.0, 0.0)), new CameraPosition(new Vec3(265.0, 77.0, 22.0), new Vec3(0.0, 0.0, -35.0)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(347.0, 73.0, 15.0), new Vec3(161.0, -220.0, -19.0)), new CameraPosition(new Vec3(69.0, 365.0, 15.0), new Vec3(-100.0, 162.0, -18.0)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(147.0, 212.0, 0.0), new Vec3(20.0, -10.0, 7.0)), new CameraPosition(new Vec3(-146.0, 182.0, 30.0), new Vec3(-20.0, 4.0, -35.0)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(-244.0, 139.0, 77.0), new Vec3(-3.0, -27.0, -37.0)), new CameraPosition(new Vec3(-151.0, -357.0, 11.0), new Vec3(20.0, -45.0, 0.0)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(-265.0, -158.0, -20.0), new Vec3(0.0, 0.0, 32.0)), new CameraPosition(new Vec3(-95.0, -70.0, 0.0), new Vec3(9.0, -13.0, -10.0)), 1.0, '', false)];
+    tmp.fs_1 = [InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(4.84, -644.785, -25.362), new Vec3(4.673, -1.741, 4.447)), new CameraPosition(new Vec3(2.56, -126.0, -8.595), new Vec3(2.533, -1.741, 3.993)), 1.0, '', false), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(-137.0, -115.0, -12.0), new Vec3(3.485, -0.679, -16.321)), new CameraPosition(new Vec3(138.0, -110.0, 20.0), new Vec3(3.485, -0.679, -16.321)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(208.0, -208.0, -21.0), new Vec3(0.0, 0.0, 0.0)), new CameraPosition(new Vec3(265.0, 77.0, 22.0), new Vec3(0.0, 0.0, -35.0)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(347.0, 73.0, 15.0), new Vec3(161.0, -220.0, -19.0)), new CameraPosition(new Vec3(69.0, 365.0, 15.0), new Vec3(-100.0, 162.0, -18.0)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(147.0, 212.0, 0.0), new Vec3(20.0, -10.0, 7.0)), new CameraPosition(new Vec3(-146.0, 182.0, 30.0), new Vec3(-20.0, 4.0, -35.0)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(-244.0, 139.0, 77.0), new Vec3(-3.0, -27.0, -37.0)), new CameraPosition(new Vec3(-151.0, -357.0, 11.0), new Vec3(20.0, -45.0, 0.0)), 1.0, '', true), InteractiveCameraPositionPair_init_$Create$(new CameraPosition(new Vec3(-265.0, -158.0, -20.0), new Vec3(0.0, 0.0, 32.0)), new CameraPosition(new Vec3(-95.0, -70.0, 0.0), new Vec3(9.0, -13.0, -10.0)), 1.0, '', false)];
   }
   var Cameras_instance_1;
   function Cameras_getInstance_1() {
@@ -12617,29 +12641,29 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   function InteractiveCameraPositionPair_init_$Init$(start, end, speedMultiplier, name, interactive, $this) {
     CameraPositionPair.call($this, start, end, speedMultiplier);
     InteractiveCameraPositionPair.call($this);
-    $this.ms_1 = name;
-    $this.ns_1 = interactive;
+    $this.js_1 = name;
+    $this.ks_1 = interactive;
     return $this;
   }
   function InteractiveCameraPositionPair_init_$Create$(start, end, speedMultiplier, name, interactive) {
     return InteractiveCameraPositionPair_init_$Init$(start, end, speedMultiplier, name, interactive, objectCreate(protoOf(InteractiveCameraPositionPair)));
   }
   function InteractiveCameraPositionPair() {
-    this.ms_1 = '';
-    this.ns_1 = false;
+    this.js_1 = '';
+    this.ks_1 = false;
   }
   function Companion_1() {
     Companion_instance_1 = this;
-    this.os_1 = new Vec4(0.55859375, 0.7578125, 0.87890625, 1.0);
+    this.ls_1 = new Vec4(0.55859375, 0.7578125, 0.87890625, 1.0);
     var tmp = this;
     // Inline function 'kotlin.apply' call
     var this_0 = new ClearColorCommand();
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.example.Companion.clearColorCommand.<anonymous>' call
-    this_0.color = Companion_getInstance_1().os_1;
+    this_0.color = Companion_getInstance_1().ls_1;
     this_0.name = 'clear color';
     this_0.enabled = true;
-    tmp.ps_1 = this_0;
+    tmp.ms_1 = this_0;
   }
   var Companion_instance_1;
   function Companion_getInstance_1() {
@@ -12651,10 +12675,10 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     Companion_getInstance_1();
     Scene.call(this);
     this.timers = new TimersMap();
-    this.vs_1 = 6.2831855;
-    this.ws_1 = 1000000.0;
-    this.xs_1 = 11000.0;
-    this.ys_1 = 1100.0;
+    this.ss_1 = 6.2831855;
+    this.ts_1 = 1000000.0;
+    this.us_1 = 11000.0;
+    this.vs_1 = 1100.0;
     this.FOV_TRANSITION = 20.0;
     this.arr1 = new Float32Array(16);
     var tmp = this;
@@ -12751,30 +12775,30 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     tmp_25.texFp16 = this_1;
     this.uniformsAnimated = listOf([UniformFloatValueWithArray(new Float32Array(16)), UniformFloatValueWithArray(new Float32Array(4)), UniformIntValueWithArray(new Int32Array(1)), UniformFloatValueWithArray(new Float32Array(1)), new UniformTextureValue(this.texFp16), UniformFloatValueWithArray(new Float32Array(4))]);
     this.animationAnimal = new TextureAnimationChunked(362, 362, 18);
-    this.zs_1 = 25000.0;
-    this.at_1 = 34000.0;
-    this.bt_1 = 250000.0;
-    this.ct_1 = 300000.0;
-    this.dt_1 = 2500.0;
+    this.ws_1 = 25000.0;
+    this.xs_1 = 34000.0;
+    this.ys_1 = 250000.0;
+    this.zs_1 = 300000.0;
+    this.at_1 = 2500.0;
+    this.bt_1 = 1000.0;
+    this.ct_1 = 900.0;
+    this.dt_1 = 6000.0;
     this.et_1 = 1000.0;
-    this.ft_1 = 900.0;
-    this.gt_1 = 6000.0;
-    this.ht_1 = 1000.0;
     this.Z_NEAR = 50.0;
     this.Z_FAR = 10000.0;
     this.FOV_LANDSCAPE = 35.0;
     this.FOV_PORTRAIT = 60.0;
-    this.timers.ci(Timers_Clouds1_getInstance(), this.bt_1);
-    this.timers.ci(Timers_Clouds2_getInstance(), this.ct_1);
-    this.timers.ci(Timers_Water_getInstance_0(), this.dt_1);
-    this.timers.ci(Timers_BirdWings1_getInstance_0(), this.et_1);
-    this.timers.ci(Timers_BirdWings2_getInstance_0(), this.ft_1);
-    this.timers.ci(Timers_AnimalAnimation_getInstance(), this.gt_1);
-    this.timers.ci(Timers_ShootingStar_getInstance(), this.ht_1);
-    this.timers.ci(Timers_BirdsFly_getInstance_0(), this.zs_1);
-    this.timers.ci(Timers_Camera_getInstance_0(), this.at_1);
-    this.cameraAnimator = new CameraPathAnimator(this.ws_1, this.xs_1, this.ys_1, true);
-    this.cameraAnimator.setCameras(Cameras_getInstance_1().is_1);
+    this.timers.ci(Timers_Clouds1_getInstance(), this.ys_1);
+    this.timers.ci(Timers_Clouds2_getInstance(), this.zs_1);
+    this.timers.ci(Timers_Water_getInstance_0(), this.at_1);
+    this.timers.ci(Timers_BirdWings1_getInstance_0(), this.bt_1);
+    this.timers.ci(Timers_BirdWings2_getInstance_0(), this.ct_1);
+    this.timers.ci(Timers_AnimalAnimation_getInstance(), this.dt_1);
+    this.timers.ci(Timers_ShootingStar_getInstance(), this.et_1);
+    this.timers.ci(Timers_BirdsFly_getInstance_0(), this.ws_1);
+    this.timers.ci(Timers_Camera_getInstance_0(), this.xs_1);
+    this.cameraAnimator = new CameraPathAnimator(this.ts_1, this.us_1, this.vs_1, true);
+    this.cameraAnimator.setCameras(Cameras_getInstance_1().fs_1);
     this.cameraAnimator.minDurationCoefficient = 2.0;
     // Inline function 'kotlin.apply' call
     var this_2 = MeshConstructor1();
@@ -12898,7 +12922,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.example.ExampleScene.<anonymous>' call
     var tmp_35 = this_20;
-    var tmp_36 = Companion_getInstance_1().ps_1;
+    var tmp_36 = Companion_getInstance_1().ms_1;
     // Inline function 'kotlin.apply' call
     var this_21 = new ClearCommand();
     // Inline function 'kotlin.contracts.contract' call
@@ -13000,67 +13024,67 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   protoOf(ExampleScene).mm = function () {
     return this.FOV_TRANSITION;
   };
-  protoOf(ExampleScene).it = function () {
+  protoOf(ExampleScene).ft = function () {
     return this.arr1;
   };
-  protoOf(ExampleScene).jt = function () {
+  protoOf(ExampleScene).gt = function () {
     return this.arr2;
   };
-  protoOf(ExampleScene).kt = function () {
+  protoOf(ExampleScene).ht = function () {
     return this.arr3;
   };
-  protoOf(ExampleScene).lt = function (_set____db54di) {
+  protoOf(ExampleScene).it = function (_set____db54di) {
     this.arr4 = _set____db54di;
   };
-  protoOf(ExampleScene).mt = function () {
+  protoOf(ExampleScene).jt = function () {
     return this.arr4;
   };
-  protoOf(ExampleScene).nt = function () {
+  protoOf(ExampleScene).kt = function () {
     return this.map8;
   };
-  protoOf(ExampleScene).ot = function () {
+  protoOf(ExampleScene).lt = function () {
     return this.uniformsMountainsBright;
   };
-  protoOf(ExampleScene).pt = function () {
+  protoOf(ExampleScene).mt = function () {
     return this.uniformsMountainsDark;
   };
-  protoOf(ExampleScene).qt = function () {
+  protoOf(ExampleScene).nt = function () {
     return this.uniformsCenterRockBright;
   };
-  protoOf(ExampleScene).rt = function () {
+  protoOf(ExampleScene).ot = function () {
     return this.uniformsCenterRockDark;
   };
-  protoOf(ExampleScene).st = function () {
+  protoOf(ExampleScene).pt = function () {
     return this.uniformsHills;
   };
-  protoOf(ExampleScene).tt = function () {
+  protoOf(ExampleScene).qt = function () {
     return this.uniformsGround1;
   };
-  protoOf(ExampleScene).ut = function () {
+  protoOf(ExampleScene).rt = function () {
     return this.uniformsGround2;
   };
-  protoOf(ExampleScene).vt = function () {
+  protoOf(ExampleScene).st = function () {
     return this.uniformsWater;
   };
-  protoOf(ExampleScene).wt = function () {
+  protoOf(ExampleScene).tt = function () {
     return this.uniformsWaterHighlights;
   };
-  protoOf(ExampleScene).xt = function () {
+  protoOf(ExampleScene).ut = function () {
     return this.uniformsSkyObjects;
   };
-  protoOf(ExampleScene).yt = function () {
+  protoOf(ExampleScene).vt = function () {
     return this.texStatic;
   };
-  protoOf(ExampleScene).zt = function () {
+  protoOf(ExampleScene).wt = function () {
     return this.uniformsDiffuseTest;
   };
-  protoOf(ExampleScene).au = function () {
+  protoOf(ExampleScene).xt = function () {
     return this.texFp16;
   };
-  protoOf(ExampleScene).bu = function () {
+  protoOf(ExampleScene).yt = function () {
     return this.uniformsAnimated;
   };
-  protoOf(ExampleScene).cu = function () {
+  protoOf(ExampleScene).zt = function () {
     return this.animationAnimal;
   };
   protoOf(ExampleScene).updateTimers = function (time) {
@@ -13164,7 +13188,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.du_1 = [new CameraPositionPair(new CameraPosition(new Vec3(182.522, 451.945, 100.426994), new Vec3(95.628395, -240.9175, 179.154)), new CameraPosition(new Vec3(-343.592, 309.3397, 121.102), new Vec3(-48.3742, -284.307, 183.019)), 1.0), new CameraPositionPair(new CameraPosition(new Vec3(466.2929, -304.8695, 30.390701), new Vec3(-343.613, 27.9626, 220.6635)), new CameraPosition(new Vec3(563.2295, 19.3432, 24.534698), new Vec3(-218.45789, 183.19339, 193.65689)), 1.0), new CameraPositionPair(new CameraPosition(new Vec3(-17.8381, -512.5913, 60.937397), new Vec3(-276.7568, 195.7981, 179.154)), new CameraPosition(new Vec3(502.0434, -225.924, 73.5525), new Vec3(-59.8787, 269.7749, 205.40071)), 1.0), new CameraPositionPair(new CameraPosition(new Vec3(-620.36957, -208.8635, 52.049202), new Vec3(216.4319, -70.2999, 243.01979)), new CameraPosition(new Vec3(-536.29553, -347.5239, 66.9248), new Vec3(245.4221, 141.5389, 220.25499)), 1.0), new CameraPositionPair(new CameraPosition(new Vec3(-405.834, 809.1909, 140.3126), new Vec3(195.42691, -167.5669, 264.4845)), new CameraPosition(new Vec3(-586.92596, -130.8418, 24.389801), new Vec3(195.42691, -167.5669, 220.6635)), 1.0)];
+    tmp.au_1 = [new CameraPositionPair(new CameraPosition(new Vec3(182.522, 451.945, 100.426994), new Vec3(95.628395, -240.9175, 179.154)), new CameraPosition(new Vec3(-343.592, 309.3397, 121.102), new Vec3(-48.3742, -284.307, 183.019)), 1.0), new CameraPositionPair(new CameraPosition(new Vec3(466.2929, -304.8695, 30.390701), new Vec3(-343.613, 27.9626, 220.6635)), new CameraPosition(new Vec3(563.2295, 19.3432, 24.534698), new Vec3(-218.45789, 183.19339, 193.65689)), 1.0), new CameraPositionPair(new CameraPosition(new Vec3(-17.8381, -512.5913, 60.937397), new Vec3(-276.7568, 195.7981, 179.154)), new CameraPosition(new Vec3(502.0434, -225.924, 73.5525), new Vec3(-59.8787, 269.7749, 205.40071)), 1.0), new CameraPositionPair(new CameraPosition(new Vec3(-620.36957, -208.8635, 52.049202), new Vec3(216.4319, -70.2999, 243.01979)), new CameraPosition(new Vec3(-536.29553, -347.5239, 66.9248), new Vec3(245.4221, 141.5389, 220.25499)), 1.0), new CameraPositionPair(new CameraPosition(new Vec3(-405.834, 809.1909, 140.3126), new Vec3(195.42691, -167.5669, 264.4845)), new CameraPosition(new Vec3(-586.92596, -130.8418, 24.389801), new Vec3(195.42691, -167.5669, 220.6635)), 1.0)];
   }
   var Cameras_instance_2;
   function Cameras_getInstance_2() {
@@ -13174,22 +13198,22 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   }
   function Meshes_1() {
     Meshes_instance_1 = this;
-    this.eu_1 = new MeshAttributes(listOf([new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_HALF3_getInstance(), 0), new MeshAttribute(AttributeType_UV0_getInstance(), VertexFormat_HALF2_getInstance(), 6)]), 12);
-    this.fu_1 = new MeshAttributes(listOf_0(new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_HALF3_getInstance(), 0)), 8);
+    this.bu_1 = new MeshAttributes(listOf([new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_HALF3_getInstance(), 0), new MeshAttribute(AttributeType_UV0_getInstance(), VertexFormat_HALF2_getInstance(), 6)]), 12);
+    this.cu_1 = new MeshAttributes(listOf_0(new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_HALF3_getInstance(), 0)), 8);
+    this.du_1 = new MeshAttributes(listOf_0(new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_FLOAT3_getInstance(), 0)), 12);
+    this.eu_1 = new MeshAttributes(listOf([new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_HALF3_getInstance(), 0), new MeshAttribute(AttributeType_UV0_getInstance(), VertexFormat_HALF2_getInstance(), 6), new MeshAttribute(AttributeType_NORMAL_getInstance(), VertexFormat_HALF3_getInstance(), 10)]), 16);
+    this.fu_1 = new MeshAttributes(listOf([new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_HALF3_getInstance(), 0), new MeshAttribute(AttributeType_UV0_getInstance(), VertexFormat_UBYTE2_NORMALIZED_getInstance(), 6)]), 8);
     this.gu_1 = new MeshAttributes(listOf_0(new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_FLOAT3_getInstance(), 0)), 12);
-    this.hu_1 = new MeshAttributes(listOf([new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_HALF3_getInstance(), 0), new MeshAttribute(AttributeType_UV0_getInstance(), VertexFormat_HALF2_getInstance(), 6), new MeshAttribute(AttributeType_NORMAL_getInstance(), VertexFormat_HALF3_getInstance(), 10)]), 16);
-    this.iu_1 = new MeshAttributes(listOf([new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_HALF3_getInstance(), 0), new MeshAttribute(AttributeType_UV0_getInstance(), VertexFormat_UBYTE2_NORMALIZED_getInstance(), 6)]), 8);
-    this.ju_1 = new MeshAttributes(listOf_0(new MeshAttribute(AttributeType_VERTEX_getInstance(), VertexFormat_FLOAT3_getInstance(), 0)), 12);
-    this.ku_1 = MeshConstructor2('sky', this.eu_1);
-    this.lu_1 = MeshConstructor2('stars', this.gu_1);
-    this.mu_1 = MeshConstructor2('building-1', this.hu_1);
-    this.nu_1 = MeshConstructor2('buildings-distant', this.iu_1);
-    this.ou_1 = MeshConstructor2('red-lamps', this.fu_1);
-    this.pu_1 = MeshConstructor2('islands', this.fu_1);
-    this.qu_1 = MeshConstructor2('water', this.fu_1);
-    this.ru_1 = MeshConstructor2('neon-signs', this.iu_1);
-    this.su_1 = MeshConstructor2('red-lights', this.ju_1);
-    this.tu_1 = mutableListOf([this.ku_1, this.lu_1, this.mu_1, this.nu_1, this.ou_1, this.pu_1, this.qu_1, this.ru_1, this.su_1]);
+    this.hu_1 = MeshConstructor2('sky', this.bu_1);
+    this.iu_1 = MeshConstructor2('stars', this.du_1);
+    this.ju_1 = MeshConstructor2('building-1', this.eu_1);
+    this.ku_1 = MeshConstructor2('buildings-distant', this.fu_1);
+    this.lu_1 = MeshConstructor2('red-lamps', this.cu_1);
+    this.mu_1 = MeshConstructor2('islands', this.cu_1);
+    this.nu_1 = MeshConstructor2('water', this.cu_1);
+    this.ou_1 = MeshConstructor2('neon-signs', this.fu_1);
+    this.pu_1 = MeshConstructor2('red-lights', this.gu_1);
+    this.qu_1 = mutableListOf([this.hu_1, this.iu_1, this.ju_1, this.ku_1, this.lu_1, this.mu_1, this.nu_1, this.ou_1, this.pu_1]);
   }
   var Meshes_instance_1;
   function Meshes_getInstance_1() {
@@ -13199,45 +13223,45 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   }
   function SkyscrapersScene() {
     Scene.call(this);
-    this.zu_1 = new TimersMap();
-    this.av_1 = 1000000.0;
-    this.bv_1 = 29000.0;
-    this.cv_1 = 2600.0;
-    this.mv_1 = mutableListOf([get_HINT_VRS_2X2()]);
-    this.nv_1 = 100.0;
+    this.wu_1 = new TimersMap();
+    this.xu_1 = 1000000.0;
+    this.yu_1 = 29000.0;
+    this.zu_1 = 2600.0;
+    this.jv_1 = mutableListOf([get_HINT_VRS_2X2()]);
+    this.kv_1 = 100.0;
     this.PIf = 3.1415927;
     var tmp = this;
     // Inline function 'kotlin.floatArrayOf' call
-    tmp.ov_1 = new Float32Array([0.145, 0.137, 0.141, 1.0]);
-    this.pv_1 = 2300.0;
-    this.qv_1 = 2500.0;
+    tmp.lv_1 = new Float32Array([0.145, 0.137, 0.141, 1.0]);
+    this.mv_1 = 2300.0;
+    this.nv_1 = 2500.0;
     var tmp_0 = this;
     // Inline function 'kotlin.arrayOf' call
-    var tmp_1 = UniformFloatValueWithArray(this.ov_1);
+    var tmp_1 = UniformFloatValueWithArray(this.lv_1);
     // Inline function 'kotlin.floatArrayOf' call
-    var tmp$ret$1 = new Float32Array([this.pv_1]);
+    var tmp$ret$1 = new Float32Array([this.mv_1]);
     var tmp_2 = UniformFloatValueWithArray(tmp$ret$1);
     // Inline function 'kotlin.floatArrayOf' call
-    var tmp$ret$2 = new Float32Array([this.qv_1]);
+    var tmp$ret$2 = new Float32Array([this.nv_1]);
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp_0.rv_1 = [tmp_1, tmp_2, UniformFloatValueWithArray(tmp$ret$2)];
-    this.sv_1 = 990.0;
+    tmp_0.ov_1 = [tmp_1, tmp_2, UniformFloatValueWithArray(tmp$ret$2)];
+    this.pv_1 = 990.0;
     var tmp_3 = this;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$6 = new Float32Array([3.0]);
     var tmp_4 = UniformFloatValueWithArray(tmp$ret$6);
-    var tmp_5 = new UniformTextureValue(Textures_getInstance_1().iw_1);
+    var tmp_5 = new UniformTextureValue(Textures_getInstance_1().fw_1);
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$7 = new Float32Array([1.2, 1.2, 1.2, 1.0]);
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp_3.zv_1 = [tmp_4, tmp_5, UniformFloatValueWithArray(tmp$ret$7)];
-    this.meshes = Meshes_getInstance_1().tu_1;
-    this.textures = Textures_getInstance_1().kw_1;
-    this.shaders = Shaders_getInstance_1().tw_1;
-    Companion_instance_2.uw(this.zu_1);
+    tmp_3.wv_1 = [tmp_4, tmp_5, UniformFloatValueWithArray(tmp$ret$7)];
+    this.meshes = Meshes_getInstance_1().qu_1;
+    this.textures = Textures_getInstance_1().hw_1;
+    this.shaders = Shaders_getInstance_1().qw_1;
+    Companion_instance_2.rw(this.wu_1);
     this.Z_NEAR = 100.0;
     this.Z_FAR = 20000.0;
     this.FOV_LANDSCAPE = 25.0;
@@ -13254,8 +13278,8 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_0.lowQuality = false;
     this_0.clock = false;
     tmp_6.settings = this_0;
-    this.cameraAnimator = new CameraPathAnimator(this.av_1, this.bv_1, this.cv_1, true);
-    this.cameraAnimator.setCameras(Cameras_getInstance_2().du_1);
+    this.cameraAnimator = new CameraPathAnimator(this.xu_1, this.yu_1, this.zu_1, true);
+    this.cameraAnimator.setCameras(Cameras_getInstance_2().au_1);
     this.cameraAnimator.minDurationCoefficient = this.settings.cameraPeriod;
     var tmp_7 = this;
     // Inline function 'kotlin.apply' call
@@ -13265,7 +13289,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_1.color = new Vec4(0.0, 0.0392156862745098, 0.0784313725490196, 1.0);
     this_1.name = 'clear color';
     this_1.enabled = true;
-    tmp_7.iv_1 = this_1;
+    tmp_7.fv_1 = this_1;
     // Inline function 'kotlin.apply' call
     var this_2 = new ClearColorCommand();
     // Inline function 'kotlin.contracts.contract' call
@@ -13274,25 +13298,25 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_2.name = 'clear color bloom';
     this_2.enabled = true;
     var clearColorBloomCommand = this_2;
-    var txSceneObjects = new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.nv_1, this.nv_1, this.nv_1));
-    var stateSky = new DrawMeshState(Shaders_getInstance_1().mw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 12));
-    var commandSky = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().ku_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().aw_1), new UniformTextureValue(Textures_getInstance_1().bw_1)]), stateSky, txSceneObjects);
-    var stateStars = new DrawMeshState(Shaders_getInstance_1().nw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf_0(new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_FLOAT3_getInstance(), 0)), 12));
+    var txSceneObjects = new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.kv_1, this.kv_1, this.kv_1));
+    var stateSky = new DrawMeshState(Shaders_getInstance_1().jw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6)]), 12));
+    var commandSky = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().hu_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().xv_1), new UniformTextureValue(Textures_getInstance_1().yv_1)]), stateSky, txSceneObjects);
+    var stateStars = new DrawMeshState(Shaders_getInstance_1().kw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf_0(new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_FLOAT3_getInstance(), 0)), 12));
     var tmp_8 = this;
     // Inline function 'kotlin.apply' call
-    var tmp_9 = Meshes_getInstance_1().lu_1;
+    var tmp_9 = Meshes_getInstance_1().iu_1;
     var tmp_10 = UniformFloatValueWithArray(new Float32Array(16));
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$14 = new Float32Array([0.35, 0.35, 0.35, 1.0]);
     var this_3 = new DrawTransformedMeshCommand(tmp_9, listOf([tmp_10, UniformFloatValueWithArray(tmp$ret$14)]), stateStars, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 0.0), new Vec3(0.055, 0.055, 0.055)));
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
-    this_3.hints = this.mv_1;
+    this_3.hints = this.jv_1;
     tmp_8.commandStars = this_3;
-    var stateBuilding = new DrawMeshState(Shaders_getInstance_1().ow_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6), new VertexAttribute(AttributeType_NORMAL_getInstance(), 2, VertexFormat_HALF3_getInstance(), 10)]), 16));
+    var stateBuilding = new DrawMeshState(Shaders_getInstance_1().lw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_HALF2_getInstance(), 6), new VertexAttribute(AttributeType_NORMAL_getInstance(), 2, VertexFormat_HALF3_getInstance(), 10)]), 16));
     var tmp_11 = this;
     // Inline function 'kotlin.apply' call
-    var tmp_12 = Meshes_getInstance_1().mu_1;
+    var tmp_12 = Meshes_getInstance_1().ju_1;
     var tmp_13 = UniformFloatValueWithArray(new Float32Array(16));
     var tmp_14 = UniformFloatValueWithArray(new Float32Array(16));
     // Inline function 'kotlin.floatArrayOf' call
@@ -13302,9 +13326,9 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     var tmp$ret$17 = new Float32Array([0.05, 0.6]);
     var tmp_16 = UniformFloatValueWithArray(tmp$ret$17);
     var tmp_17 = UniformFloatValueWithArray(new Float32Array(3));
-    var tmp_18 = new UniformTextureValue(Textures_getInstance_1().cw_1);
-    var tmp_19 = new UniformTextureValue(Textures_getInstance_1().dw_1);
-    var tmp_20 = new UniformTextureValue(Textures_getInstance_1().ew_1);
+    var tmp_18 = new UniformTextureValue(Textures_getInstance_1().zv_1);
+    var tmp_19 = new UniformTextureValue(Textures_getInstance_1().aw_1);
+    var tmp_20 = new UniformTextureValue(Textures_getInstance_1().bw_1);
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$18 = new Float32Array([0.33, 0.33, 0.33, 1.0]);
     var tmp_21 = UniformFloatValueWithArray(tmp$ret$18);
@@ -13323,7 +13347,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     tmp_11.commandBuildings = this_4;
     var tmp_24 = this;
     // Inline function 'kotlin.apply' call
-    var tmp_25 = Meshes_getInstance_1().mu_1;
+    var tmp_25 = Meshes_getInstance_1().ju_1;
     var tmp_26 = UniformFloatValueWithArray(new Float32Array(16));
     var tmp_27 = UniformFloatValueWithArray(new Float32Array(16));
     // Inline function 'kotlin.floatArrayOf' call
@@ -13333,9 +13357,9 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     var tmp$ret$24 = new Float32Array([0.05, 0.6]);
     var tmp_29 = UniformFloatValueWithArray(tmp$ret$24);
     var tmp_30 = UniformFloatValueWithArray(new Float32Array(3));
-    var tmp_31 = new UniformTextureValue(Textures_getInstance_1().cw_1);
-    var tmp_32 = new UniformTextureValue(Textures_getInstance_1().dw_1);
-    var tmp_33 = new UniformTextureValue(Textures_getInstance_1().ew_1);
+    var tmp_31 = new UniformTextureValue(Textures_getInstance_1().zv_1);
+    var tmp_32 = new UniformTextureValue(Textures_getInstance_1().aw_1);
+    var tmp_33 = new UniformTextureValue(Textures_getInstance_1().bw_1);
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$25 = new Float32Array([0.0, 0.0, 0.0, 1.0]);
     var tmp_34 = UniformFloatValueWithArray(tmp$ret$25);
@@ -13352,32 +13376,32 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_5.indexUniformModel = 1;
     tmp_24.commandBuildingsBloom = this_5;
-    var stateRed = new DrawMeshState(Shaders_getInstance_1().nw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf_0(new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0)), 8));
+    var stateRed = new DrawMeshState(Shaders_getInstance_1().kw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf_0(new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0)), 8));
     // Inline function 'kotlin.apply' call
-    var tmp_37 = Meshes_getInstance_1().ou_1;
+    var tmp_37 = Meshes_getInstance_1().lu_1;
     var tmp_38 = UniformFloatValueWithArray(new Float32Array(16));
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$30 = new Float32Array([1.0, 0.3, 0.3, 1.0]);
     var this_6 = new DrawTransformedMeshCommand(tmp_37, listOf([tmp_38, UniformFloatValueWithArray(tmp$ret$30)]), stateRed, txSceneObjects);
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
-    this_6.hints = this.mv_1;
+    this_6.hints = this.jv_1;
     var commandRed = this_6;
-    var stateDistant = new DrawMeshState(Shaders_getInstance_1().pw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_BYTE2_NORMALIZED_getInstance(), 6)]), 8));
-    var commandBuildingsDistant = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().nu_1, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().fw_1)], this.rv_1])), stateDistant, txSceneObjects);
-    var commandBuildingsDistant2 = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().nu_1, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().fw_1)], this.rv_1])), stateDistant, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 180.0), new Vec3(this.nv_1, this.nv_1, this.nv_1)));
-    var stateGround = new DrawMeshState(Shaders_getInstance_1().qw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf_0(new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0)), 8));
-    var tmp_39 = Meshes_getInstance_1().pu_1;
+    var stateDistant = new DrawMeshState(Shaders_getInstance_1().mw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_BYTE2_NORMALIZED_getInstance(), 6)]), 8));
+    var commandBuildingsDistant = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().ku_1, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().cw_1)], this.ov_1])), stateDistant, txSceneObjects);
+    var commandBuildingsDistant2 = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().ku_1, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().cw_1)], this.ov_1])), stateDistant, new AffineTranformation(new Vec3(0.0, 0.0, 0.0), new Vec3(0.0, 0.0, 180.0), new Vec3(this.kv_1, this.kv_1, this.kv_1)));
+    var stateGround = new DrawMeshState(Shaders_getInstance_1().nw_1, get_BLENDING_NONE(), get_DEPTH_TEST_ENABLED(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf_0(new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0)), 8));
+    var tmp_39 = Meshes_getInstance_1().mu_1;
     var tmp_40 = UniformFloatValueWithArray(new Float32Array(16));
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$32 = new Float32Array([0.1171875, 0.1171875, 0.1171875, 1.0]);
-    var commandIslands1 = DrawStaticMeshCommandConstructor(tmp_39, listOf(arrayConcat([[tmp_40, UniformFloatValueWithArray(tmp$ret$32)], this.rv_1])), stateGround, txSceneObjects);
-    var tmp_41 = Meshes_getInstance_1().qu_1;
+    var commandIslands1 = DrawStaticMeshCommandConstructor(tmp_39, listOf(arrayConcat([[tmp_40, UniformFloatValueWithArray(tmp$ret$32)], this.ov_1])), stateGround, txSceneObjects);
+    var tmp_41 = Meshes_getInstance_1().nu_1;
     var tmp_42 = UniformFloatValueWithArray(new Float32Array(16));
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$33 = new Float32Array([0.0, 0.01953125, 0.01953125, 1.0]);
-    var commandWater = DrawStaticMeshCommandConstructor(tmp_41, listOf(arrayConcat([[tmp_42, UniformFloatValueWithArray(tmp$ret$33)], this.rv_1])), stateGround, txSceneObjects);
-    var tmp_43 = Shaders_getInstance_1().lw_1;
+    var commandWater = DrawStaticMeshCommandConstructor(tmp_41, listOf(arrayConcat([[tmp_42, UniformFloatValueWithArray(tmp$ret$33)], this.ov_1])), stateGround, txSceneObjects);
+    var tmp_43 = Shaders_getInstance_1().iw_1;
     // Inline function 'kotlin.apply' call
     var this_7 = new Blending();
     // Inline function 'kotlin.contracts.contract' call
@@ -13387,9 +13411,9 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_7.destinationFactorColor = BlendingFactor_ONE_getInstance();
     this_7.isSeparateAlpha = false;
     var stateNeon = new DrawMeshState(tmp_43, this_7, get_DEPTH_NO_WRITE(), CullFace_BACK_getInstance(), new VertexAttributesDescriptor(listOf([new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_HALF3_getInstance(), 0), new VertexAttribute(AttributeType_UV0_getInstance(), 1, VertexFormat_UBYTE2_NORMALIZED_getInstance(), 6)]), 8));
-    var commandNeon = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().ru_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().gw_1)]), stateNeon, txSceneObjects);
-    var commandNeonBloom = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().ru_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().jw_1)]), stateNeon, txSceneObjects);
-    var tmp_44 = Shaders_getInstance_1().rw_1;
+    var commandNeon = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().ou_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().dw_1)]), stateNeon, txSceneObjects);
+    var commandNeonBloom = DrawStaticMeshCommandConstructor(Meshes_getInstance_1().ou_1, listOf([UniformFloatValueWithArray(new Float32Array(16)), new UniformTextureValue(Textures_getInstance_1().gw_1)]), stateNeon, txSceneObjects);
+    var tmp_44 = Shaders_getInstance_1().ow_1;
     // Inline function 'kotlin.apply' call
     var this_8 = new Blending();
     // Inline function 'kotlin.contracts.contract' call
@@ -13400,12 +13424,12 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_8.isSeparateAlpha = false;
     var stateRedSprites = new DrawMeshState(tmp_44, this_8, get_DEPTH_NO_WRITE(), CullFace_DISABLED_getInstance(), new VertexAttributesDescriptor(listOf_0(new VertexAttribute(AttributeType_VERTEX_getInstance(), 0, VertexFormat_FLOAT3_getInstance(), 0)), 12));
     // Inline function 'kotlin.apply' call
-    var tmp_45 = Meshes_getInstance_1().su_1;
+    var tmp_45 = Meshes_getInstance_1().pu_1;
     var tmp_46 = UniformFloatValueWithArray(new Float32Array(16));
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$36 = new Float32Array([4.0]);
     var tmp_47 = UniformFloatValueWithArray(tmp$ret$36);
-    var tmp_48 = new UniformTextureValue(Textures_getInstance_1().hw_1);
+    var tmp_48 = new UniformTextureValue(Textures_getInstance_1().ew_1);
     // Inline function 'kotlin.floatArrayOf' call
     var tmp$ret$37 = new Float32Array([1.0, 0.2, 0.2, 1.0]);
     var this_9 = DrawStaticMeshCommandConstructor(tmp_45, listOf([tmp_46, tmp_47, tmp_48, UniformFloatValueWithArray(tmp$ret$37)]), stateRedSprites, txSceneObjects);
@@ -13413,7 +13437,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_9.primitiveType = PrimitiveType_POINTS_getInstance();
     var commandRedSprites = this_9;
-    var tmp_49 = Shaders_getInstance_1().sw_1;
+    var tmp_49 = Shaders_getInstance_1().pw_1;
     // Inline function 'kotlin.apply' call
     var this_10 = new Blending();
     // Inline function 'kotlin.contracts.contract' call
@@ -13425,59 +13449,59 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     var statePlanes = new DrawMeshState(tmp_49, this_10, get_DEPTH_NO_WRITE(), CullFace_DISABLED_getInstance(), null);
     var tmp_50 = this;
     // Inline function 'kotlin.apply' call
-    var this_11 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.zv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 380.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.nv_1, this.nv_1, this.nv_1)));
+    var this_11 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.wv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 380.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.kv_1, this.kv_1, this.kv_1)));
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_11.primitiveType = PrimitiveType_POINTS_getInstance();
     this_11.primitiveCount = 1;
-    tmp_50.tv_1 = this_11;
+    tmp_50.qv_1 = this_11;
     var tmp_51 = this;
     // Inline function 'kotlin.apply' call
-    var this_12 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.zv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 400.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.nv_1, this.nv_1, this.nv_1)));
+    var this_12 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.wv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 400.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.kv_1, this.kv_1, this.kv_1)));
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_12.primitiveType = PrimitiveType_POINTS_getInstance();
     this_12.primitiveCount = 1;
-    tmp_51.uv_1 = this_12;
+    tmp_51.rv_1 = this_12;
     var tmp_52 = this;
     // Inline function 'kotlin.apply' call
-    var this_13 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.zv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 350.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.nv_1, this.nv_1, this.nv_1)));
+    var this_13 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.wv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 350.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.kv_1, this.kv_1, this.kv_1)));
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_13.primitiveType = PrimitiveType_POINTS_getInstance();
     this_13.primitiveCount = 1;
-    tmp_52.vv_1 = this_13;
+    tmp_52.sv_1 = this_13;
     var tmp_53 = this;
     // Inline function 'kotlin.apply' call
-    var this_14 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.zv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 450.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.nv_1, this.nv_1, this.nv_1)));
+    var this_14 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.wv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 450.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.kv_1, this.kv_1, this.kv_1)));
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_14.primitiveType = PrimitiveType_POINTS_getInstance();
     this_14.primitiveCount = 1;
-    tmp_53.wv_1 = this_14;
+    tmp_53.tv_1 = this_14;
     var tmp_54 = this;
     // Inline function 'kotlin.apply' call
-    var this_15 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.zv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 430.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.nv_1, this.nv_1, this.nv_1)));
+    var this_15 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.wv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 430.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.kv_1, this.kv_1, this.kv_1)));
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_15.primitiveType = PrimitiveType_POINTS_getInstance();
     this_15.primitiveCount = 1;
-    tmp_54.xv_1 = this_15;
+    tmp_54.uv_1 = this_15;
     var tmp_55 = this;
     // Inline function 'kotlin.apply' call
-    var this_16 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.zv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 500.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.nv_1, this.nv_1, this.nv_1)));
+    var this_16 = new DrawTransformedMeshCommand(null, listOf(arrayConcat([[UniformFloatValueWithArray(new Float32Array(16))], this.wv_1])), statePlanes, new AffineTranformation(new Vec3(0.0, 0.0, 500.0), new Vec3(0.0, 0.0, 0.0), new Vec3(this.kv_1, this.kv_1, this.kv_1)));
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_16.primitiveType = PrimitiveType_POINTS_getInstance();
     this_16.primitiveCount = 1;
-    tmp_55.yv_1 = this_16;
+    tmp_55.vv_1 = this_16;
     var tmp_56 = this;
     // Inline function 'kotlin.apply' call
     var this_17 = new ClearCommand();
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_17.clearType = ClearCommandClearType_COLOR_AND_DEPTH_getInstance();
-    tmp_56.hv_1 = GroupCommandArr(true, [this.iv_1, this_17]);
+    tmp_56.ev_1 = GroupCommandArr(true, [this.fv_1, this_17]);
     // Inline function 'kotlin.apply' call
     var this_18 = new ClearCommand();
     // Inline function 'kotlin.contracts.contract' call
@@ -13491,7 +13515,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_19.color0 = new Vec4(0.45, 0.45, 0.45, 1.0);
     this_19.color1 = new Vec4(1.0, 1.0, 1.0, 1.0);
-    tmp_57.jv_1 = this_19;
+    tmp_57.gv_1 = this_19;
     var groupBloomPass = GroupCommandArr(true, [this.commandBuildingsBloom, commandRedSprites, commandNeonBloom]);
     var tmp_58 = this;
     // Inline function 'kotlin.apply' call
@@ -13505,7 +13529,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_20.blurSize = BlurSize_KERNEL_4_getInstance();
     this_20.commands = mutableListOf([groupClearBloom, groupBloomPass]);
     this_20.id = 0;
-    tmp_58.gv_1 = this_20;
+    tmp_58.dv_1 = this_20;
     var tmp_59 = this;
     // Inline function 'kotlin.apply' call
     var this_21 = new DrawBlurredCommand();
@@ -13522,8 +13546,8 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_22.sourceFactorColor = BlendingFactor_ONE_getInstance();
     this_22.destinationFactorColor = BlendingFactor_ONE_getInstance();
     tmp_60.blending = this_22;
-    tmp_59.lv_1 = this_21;
-    this.dv_1 = GroupCommandArr(true, [this.gv_1, MainPassCommandArr(true, [this.hv_1, this.commandBuildings, commandRed, commandBuildingsDistant, commandBuildingsDistant2, commandIslands1, commandWater, this.commandStars, commandSky, this.tv_1, this.uv_1, this.vv_1, this.wv_1, this.xv_1, this.yv_1, commandNeon, this.lv_1, this.jv_1])]);
+    tmp_59.iv_1 = this_21;
+    this.av_1 = GroupCommandArr(true, [this.dv_1, MainPassCommandArr(true, [this.ev_1, this.commandBuildings, commandRed, commandBuildingsDistant, commandBuildingsDistant2, commandIslands1, commandWater, this.commandStars, commandSky, this.qv_1, this.rv_1, this.sv_1, this.tv_1, this.uv_1, this.vv_1, commandNeon, this.iv_1, this.gv_1])]);
     var tmp_61 = this;
     // Inline function 'kotlin.apply' call
     var this_23 = new BlurredPassCommand();
@@ -13534,8 +13558,8 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_23.minSize = 180;
     this_23.brightness = 0.95;
     this_23.blurSize = BlurSize_KERNEL_4_getInstance();
-    this_23.commands = mutableListOf([groupClearBloom, this.commandBuildings, commandBuildingsDistant, commandBuildingsDistant2, commandIslands1, commandWater, commandSky, commandNeon, this.jv_1]);
-    tmp_61.fv_1 = this_23;
+    this_23.commands = mutableListOf([groupClearBloom, this.commandBuildings, commandBuildingsDistant, commandBuildingsDistant2, commandIslands1, commandWater, commandSky, commandNeon, this.gv_1]);
+    tmp_61.cv_1 = this_23;
     var tmp_62 = this;
     // Inline function 'kotlin.apply' call
     var this_24 = new DrawBlurredCommand();
@@ -13543,9 +13567,9 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     // Inline function 'org.androidworks.skyscrapers.SkyscrapersScene.<anonymous>' call
     this_24.name = 'draw blurred';
     this_24.blending = get_BLENDING_NONE();
-    tmp_62.kv_1 = this_24;
-    this.ev_1 = GroupCommandArr(false, [this.fv_1, MainPassCommandArr(true, [this.hv_1, this.kv_1])]);
-    this.commands = mutableListOf([this.dv_1, this.ev_1]);
+    tmp_62.hv_1 = this_24;
+    this.bv_1 = GroupCommandArr(false, [this.cv_1, MainPassCommandArr(true, [this.ev_1, this.hv_1])]);
+    this.commands = mutableListOf([this.av_1, this.bv_1]);
   }
   protoOf(SkyscrapersScene).lm = function () {
     return this.cameraAnimator;
@@ -13556,17 +13580,17 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   protoOf(SkyscrapersScene).rm = function () {
     return this.commandStars;
   };
-  protoOf(SkyscrapersScene).vw = function () {
+  protoOf(SkyscrapersScene).sw = function () {
     return this.commandBuildings;
   };
-  protoOf(SkyscrapersScene).ww = function () {
+  protoOf(SkyscrapersScene).tw = function () {
     return this.commandBuildingsBloom;
   };
   protoOf(SkyscrapersScene).dn = function () {
     return this.PIf;
   };
   protoOf(SkyscrapersScene).updateTimers = function (time) {
-    this.zu_1.hi(time);
+    this.wu_1.hi(time);
     this.cameraAnimator.animate(time);
     this.animate();
     protoOf(Scene).updateTimers.call(this, time);
@@ -13577,11 +13601,11 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   protoOf(SkyscrapersScene).initialize = function () {
   };
   protoOf(SkyscrapersScene).applySettings = function () {
-    this.dv_1.enabled = !this.settings.blurred;
-    this.ev_1.enabled = this.settings.blurred;
-    this.jv_1.enabled = this.settings.vignette;
-    this.fv_1.additionalBlur = !this.settings.lowQuality;
-    this.gv_1.additionalBlur = !this.settings.lowQuality;
+    this.av_1.enabled = !this.settings.blurred;
+    this.bv_1.enabled = this.settings.blurred;
+    this.gv_1.enabled = this.settings.vignette;
+    this.cv_1.additionalBlur = !this.settings.lowQuality;
+    this.dv_1.additionalBlur = !this.settings.lowQuality;
     setUniform_1(this.commandBuildings.uniforms.q(11), 1.0 - this.settings.lights);
     setUniform_1(this.commandBuildingsBloom.uniforms.q(11), 1.0 - this.settings.lights);
     if (!(this.cameraAnimator.minDurationCoefficient === this.settings.cameraPeriod)) {
@@ -13606,27 +13630,27 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     setUniform_3(this.commandBuildingsBloom.uniforms.q(4), eye);
   };
   protoOf(SkyscrapersScene).updatePlanes = function () {
-    var angle1 = this.zu_1.ei(Timers_Planes1_getInstance()) * this.PIf * 2.0;
-    var angle2 = this.zu_1.ei(Timers_Planes2_getInstance()) * this.PIf * 2.0;
-    this.updatePlanePosition(angle1, 0.0, 0.0, this.tv_1.transform.l9_1);
-    this.updatePlanePosition(-angle2 - this.PIf, 0.0, -400.0, this.uv_1.transform.l9_1);
-    this.updatePlanePosition(-angle1 - this.PIf, 0.0, 300.0, this.vv_1.transform.l9_1);
-    this.updatePlanePosition(angle2, 100.0, 300.0, this.wv_1.transform.l9_1);
-    this.updatePlanePosition(angle1 + this.PIf / 2.0, 100.0, 300.0, this.xv_1.transform.l9_1);
-    this.updatePlanePosition(angle2 + this.PIf / 1.5, 100.0, 300.0, this.yv_1.transform.l9_1);
+    var angle1 = this.wu_1.ei(Timers_Planes1_getInstance()) * this.PIf * 2.0;
+    var angle2 = this.wu_1.ei(Timers_Planes2_getInstance()) * this.PIf * 2.0;
+    this.updatePlanePosition(angle1, 0.0, 0.0, this.qv_1.transform.l9_1);
+    this.updatePlanePosition(-angle2 - this.PIf, 0.0, -400.0, this.rv_1.transform.l9_1);
+    this.updatePlanePosition(-angle1 - this.PIf, 0.0, 300.0, this.sv_1.transform.l9_1);
+    this.updatePlanePosition(angle2, 100.0, 300.0, this.tv_1.transform.l9_1);
+    this.updatePlanePosition(angle1 + this.PIf / 2.0, 100.0, 300.0, this.uv_1.transform.l9_1);
+    this.updatePlanePosition(angle2 + this.PIf / 1.5, 100.0, 300.0, this.vv_1.transform.l9_1);
     // Inline function 'kotlin.math.max' call
     // Inline function 'kotlin.math.min' call
     var a = this.viewportWidth;
     var b = this.viewportHeight;
     var b_0 = Math.min(a, b) / 300.0;
     var size = Math.max(2.5, b_0);
-    setUniform_1(this.tv_1.uniforms.q(1), size);
+    setUniform_1(this.qv_1.uniforms.q(1), size);
   };
   protoOf(SkyscrapersScene).updatePlanePosition = function (angle, centerX, centerY, result) {
     // Inline function 'kotlin.math.sin' call
-    result.x = Math.sin(angle) * this.sv_1 + centerX;
+    result.x = Math.sin(angle) * this.pv_1 + centerX;
     // Inline function 'kotlin.math.cos' call
-    result.y = Math.cos(angle) * this.sv_1 + centerY;
+    result.y = Math.cos(angle) * this.pv_1 + centerY;
   };
   protoOf(SkyscrapersScene).nextCamera = function () {
     this.cameraAnimator.nextCamera();
@@ -13686,23 +13710,23 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   protoOf(SkyscrapersSettings).rn = function () {
     return this.clock;
   };
-  protoOf(SkyscrapersSettings).xw = function (_set____db54di) {
+  protoOf(SkyscrapersSettings).uw = function (_set____db54di) {
     this.lights = _set____db54di;
   };
-  protoOf(SkyscrapersSettings).yw = function () {
+  protoOf(SkyscrapersSettings).vw = function () {
     return this.lights;
   };
   function Shaders_1() {
     Shaders_instance_1 = this;
-    this.lw_1 = new Shader('Diffuse');
-    this.mw_1 = new Shader('SkyDither');
-    this.nw_1 = new Shader('Color');
-    this.ow_1 = new Shader('Building');
-    this.pw_1 = new Shader('DiffuseFog');
-    this.qw_1 = new Shader('ColorFog');
-    this.rw_1 = new Shader('PointSpritesColored');
-    this.sw_1 = new Shader('PointSpriteColored');
-    this.tw_1 = mutableListOf([this.lw_1, this.mw_1, this.nw_1, this.ow_1, this.pw_1, this.qw_1, this.rw_1, this.sw_1]);
+    this.iw_1 = new Shader('Diffuse');
+    this.jw_1 = new Shader('SkyDither');
+    this.kw_1 = new Shader('Color');
+    this.lw_1 = new Shader('Building');
+    this.mw_1 = new Shader('DiffuseFog');
+    this.nw_1 = new Shader('ColorFog');
+    this.ow_1 = new Shader('PointSpritesColored');
+    this.pw_1 = new Shader('PointSpriteColored');
+    this.qw_1 = mutableListOf([this.iw_1, this.jw_1, this.kw_1, this.lw_1, this.mw_1, this.nw_1, this.ow_1, this.pw_1]);
   }
   var Shaders_instance_1;
   function Shaders_getInstance_1() {
@@ -13723,7 +13747,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_0.minFilter = TextureFiltering_LINEAR_getInstance();
     this_0.magFilter = TextureFiltering_LINEAR_getInstance();
     this_0.wrapping = TextureWrapping_CLAMP_TO_EDGE_getInstance();
-    tmp.aw_1 = this_0;
+    tmp.xv_1 = this_0;
     var tmp_0 = this;
     // Inline function 'kotlin.apply' call
     var this_1 = new Texture();
@@ -13734,7 +13758,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_1.format = TextureFormat_ASTC_getInstance();
     this_1.minFilter = TextureFiltering_NEAREST_getInstance();
     this_1.magFilter = TextureFiltering_NEAREST_getInstance();
-    tmp_0.bw_1 = this_1;
+    tmp_0.yv_1 = this_1;
     var tmp_1 = this;
     // Inline function 'kotlin.apply' call
     var this_2 = new Texture();
@@ -13746,7 +13770,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_2.minFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_2.magFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_2.mipmaps = 11;
-    tmp_1.cw_1 = this_2;
+    tmp_1.zv_1 = this_2;
     var tmp_2 = this;
     // Inline function 'kotlin.apply' call
     var this_3 = new Texture();
@@ -13758,7 +13782,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_3.minFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_3.magFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_3.mipmaps = 11;
-    tmp_2.dw_1 = this_3;
+    tmp_2.aw_1 = this_3;
     var tmp_3 = this;
     // Inline function 'kotlin.apply' call
     var this_4 = new Texture();
@@ -13770,7 +13794,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_4.format = TextureFormat_ASTC_getInstance();
     this_4.minFilter = TextureFiltering_LINEAR_getInstance();
     this_4.magFilter = TextureFiltering_LINEAR_getInstance();
-    tmp_3.ew_1 = this_4;
+    tmp_3.bw_1 = this_4;
     var tmp_4 = this;
     // Inline function 'kotlin.apply' call
     var this_5 = new Texture();
@@ -13782,7 +13806,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_5.minFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_5.magFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_5.mipmaps = 8;
-    tmp_4.fw_1 = this_5;
+    tmp_4.cw_1 = this_5;
     var tmp_5 = this;
     // Inline function 'kotlin.apply' call
     var this_6 = new Texture();
@@ -13794,7 +13818,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_6.minFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_6.magFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_6.mipmaps = 9;
-    tmp_5.gw_1 = this_6;
+    tmp_5.dw_1 = this_6;
     var tmp_6 = this;
     // Inline function 'kotlin.apply' call
     var this_7 = new Texture();
@@ -13806,7 +13830,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_7.minFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_7.magFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_7.mipmaps = 3;
-    tmp_6.hw_1 = this_7;
+    tmp_6.ew_1 = this_7;
     var tmp_7 = this;
     // Inline function 'kotlin.apply' call
     var this_8 = new Texture();
@@ -13817,7 +13841,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_8.format = TextureFormat_ASTC_getInstance();
     this_8.minFilter = TextureFiltering_NEAREST_getInstance();
     this_8.magFilter = TextureFiltering_NEAREST_getInstance();
-    tmp_7.iw_1 = this_8;
+    tmp_7.fw_1 = this_8;
     var tmp_8 = this;
     // Inline function 'kotlin.apply' call
     var this_9 = new Texture();
@@ -13829,8 +13853,8 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
     this_9.minFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_9.magFilter = TextureFiltering_LINEAR_MIPMAP_LINEAR_getInstance();
     this_9.mipmaps = 5;
-    tmp_8.jw_1 = this_9;
-    this.kw_1 = mutableListOf([this.aw_1, this.bw_1, this.cw_1, this.dw_1, this.ew_1, this.fw_1, this.gw_1, this.hw_1, this.iw_1, this.jw_1]);
+    tmp_8.gw_1 = this_9;
+    this.hw_1 = mutableListOf([this.xv_1, this.yv_1, this.zv_1, this.aw_1, this.bw_1, this.cw_1, this.dw_1, this.ew_1, this.fw_1, this.gw_1]);
   }
   var Textures_instance_1;
   function Textures_getInstance_1() {
@@ -13842,7 +13866,7 @@ var KMPLibraryShared = createCommonjsModule(function (module, exports) {
   var Timers_Planes2_instance;
   function Companion_2() {
   }
-  protoOf(Companion_2).uw = function (timers) {
+  protoOf(Companion_2).rw = function (timers) {
     timers.ci(Timers_Planes1_getInstance(), 80000.0);
     timers.ci(Timers_Planes2_getInstance(), 70000.0);
   };
@@ -16026,7 +16050,7 @@ class Renderer extends SceneRenderer {
     }
     createScene() {
         const scene = new cartoonplanes.CartoonPlanesScene();
-        scene.changePlanes(0, 1);
+        scene.changePlanes(0, 0);
         scene.randomizePropTexture();
         // FIXME
         // setTimeout(() => { scene. }, 1000);

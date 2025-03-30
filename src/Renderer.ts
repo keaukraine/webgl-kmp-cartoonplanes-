@@ -32,7 +32,7 @@ export class Renderer extends SceneRenderer<lib.org.androidworks.cartoonplanes.C
 
     createScene(): lib.org.androidworks.cartoonplanes.CartoonPlanesScene {
         const scene = new cartoonplanes.CartoonPlanesScene();
-        scene.changePlanes(0, 1);
+        scene.changePlanes(0, 0);
         scene.randomizePropTexture();
 
         // FIXME
