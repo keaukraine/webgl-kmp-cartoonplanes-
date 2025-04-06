@@ -20,6 +20,7 @@ Live demo page is available here: https://keaukraine.github.io/webgl-kmp-cartoon
 * "Flying Circus - Primavera I99" (https://skfb.ly/oFrCK) by Iris Paun is licensed under Creative Commons Attribution.
 * "RustAirborn - French Trainer" (https://skfb.ly/oSzOr) by Wouter De Moor is licensed under Creative Commons Attribution.
 * "Wenning Carsten GameArt Plane" (https://skfb.ly/otDOq) by Carsten Wenning is licensed under Creative Commons Attribution.
+* Skyboxes are generated with https://skybox.blockadelabs.com/
 
 # License
 
