@@ -2,7 +2,6 @@ import { FullScreenUtils } from "webgl-framework";
 import { Renderer } from "./Renderer";
 import GUI from "lil-gui";
 import { CameraMode } from "./CameraMode";
-import { engine, cartoonplanes } from "./KotlinLib";
 
 
 function ready(fn: () => void) {
@@ -30,7 +29,7 @@ function initUI(): void {
 
     const gui = new GUI();
     const dummyConfig = {
-        github: () => window.open("https://github.com/keaukraine/webgl-stylized-castle")
+        github: () => window.open("https://github.com/keaukraine/webgl-kmp-cartoonplanes-")
     };
 
     const fullScreenUtils = new FullScreenUtils();
@@ -53,28 +52,13 @@ function initUI(): void {
         }
     ).name("Camera");
 
-    // gui.add(
-    //     renderer.settings,
-    //     "timeOfDay",
-    //     {
-    //         "Day": arctic.TimeOfDay.Day,
-    //         "Night": arctic.TimeOfDay.Night,
-    //         "Sunrise": arctic.TimeOfDay.Sunrise,
-    //         "Sunset": arctic.TimeOfDay.Sunset
-    //     }
-    // )
-    //     .name("Time of Day")
-    //     .onChange((value: any) => renderer.settings.timeOfDay = value);
-
     gui.add(renderer.settings, "cameraPeriod", 0.1, 2, 0.1);
-    gui.add(renderer.settings, "vignette");
-    gui.add(renderer.settings, "blurred");
     gui.add(renderer.settings, "lowQuality");
-    gui.add(renderer.settings, "autoSwitchCameras");
 
     gui.add(renderer, "randomizeSky");
     gui.add(renderer, "randomizePlane");
     gui.add(fullscreen, "toggleFullscreen");
+    gui.add(dummyConfig, "github");
 
     initDebugUI();
 }

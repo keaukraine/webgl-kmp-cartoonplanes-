@@ -18547,6 +18547,9 @@ function initUI() {
     (_a = document.getElementById("message")) === null || _a === void 0 ? void 0 : _a.classList.add("hidden");
     (_b = document.getElementById("canvasGL")) === null || _b === void 0 ? void 0 : _b.classList.remove("transparent");
     const gui = new GUI$1();
+    const dummyConfig = {
+        github: () => window.open("https://github.com/keaukraine/webgl-kmp-cartoonplanes-")
+    };
     const fullScreenUtils = new FullScreenUtils();
     const fullscreen = {
         toggleFullscreen: () => {
@@ -18562,26 +18565,12 @@ function initUI() {
         "FrontEnd": CameraMode.FrontEnd,
         "FPS": CameraMode.FPS
     }).name("Camera");
-    // gui.add(
-    //     renderer.settings,
-    //     "timeOfDay",
-    //     {
-    //         "Day": arctic.TimeOfDay.Day,
-    //         "Night": arctic.TimeOfDay.Night,
-    //         "Sunrise": arctic.TimeOfDay.Sunrise,
-    //         "Sunset": arctic.TimeOfDay.Sunset
-    //     }
-    // )
-    //     .name("Time of Day")
-    //     .onChange((value: any) => renderer.settings.timeOfDay = value);
     gui.add(renderer.settings, "cameraPeriod", 0.1, 2, 0.1);
-    gui.add(renderer.settings, "vignette");
-    gui.add(renderer.settings, "blurred");
     gui.add(renderer.settings, "lowQuality");
-    gui.add(renderer.settings, "autoSwitchCameras");
     gui.add(renderer, "randomizeSky");
     gui.add(renderer, "randomizePlane");
     gui.add(fullscreen, "toggleFullscreen");
+    gui.add(dummyConfig, "github");
     initDebugUI();
 }
 function initDebugUI() {
