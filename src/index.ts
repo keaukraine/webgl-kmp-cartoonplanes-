@@ -29,7 +29,8 @@ function initUI(): void {
 
     const gui = new GUI();
     const dummyConfig = {
-        github: () => window.open("https://github.com/keaukraine/webgl-kmp-cartoonplanes-")
+        github: () => window.open("https://github.com/keaukraine/webgl-kmp-cartoonplanes-"),
+        android: () => window.open("https://play.google.com/store/apps/details?id=org.androidworks.livewallpaper.cartoonairplanes")
     };
 
     const fullScreenUtils = new FullScreenUtils();
@@ -59,6 +60,7 @@ function initUI(): void {
     gui.add(renderer, "randomizePlane");
     gui.add(fullscreen, "toggleFullscreen");
     gui.add(dummyConfig, "github");
+    gui.add(dummyConfig, "android");
 
     initDebugUI();
 }

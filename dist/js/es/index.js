@@ -1,5 +1,3 @@
-
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 class FullScreenUtils {
     /** Enters fullscreen. */
     enterFullScreen() {
@@ -18548,7 +18546,8 @@ function initUI() {
     (_b = document.getElementById("canvasGL")) === null || _b === void 0 ? void 0 : _b.classList.remove("transparent");
     const gui = new GUI$1();
     const dummyConfig = {
-        github: () => window.open("https://github.com/keaukraine/webgl-kmp-cartoonplanes-")
+        github: () => window.open("https://github.com/keaukraine/webgl-kmp-cartoonplanes-"),
+        android: () => window.open("https://play.google.com/store/apps/details?id=org.androidworks.livewallpaper.cartoonairplanes")
     };
     const fullScreenUtils = new FullScreenUtils();
     const fullscreen = {
@@ -18571,6 +18570,7 @@ function initUI() {
     gui.add(renderer, "randomizePlane");
     gui.add(fullscreen, "toggleFullscreen");
     gui.add(dummyConfig, "github");
+    gui.add(dummyConfig, "android");
     initDebugUI();
 }
 function initDebugUI() {

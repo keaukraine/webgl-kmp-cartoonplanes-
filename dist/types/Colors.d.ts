@@ -1,5 +1,21 @@
-export declare const GROUND_COLORS: Float32Array;
-export declare const CASTLE_OUTER_COLORS: Float32Array;
-export declare const CASTLE_INNER_COLORS: Float32Array;
-export declare const BASE_COLORS: number[][];
-export declare const AMBIENT: number[];
+export interface SceneColors {
+    isDay: boolean;
+    drawSmallSun: boolean;
+    drawStars: boolean;
+    sky: number[];
+    hillDark: number[];
+    hillBright: number[];
+    mountainsDark: number[];
+    mountainsBright: number[];
+    ground1: number[];
+    ground2: number[];
+    water: number[];
+    waterHighlight: number[];
+    sun: number[];
+    stars: number[];
+    clouds: number[];
+    animal: number[];
+    birds: number[];
+    hills: number[];
+}
+export declare const COLORS: SceneColors[];

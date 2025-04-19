@@ -7,6 +7,38 @@ const gl_matrix_1 = require("gl-matrix");
  * This type of camera is good for displaying large scenes
  */
 class FpsCamera {
+    get angles() {
+        return this._angles;
+    }
+    set angles(value) {
+        this._angles = value;
+        this._dirty = true;
+    }
+    get position() {
+        return this._position;
+    }
+    set position(value) {
+        this._position = value;
+        this._dirty = true;
+    }
+    get dirty() {
+        return this._dirty;
+    }
+    set dirty(value) {
+        this._dirty = value;
+    }
+    get viewMat() {
+        if (this._dirty) {
+            var mv = this._viewMat;
+            gl_matrix_1.mat4.identity(mv);
+            gl_matrix_1.mat4.rotateX(mv, mv, this.angles[0] - Math.PI / 2.0);
+            gl_matrix_1.mat4.rotateZ(mv, mv, this.angles[1]);
+            gl_matrix_1.mat4.rotateY(mv, mv, this.angles[2]);
+            gl_matrix_1.mat4.translate(mv, mv, [-this.position[0], -this.position[1], -this.position[2]]);
+            this._dirty = false;
+        }
+        return this._viewMat;
+    }
     constructor(options) {
         var _a, _b;
         this.options = options;
@@ -61,38 +93,6 @@ class FpsCamera {
             }
         });
         this.canvas.addEventListener('mouseup', event => moving = false);
-    }
-    get angles() {
-        return this._angles;
-    }
-    set angles(value) {
-        this._angles = value;
-        this._dirty = true;
-    }
-    get position() {
-        return this._position;
-    }
-    set position(value) {
-        this._position = value;
-        this._dirty = true;
-    }
-    get dirty() {
-        return this._dirty;
-    }
-    set dirty(value) {
-        this._dirty = value;
-    }
-    get viewMat() {
-        if (this._dirty) {
-            var mv = this._viewMat;
-            gl_matrix_1.mat4.identity(mv);
-            gl_matrix_1.mat4.rotateX(mv, mv, this.angles[0] - Math.PI / 2.0);
-            gl_matrix_1.mat4.rotateZ(mv, mv, this.angles[1]);
-            gl_matrix_1.mat4.rotateY(mv, mv, this.angles[2]);
-            gl_matrix_1.mat4.translate(mv, mv, [-this.position[0], -this.position[1], -this.position[2]]);
-            this._dirty = false;
-        }
-        return this._viewMat;
     }
     update(frameTime) {
         this.vec3Temp1[0] = 0;

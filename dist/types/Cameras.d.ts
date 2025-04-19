@@ -1,4 +1,5 @@
 export declare const CAMERAS: {
+    name: string;
     start: {
         position: Float32Array;
         rotation: Float32Array;
@@ -8,5 +9,5 @@ export declare const CAMERAS: {
         rotation: Float32Array;
     };
     speedMultiplier: number;
+    interactive: boolean;
 }[];
-export declare const CAMERA_FOV_COEFFS: number[];

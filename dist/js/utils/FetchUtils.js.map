@@ -1,0 +1,1 @@
+{"version":3,"file":"FetchUtils.js","sourceRoot":"","sources":["../../../src/utils/FetchUtils.ts"],"names":[],"mappings":";;;AAAO,KAAK,UAAU,gBAAgB,CAAC,GAAW;IAC9C,MAAM,QAAQ,GAAG,MAAM,KAAK,CAAC,GAAG,CAAC,CAAC;IAClC,MAAM,MAAM,GAAG,MAAM,QAAQ,CAAC,WAAW,EAAE,CAAC;IAC5C,OAAO,MAAM,CAAC;AAClB,CAAC;AAJD,4CAIC"}

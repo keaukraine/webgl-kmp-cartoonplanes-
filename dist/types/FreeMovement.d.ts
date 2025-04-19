@@ -1,6 +1,6 @@
-import { Renderer } from "./Renderer";
 import { vec3 } from "gl-matrix";
 import { FpsCameraOptions } from "./FpsCamera";
+import { SceneRenderer } from "./SceneRenderer";
 export declare class FreeMovement {
     private renderer;
     private options;
@@ -11,7 +11,7 @@ export declare class FreeMovement {
     private vec3Rotation;
     private fpsCamera;
     private enabled;
-    constructor(renderer: Renderer, options: FpsCameraOptions);
+    constructor(renderer: SceneRenderer<any>, options: FpsCameraOptions);
     enable(): void;
     disable(): void;
     private setupControls;

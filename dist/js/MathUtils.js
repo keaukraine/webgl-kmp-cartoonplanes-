@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.lerp = exports.findLinePlaneIntersectionCoords = void 0;
+exports.angleBetweenPoints = exports.lerp = exports.findLinePlaneIntersectionCoords = void 0;
 /**
 * findLinePlaneIntersectionCoords (to avoid requiring unnecessary instantiation)
 * Given points p with px py pz and q that define a line, and the plane
@@ -23,4 +23,11 @@ function lerp(start, end, m) {
     return (1 - m) * start + m * end;
 }
 exports.lerp = lerp;
+function angleBetweenPoints(start, end, result) {
+    result.x = Math.atan2(start.z - end.z, start.y - end.y); // * 180 / Math.PI; // x axis
+    result.y = Math.atan2(start.z - end.z, start.x - end.x); // * 180 / Math.PI; // y axis
+    result.z = Math.atan2(start.x - end.x, start.y - end.y); // * 180 / Math.PI; // z axis
+    return result;
+}
+exports.angleBetweenPoints = angleBetweenPoints;
 //# sourceMappingURL=MathUtils.js.map
