@@ -1,4 +1,7 @@
-# WebGL Skyscrapers KMP demo
+# WebGL Cartoon Planes KMP demo
+
+![image](https://github.com/user-attachments/assets/642bb732-1295-409d-b9a1-a897c9afc6f9)
+
 
 Live demo page is available here: https://keaukraine.github.io/webgl-kmp-cartoonplanes-/index.html
 
